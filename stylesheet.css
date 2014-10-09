@@ -1,0 +1,163 @@
+body {
+	background:#fbfbfb;
+}
+
+#bodyTitle{
+	margin-top: 3%;
+	font-family: Raleway, sans-serif;
+	font-weight: 800;
+	font-size:36px;
+	width:100%;
+	text-align:center;
+	text-shadow: 1px 1px 4px #666;
+}
+#selection {
+	font-family: Raleway, sans-serif;
+	font-weight: 400;
+	margin-left: 2%;
+	margin-top: 4%;
+}
+#hug {
+	width:100%;
+	text-align:center;
+}
+#code {
+	display:none;
+	width:60%;
+	background:#e3e3e3;
+	text-align:left;
+	margin-bottom:2%;
+	padding:2%;
+	border-radius: 15px;
+	-moz-box-shadow: inset 0 0 15px #000000;
+	-webkit-box-shadow: inset 0 0 15px #000000;
+	box-shadow: inset 0 0 15px #000000;
+}
+
+#mobDisplay {
+	position:absolute;
+	display:inline-block;
+	right:3%;
+	top:20%;
+	width:400px;
+	height: 500px;
+	border-radius: 15px;
+	-moz-box-shadow: inset 0 0 15px #000000;
+	-webkit-box-shadow: inset 0 0 15px #000000;
+	box-shadow: inset 0 0 15px #000000;
+	text-align:center;
+}
+#mobDisplay:after {
+	background: url(img/background.png);
+	opacity: 0.5;
+	width: 400px;
+	height: 500px;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: -1;
+	content: "";
+	border-radius: 15px;
+}
+#displayName {
+	display:inline-block;
+	margin-top:30px;
+	font-size:24px;
+	background:rgba(0,0,0,0.4);
+	padding:5px;
+	padding-right:17px;
+	padding-left:17px;
+}
+#displayTag {
+	color:#FF5555;
+}
+#displayLevel {
+	color:#FFAA00;
+}
+#displayImage {
+	width: 250px;
+	height: 350px;
+	margin: 0 auto;
+	margin-top:25px;
+}
+
+
+
+#titleName {
+	text-align:center;
+	font-weight: 600;
+}
+#all {
+	margin-left: 3%;
+}
+#special {
+	margin-left: 3%;
+}
+.comment {
+	color:#CCC;
+	margin-left:15px;
+	font-style: italic;
+	font-size:15px;
+}
+
+
+
+
+
+#arrow {
+	display: inline-block;
+}
+#bat {
+	display: none;
+}
+#blaze {
+	display: none;
+}
+#creeper {
+	display: none;
+}
+#enderman {
+	display: none;
+}
+#fallingblock {
+	display: none;
+}
+#ghast {
+	display: none;
+}
+#horse {
+	display: none;
+}
+#item {
+	display: none;
+}
+#ocelot {
+	display: none;
+}
+#painting {
+	display: none;
+}
+#pig {
+	display: none;
+}
+#potion {
+	display: none;
+}
+#sheep {
+	display: none;
+}
+#slime {
+	display: none;
+}
+#villager {
+	display: none;
+}
+#witherskull {
+	display: none;
+}
+#wolf {
+	display: none;
+}
+#zombie {
+	display: none;
+}
