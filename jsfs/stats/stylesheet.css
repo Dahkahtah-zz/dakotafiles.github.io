@@ -1,0 +1,14 @@
+@charset "utf-8";
+#user{
+	font-family: 'Raleway', sans-serif;
+	width:800px;
+	display:inline-block;
+	height:35px;
+}
+#container{
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:80px;
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+}

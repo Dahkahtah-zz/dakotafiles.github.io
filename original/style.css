@@ -1,0 +1,33 @@
+@charset "utf-8";
+body{
+	background:#0A3542;
+}
+#body{
+	padding-top:80px;
+	font-family:'Marck Script';
+	font-size:48px;
+	text-align:center;
+	line-height:80%;
+}
+h1{
+	color:#2e697b;
+}
+img.img{
+	display:block
+	margin: 0 auto;
+}
+h2{
+	color:#051e25;
+}
+h1 #dako{
+	color:#2d9d57;
+}
+h3{
+	position:fixed;
+	font-family:'Marck Script';
+	color:#09313d;
+	font-size:28px;
+	bottom:0px;
+	text-align:center;
+	width:100%;
+}

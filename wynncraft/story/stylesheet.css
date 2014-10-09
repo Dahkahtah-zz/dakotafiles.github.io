@@ -1,0 +1,141 @@
+@charset "utf-8";
+body {
+	margin:0px;
+	padding:0px;
+}
+#frameOne {
+	width:100%;
+	height:100%;
+	background-color: #4ecdc4;
+	background-image: url(../media/noise2.png);
+	background-image: url(../media/noise2.png), -webkit-radial-gradient(#4ecdc4, #348b84); /* Safari 5.1 to 6.0 */
+	background-image: url(../media/noise2.png), -o-radial-gradient(#4ecdc4, #348b84); /* For Opera 11.6 to 12.0 */
+	background-image: url(../media/noise2.png), -moz-radial-gradient(#4ecdc4, #348b84); /* For Firefox 3.6 to 15 */
+	background-image: url(../media/noise2.png), radial-gradient(#4ecdc4, #348b84); /* Standard syntax */
+	position:fixed;
+	margin:0px;
+	padding:0px;
+	z-index:-1;
+}
+#frameTwo {
+	width:100%;
+	height:100%;
+	background-color: #a8f465;
+	background-image: url(../media/noise2.png);
+	background-image: url(../media/noise2.png), -webkit-radial-gradient(#a8f465, #6fa645); /* Safari 5.1 to 6.0 */
+	background-image: url(../media/noise2.png), -o-radial-gradient(#a8f465, #6fa645); /* For Opera 11.6 to 12.0 */
+	background-image: url(../media/noise2.png), -moz-radial-gradient(#a8f465, #6fa645); /* For Firefox 3.6 to 15 */
+	background-image: url(../media/noise2.png), radial-gradient(#a8f465, #6fa645); /* Standard syntax */
+	position:fixed;
+	margin:0px;
+	padding:0px;
+	z-index:-2;
+}
+#title {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	text-shadow: 0px 0px 6px #246a64;
+	color: #102c29;
+	font-size: 55px;
+	width:100%;
+	height:122px;
+	text-align:center;
+	letter-spacing: 7px;
+	position:fixed;
+}
+.text {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	text-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+	color:#000;
+	color: rgba(0,0,0,0.7);
+	font-size: 42px;
+	position:fixed;
+}
+#img {
+	display:inline;
+	position:relative;
+	top: 50px;
+}
+#username {
+	font-family: 'minecraftfont';
+	text-align:center;
+	color:#FFF;
+	font-size:40px;
+	display:inline-block;
+	position:fixed;
+	top:250px;
+	width:100%;
+}
+#username span {
+	background-color:rgba(0, 0, 0, 0.2);
+	width:auto;
+	padding:7px;
+}
+#skin {
+	position:fixed;
+	text-align:center;
+	display:inline-block;
+	width:100%;
+	top:250px;
+}
+#shadow {
+	position:fixed;
+	text-align:center;
+	display:inline-block;
+	width:100%;
+	top:250px;
+}
+#scroll {
+	position:fixed;
+	text-align:center;
+	display:inline-block;
+	width:100%;
+	top: 30%
+}
+#stand {
+	position:fixed;
+	text-align:center;
+	display:inline-block;
+	width:100%;
+	top:710px;
+	opacity: 0.7;
+}
+#life {
+	position:fixed;
+	text-align:center;
+	display:inline-block;
+	width:100%;
+	top: 200%
+}
+#firstLogin {
+	position:fixed;
+	text-align:center;
+	display:inline-block;
+	width:100%;
+	top: 200%
+}
+
+
+
+
+#scrollStart {
+	position:absolute;
+	margin-top: 40%;
+}
+#scrollStart2 {
+	position:absolute;
+	margin-top: 50%;
+}
+#player {
+	position:absolute;
+	margin-top: 80%;
+}
+#bgTriggerOne {
+	position:absolute;
+	margin-top: 130%;
+}
+#forceScroll {
+	position:absolute;
+	margin-top: 560%;
+}
