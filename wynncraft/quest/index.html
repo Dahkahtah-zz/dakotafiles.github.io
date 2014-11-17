@@ -1,0 +1,660 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,600,800' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+NOT YET FUNCTIONAL - FOR LOGIC FIXES
+<br><br><br><br><br>
+What is your quest called?<br>
+<input type="text" name="questName" id="questName" style="color:#888;" value="Quest Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+<input type="submit" value="Next" class="next" id="questNameSubmit">
+<input type="submit" value="Back" class="back" id="questNamePrevious">
+<br><br>
+What Level is it?<br>
+<input type="number" name="level" id="level" min="1" max="100">
+<input type="submit" value="Next" class="next" id="levelSubmit">
+<input type="submit" value="Back" class="back" id="levelPrevious">
+<br><br>
+What is the name of your first NPC?<br>
+<input type="text" name="npc1Name" id="npc1Name" style="color:#888;" value="NPC Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+<input type="submit" value="Next" class="next" id="npc1NameSubmit">
+<input type="submit" value="Back" class="back" id="npc1NamePrevious">
+<br><br>
+How do you get to it?<br>
+<input type="text" name="stage1" id="stage1" style="color:#888;" value="Stage 1" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+<input type="submit" value="Next" class="next" id="stageSubmit">
+<input type="submit" value="Back" class="back" id="stagePrevious">
+<br><br>
+Where is it?<br>
+<input type="number" name="xnpc1Loc" id="xnpc1Loc" value="0">, 
+<input type="number" name="ynpc1Loc" id="ynpc1Loc" value="0">, 
+<input type="number" name="znpc1Loc" id="znpc1Loc" value="0">
+<input type="submit" value="Next" class="next" id="xyznpc1LocSubmit">
+<input type="submit" value="Back" class="back" id="xyznpc1LocPrevious">
+<br><br>
+What is its occupation?<br>
+<select id="npc1Profession">
+<option value="blacksmith">Blacksmith</option>
+<option value="butcher">Butcher</option>
+<option value="farmer">Farmer</option>
+<option value="librarian">Librarian</option>
+<option value="priest">Priest</option>
+</select>
+<input type="submit" value="Next" class="next" id="npc1ProfessionSubmit">
+<input type="submit" value="Back" class="back" id="npc1ProfessionPrevious">
+<br><br>
+Is it a child?<br>
+Y:<input type="radio" name="npc1Child" value="yes" class="npc1Child"> N:<input type="radio" name="npc1Child" value="no" class="npc1Child" checked>
+<input type="submit" value="Next" class="next" id="npc1ChildSubmit">
+<input type="submit" value="Back" class="back" id="npc1ChildPrevious">
+<br><br>
+What will it say to you at stage 1?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npc1Stage1" id="npc1Stage1" style="color:#888;" value="{NAME} Stage 1" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npc1Stage1Edit">
+<input type="submit" value="Add Line" id="npc1Stage1Add">
+<input type="submit" value="Next" class="next" id="npc1Stage1Submit">
+<input type="submit" value="Back" class="back" id="npc1Stage1Previous">
+<br><br>
+What does it say if you're not the right level?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npc1LowLevel" id="npc1LowLevel" style="color:#888;" value="Low Level Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npc1LowLevelEdit">
+<input type="submit" value="Add Line" id="npc1LowLevelAdd">
+<input type="submit" value="Next" class="next" id="npc1LowLevelSubmit">
+<input type="submit" value="Back" class="back" id="npc1LowLevelPrevious">
+<br><br>
+What does it say if it is waiting for an item you don't have yet?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npc1Repeat" id="npc1Repeat" style="color:#888;" value="Repeat Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npc1RepeatEdit">
+<input type="submit" value="Add Line" id="npc1RepeatAdd">
+<input type="submit" value="Next" class="next" id="npc1RepeatSubmit">
+<input type="submit" value="Back" class="back" id="npc1RepeatPrevious">
+<br><br>
+What does it say if you haven't finished the quest, but you wont need to talk to them again?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npc1Fallback" id="npc1Fallback" style="color:#888;" value="Fallback Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npc1FallbackEdit">
+<input type="submit" value="Add Line" id="npc1FallbackAdd">
+<input type="submit" value="Next" class="next" id="npc1FallbackSubmit">
+<input type="submit" value="Back" class="back" id="npc1FallbackPrevious">
+<br><br>
+What does it say after you finished the quest?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npc1Greet" id="npc1Greet" style="color:#888;" value="Greet Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npc1GreetEdit">
+<input type="submit" value="Add Line" id="npc1GreetAdd">
+<input type="submit" value="Next" class="next" id="npc1GreetSubmit">
+<input type="submit" value="Back" class="back" id="npc1GreetPrevious">
+<br><br>
+Does it have a reward?<br>
+Y:<input type="radio" name="npc1Reward" value="yes" class="npc1Reward"> N:<input type="radio" name="npc1Reward" value="no" class="npc1Reward" checked>
+<input type="submit" value="Next" class="next" id="npc1RewardSubmit">
+<input type="submit" value="Back" class="back" id="npc1RewardPrevious">
+<br><br>
+Where is the reward's chest located?<br>
+<input type="number" name="xnpc1Reward" id="xnpc1Reward" value="0">, 
+<input type="number" name="ynpc1Reward" id="ynpc1Reward" value="0">, 
+<input type="number" name="znpc1Reward" id="znpc1Reward" value="0">
+<input type="submit" value="Next" class="next" id="xyznpc1RewardSubmit">
+<input type="submit" value="Back" class="back" id="xyznpc1RewardPrevious">
+<br><br>
+Is this the end of the quest?<br>
+Y:<input type="radio" name="questEnd" value="yes" class="questEnd"> N:<input type="radio" name="questEnd" value="no" class="questEnd" checked>
+<input type="submit" value="Next" class="next" id="questEndSubmit">
+<input type="submit" value="Back" class="back" id="questEndPrevious">
+<br><br><br><br>
+
+
+NO:
+<br><br>
+Does an NPC or a region escalate the next stage?<br>
+NPC:<input type="radio" name="NPCRegion" value="npc" class="NPCRegion" checked> Region:<input type="radio" name="NPCRegion" value="region" class="NPCRegion">
+<input type="submit" value="Next" class="next" id="NPCRegionSubmit">
+<input type="submit" value="Back" class="back" id="NPCRegionPrevious">
+<br><br><br><br>
+
+
+
+
+
+
+NPC:
+<br><br>
+Does the NPC already exist?<br>
+Y:<input type="radio" name="npcNewStage" value="yes" class="npcNewStage"> N:<input type="radio" name="npcNewStage" value="no" class="npcNewStage" checked>
+<input type="submit" value="Next" class="next" id="npcNewStageSubmit">
+<input type="submit" value="Back" class="back" id="npcNewStagePrevious">
+<br><br><br>
+YES:
+<br><br>
+What NPC is it?<br>
+<select id="npcSelection">
+<option value="npc1">Bobby</option>
+<option value="npc2">Johnny</option>
+</select>
+<input type="submit" value="Next" class="next" id="npcSelectionSubmit">
+<input type="submit" value="Back" class="back" id="npcSelectionPrevious">
+<br><br>
+What will it say to you at stage 1?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXStageX" id="npcXStageX" style="color:#888;" value="{NAME} Stage X" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXStageXEdit">
+<input type="submit" value="Add Line" id="npcXStageXAdd">
+<input type="submit" value="Next" class="next" id="npcXStageXSubmit">
+<input type="submit" value="Back" class="back" id="npcXStageXPrevious">
+<br><br><br>
+NO:
+<br><br>
+What is the name of the NPC?<br>
+<input type="text" name="npcXName" id="npcXName" style="color:#888;" value="NPC Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+<input type="submit" value="Next" class="next" id="npcXNameSubmit">
+<input type="submit" value="Back" class="back" id="npcXNamePrevious">
+<br><br>
+Where is it?<br>
+<input type="number" name="xnpcXLoc" id="xnpcXLoc" value="0">, 
+<input type="number" name="ynpcXLoc" id="ynpcXLoc" value="0">, 
+<input type="number" name="znpcXLoc" id="znpcXLoc" value="0">
+<input type="submit" value="Next" class="next" id="xyznpcXLocSubmit">
+<input type="submit" value="Back" class="back" id="xyznpcXLocPrevious">
+<br><br>
+What is its occupation?<br>
+<select id="npcXProfession">
+<option value="blacksmith">Blacksmith</option>
+<option value="butcher">Butcher</option>
+<option value="farmer">Farmer</option>
+<option value="librarian">Librarian</option>
+<option value="priest">Priest</option>
+</select>
+<input type="submit" value="Next" class="next" id="npcXProfessionSubmit">
+<input type="submit" value="Back" class="back" id="npcXProfessionPrevious">
+<br><br>
+Is it a child?<br>
+Y:<input type="radio" name="npcXChild" value="yes" class="npcXChild"> N:<input type="radio" name="npcXChild" value="no" class="npcXChild" checked>
+<input type="submit" value="Next" class="next" id="npcXChildSubmit">
+<input type="submit" value="Back" class="back" id="npcXChildPrevious">
+<br><br>
+What will it say to you at stage X?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXStage1" id="npcXStage1" style="color:#888;" value="{NAME} Stage 1" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXEdit">
+<input type="submit" value="Add Line" id="npcXAdd">
+<input type="submit" value="Next" class="next" id="npcXSubmit">
+<input type="submit" value="Back" class="back" id="npcXPrevious">
+<br><br>
+What does it say if you're not the right level?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXLowLevel" id="npcXLowLevel" style="color:#888;" value="Low Level Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXLowLevelEdit">
+<input type="submit" value="Add Line" id="npcXLowLevelAdd">
+<input type="submit" value="Next" class="next" id="npcXLowLevelSubmit">
+<input type="submit" value="Back" class="back" id="npcXLowLevelPrevious">
+<br><br>
+What does it say if you don't need to talk to it yet?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXLowStage" id="npcXLowStage" style="color:#888;" value="Low Stage Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXLowStageEdit">
+<input type="submit" value="Add Line" id="npcXLowStageAdd">
+<input type="submit" value="Next" class="next" id="npcXLowStageSubmit">
+<input type="submit" value="Back" class="back" id="npcXLowStagePrevious">
+<br><br>
+What does it say if it is waiting for an item you don't have yet?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXRepeat" id="npcXRepeat" style="color:#888;" value="Repeat Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXRepeatEdit">
+<input type="submit" value="Add Line" id="npcXRepeatAdd">
+<input type="submit" value="Next" class="next" id="npcXRepeatSubmit">
+<input type="submit" value="Back" class="back" id="npcXRepeatPrevious">
+<br><br>
+What does it say if you haven't finished the quest, but you wont need to talk to them again?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXFallback" id="npcXFallback" style="color:#888;" value="Fallback Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXFallbackEdit">
+<input type="submit" value="Add Line" id="npcXFallbackAdd">
+<input type="submit" value="Next" class="next" id="npcXFallbackSubmit">
+<input type="submit" value="Back" class="back" id="npcXFallbackPrevious">
+<br><br>
+What does it say after you finished the quest?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXGreet" id="npcXGreet" style="color:#888;" value="Greet Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXGreetEdit">
+<input type="submit" value="Add Line" id="npcXGreetAdd">
+<input type="submit" value="Next" class="next" id="npcXGreetSubmit">
+<input type="submit" value="Back" class="back" id="npcXGreetPrevious">
+<br><br>
+Does it have a requirement?<br>
+Y:<input type="radio" name="npcXRequirement" value="yes" class="npcXRequirement"> N:<input type="radio" name="npcXRequirement" value="no" class="npcXRequirement" checked>
+<input type="submit" value="Next" class="next" id="npcXRequirementSubmit">
+<input type="submit" value="Back" class="back" id="npcXRequirementPrevious">
+<br><br>
+Where is the requirement's chest located?<br>
+<input type="number" name="xnpcXRequirement" id="xnpcXRequirement" value="0">, 
+<input type="number" name="ynpcXRequirement" id="ynpcXRequirement" value="0">, 
+<input type="number" name="znpcXRequirement" id="znpcXRequirement" value="0">
+<input type="submit" value="Next" class="next" id="xyznpcXRequirementSubmit">
+<input type="submit" value="Back" class="back" id="xyznpcXRequirementPrevious">
+<br><br>
+Does it have a reward?<br>
+Y:<input type="radio" name="npcXReward" value="yes" class="npcXReward"> N:<input type="radio" name="npcXReward" value="no" class="npcXReward" checked>
+<input type="submit" value="Next" class="next" id="npcXRewardSubmit">
+<input type="submit" value="Back" class="back" id="npcXRewardPrevious">
+<br><br>
+Where is the reward's chest located?<br>
+<input type="number" name="xnpcXReward" id="xnpcXReward" value="0">, 
+<input type="number" name="ynpcXReward" id="ynpcXReward" value="0">, 
+<input type="number" name="znpcXReward" id="znpcXReward" value="0">
+<input type="submit" value="Next" class="next" id="xyznpcXRewardSubmit">
+<input type="submit" value="Back" class="back" id="xyznpcXRewardPrevious">
+<br><br><br><br>
+
+
+REGION:
+<br><br>
+What is the region name?<br>
+<input type="text" name="regionXName" id="regionXName" style="color:#888;" value="Region Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" /> 
+<input type="submit" value="Next" class="next" id="regionXNameSubmit"> 
+<input type="submit" value="Back" class="back" id="regionXNamePrevious">
+<br><br>
+What is one of the corners?<br>
+<input type="number" name="xRegionXLoc1" id="xRegionXLoc1" value="0">, 
+<input type="number" name="yRegionXLoc1" id="yRegionXLoc1" value="0">, 
+<input type="number" name="zRegionXLoc1" id="zRegionXLoc1" value="0">
+<input type="submit" value="Next" class="next" id="xyzRegionXLoc1Submit">
+<input type="submit" value="Back" class="back" id="xyzRegionXLoc1Previous">
+<br><br>
+What is the opposite corner?<br>
+<input type="number" name="xRegionXLoc2" id="xRegionXLoc2" value="0">, 
+<input type="number" name="yRegionXLoc2" id="yRegionXLoc2" value="0">, 
+<input type="number" name="zRegionXLoc2" id="zRegionXLoc2" value="0">
+<input type="submit" value="Next" class="next" id="xyzRegionXLoc2Submit">
+<input type="submit" value="Back" class="back" id="xyzRegionXLoc2Previous">
+<br><br>
+What is said when you're not at the right stage?<br>
+<input type="text" name="regionXNotStage" id="regionXNotStage" style="color:#888;" value="Region Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" /> 
+<input type="submit" value="Next" class="next" id="regionXNotStageSubmit"> 
+<input type="submit" value="Back" class="back" id="regionXNotStagePrevious">
+<br><br>
+Do you need to be wearing a hat?<br>
+Y:<input type="radio" name="regionXRequi" value="yes" class="regionXRequi"> N:<input type="radio" name="regionXRequi" value="no" class="regionXRequi" checked>
+<input type="submit" value="Next" class="next" id="regionXRequiSubmit">
+<input type="submit" value="Back" class="back" id="regionXRequiPrevious">
+<br><br>
+Where is the hat's chest located?<br>
+<input type="number" name="xRegionXHat" id="xRegionXHat" value="0">, 
+<input type="number" name="yRegionXHat" id="yRegionXHat" value="0">, 
+<input type="number" name="zRegionXHat" id="zRegionXHat" value="0">
+<input type="submit" value="Next" class="next" id="xyzRegionXHatSubmit">
+<input type="submit" value="Back" class="back" id="xyzRegionXHatPrevious">
+<br><br>
+Does the region teleport you?<br>
+Y:<input type="radio" name="regionXTele" value="yes" class="regionXTele"> N:<input type="radio" name="regionXTele" value="no" class="regionXTele" checked>
+<input type="submit" value="Next" class="next" id="regionXRequiSubmit">
+<input type="submit" value="Back" class="back" id="regionXRequiPrevious">
+<br><br>
+Where does it teleport you to?<br>
+<input type="number" name="xRegionXTele" id="xRegionXTele" value="0">, 
+<input type="number" name="yRegionXTele" id="yRegionXTele" value="0">, 
+<input type="number" name="zRegionXTele" id="zRegionXTele" value="0">
+<input type="submit" value="Next" class="next" id="xyzRegionXTeleSubmit">
+<input type="submit" value="Back" class="back" id="xyzRegionXTelePrevious">
+<br><br>
+What is said when you enter the region?<br>
+<input type="text" name="regionXStageMessage" id="regionXStageMessage" value="&7[Quest Book Updated]" /> 
+<input type="submit" value="Next" class="next" id="regionXStageMessageSubmit"> 
+<input type="submit" value="Back" class="back" id="regionXStageMessagePrevious">
+<br><br><br><br>
+
+YES: (No More Stages)
+<br><br>
+Are there any more regions you want to add?<br>
+Y:<input type="radio" name="moreRegion" value="yes" class="moreRegion"> N:<input type="radio" name="moreRegion" value="no" class="moreRegion" checked>
+<input type="submit" value="Next" class="next" id="moreRegionSubmit">
+<input type="submit" value="Back" class="back" id="moreRegionPrevious">
+<br><br><br><br>
+
+
+
+YES:
+<br><br>
+What is the region name?<br>
+<input type="text" name="regionXName" id="regionXName" style="color:#888;" value="Region Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" /> 
+<input type="submit" value="Next" class="next" id="regionXNameSubmit"> 
+<input type="submit" value="Back" class="back" id="regionXNamePrevious">
+<br><br>
+What is one of the corners?<br>
+<input type="number" name="xRegionXLoc1" id="xRegionXLoc1" value="0">, 
+<input type="number" name="yRegionXLoc1" id="yRegionXLoc1" value="0">, 
+<input type="number" name="zRegionXLoc1" id="zRegionXLoc1" value="0">
+<input type="submit" value="Next" class="next" id="xyzRegionXLoc1Submit">
+<input type="submit" value="Back" class="back" id="xyzRegionXLoc1Previous">
+<br><br>
+What is the opposite corner?<br>
+<input type="number" name="xRegionXLoc2" id="xRegionXLoc2" value="0">, 
+<input type="number" name="yRegionXLoc2" id="yRegionXLoc2" value="0">, 
+<input type="number" name="zRegionXLoc2" id="zRegionXLoc2" value="0">
+<input type="submit" value="Next" class="next" id="xyzRegionXLoc2Submit">
+<input type="submit" value="Back" class="back" id="xyzRegionXLoc2Previous">
+<br><br>
+What is said when you're not at the right stage?<br>
+<input type="text" name="regionXNotStage" id="regionXNotStage" style="color:#888;" value="Region Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" /> 
+<input type="submit" value="Next" class="next" id="regionXNotStageSubmit"> 
+<input type="submit" value="Back" class="back" id="regionXNotStagePrevious">
+<br><br>
+What stage do you need to be to enter?<br>
+<input type="number" name="regionXStage" id="regionXStage" value="0">, 
+<input type="submit" value="Next" class="next" id="regionXStageSubmit"> 
+<input type="submit" value="Back" class="back" id="regionXStagePrevious">
+<br><br>
+Do you need to be wearing a hat?<br>
+Y:<input type="radio" name="regionXRequi" value="yes" class="regionXRequi"> N:<input type="radio" name="regionXRequi" value="no" class="regionXRequi" checked>
+<input type="submit" value="Next" class="next" id="regionXRequiSubmit">
+<input type="submit" value="Back" class="back" id="regionXRequiPrevious">
+<br><br>
+Where is the hat's chest located?<br>
+<input type="number" name="xRegionXHat" id="xRegionXHat" value="0">, 
+<input type="number" name="yRegionXHat" id="yRegionXHat" value="0">, 
+<input type="number" name="zRegionXHat" id="zRegionXHat" value="0">
+<input type="submit" value="Next" class="next" id="xyzRegionXHatSubmit">
+<input type="submit" value="Back" class="back" id="xyzRegionXHatPrevious">
+<br><br>
+Does the region teleport you?<br>
+Y:<input type="radio" name="regionXTele" value="yes" class="regionXTele"> N:<input type="radio" name="regionXTele" value="no" class="regionXTele" checked>
+<input type="submit" value="Next" class="next" id="regionXRequiSubmit">
+<input type="submit" value="Back" class="back" id="regionXRequiPrevious">
+<br><br>
+Where does it teleport you to?<br>
+<input type="number" name="xRegionXTele" id="xRegionXTele" value="0">, 
+<input type="number" name="yRegionXTele" id="yRegionXTele" value="0">, 
+<input type="number" name="zRegionXTele" id="zRegionXTele" value="0">
+<input type="submit" value="Next" class="next" id="xyzRegionXTeleSubmit">
+<input type="submit" value="Back" class="back" id="xyzRegionXTelePrevious">
+<br><br><br><br>
+
+
+
+NO:
+<br><br>
+Are there any more NPCs you want to add?<br>
+Y:<input type="radio" name="moreNPC" value="yes" class="moreNPC"> N:<input type="radio" name="moreNPC" value="no" class="moreNPC" checked>
+<input type="submit" value="Next" class="next" id="moreNPCSubmit">
+<input type="submit" value="Back" class="back" id="moreNPCPrevious">
+<br><br><br><br>
+
+
+
+YES:
+<br><br>
+What is the name of the NPC?<br>
+<input type="text" name="npcXName" id="npcXName" style="color:#888;" value="NPC Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+<input type="submit" value="Next" class="next" id="npcXNameSubmit">
+<input type="submit" value="Back" class="back" id="npcXNamePrevious">
+<br><br>
+Where is it?<br>
+<input type="number" name="xnpcXLoc" id="xnpcXLoc" value="0">, 
+<input type="number" name="ynpcXLoc" id="ynpcXLoc" value="0">, 
+<input type="number" name="znpcXLoc" id="znpcXLoc" value="0">
+<input type="submit" value="Next" class="next" id="xyznpcXLocSubmit">
+<input type="submit" value="Back" class="back" id="xyznpcXLocPrevious">
+<br><br>
+What is its occupation?<br>
+<select id="npcXProfession">
+<option value="blacksmith">Blacksmith</option>
+<option value="butcher">Butcher</option>
+<option value="farmer">Farmer</option>
+<option value="librarian">Librarian</option>
+<option value="priest">Priest</option>
+</select>
+<input type="submit" value="Next" class="next" id="npcXProfessionSubmit">
+<input type="submit" value="Back" class="back" id="npcXProfessionPrevious">
+<br><br>
+Is it a child?<br>
+Y:<input type="radio" name="npcXChild" value="yes" class="npcXChild"> N:<input type="radio" name="npcXChild" value="no" class="npcXChild" checked>
+<input type="submit" value="Next" class="next" id="npcXChildSubmit">
+<input type="submit" value="Back" class="back" id="npcXChildPrevious">
+<br><br>
+What does it say if you're not the right level?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXLowLevel" id="npcXLowLevel" style="color:#888;" value="Low Level Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXLowLevelEdit">
+<input type="submit" value="Add Line" id="npcXLowLevelAdd">
+<input type="submit" value="Next" class="next" id="npcXLowLevelSubmit">
+<input type="submit" value="Back" class="back" id="npcXLowLevelPrevious">
+<br><br>
+What does it say if you don't need to talk to it yet?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXLowStage" id="npcXLowStage" style="color:#888;" value="Low Stage Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXLowStageEdit">
+<input type="submit" value="Add Line" id="npcXLowStageAdd">
+<input type="submit" value="Next" class="next" id="npcXLowStageSubmit">
+<input type="submit" value="Back" class="back" id="npcXLowStagePrevious">
+<br><br>
+What does it say if you haven't finished the quest, but you wont need to talk to them again?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXFallback" id="npcXFallback" style="color:#888;" value="Fallback Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXFallbackEdit">
+<input type="submit" value="Add Line" id="npcXFallbackAdd">
+<input type="submit" value="Next" class="next" id="npcXFallbackSubmit">
+<input type="submit" value="Back" class="back" id="npcXFallbackPrevious">
+<br><br>
+What does it say after you finished the quest?<br>
+&7[1/1] &2{NAME}: &a <input type="text" name="npcXGreet" id="npcXGreet" style="color:#888;" value="Greet Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />   
+<input type="submit" value="Edit Prefix" id="npcXGreetEdit">
+<input type="submit" value="Add Line" id="npcXGreetAdd">
+<input type="submit" value="Next" class="next" id="npcXGreetSubmit">
+<input type="submit" value="Back" class="back" id="npcXGreetPrevious">
+<br><br><br><br>
+
+
+
+
+NO:
+<br><br>
+How much XP does the quest give?<br>
+<input type="number" name="questXP" id="questXP" value="0">
+<input type="submit" value="Next" class="next" id="questXPSubmit">
+<input type="submit" value="Back" class="back" id="questXPPrevious">
+<br><br>
+What extra rewards does the quest give?<br>
+&7[+ <input type="text" name="questRewardX" id="questRewardX" style="color:#888;" value="Reward" onfocus="inputFocus(this)" onblur="inputBlur(this)" />]
+<input type="submit" value="Edit Prefix" id="questRewardXEdit">
+<input type="submit" value="Add Line" id="questRewardXAdd">
+<input type="submit" value="Next" class="next" id="questRewardXSubmit">
+<input type="submit" value="Back" class="back" id="questRewardXPrevious">
+<br><br>
+Your quest is now complete!
+<input type="submit" value="Generate YML" class="next" id="questCompleteSubmit">
+<input type="submit" value="Back" class="back" id="questCompletePrevious">
+<br><br>
+
+
+
+
+
+
+<script>
+function inputFocus(i){
+    if(i.value==i.defaultValue){ i.value=""; i.style.color="#000"; }
+}
+function inputBlur(i){
+    if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
+}
+</script>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Each form is a string in java
+String is labeled Part 1, Part 2 ...
+Next button saves your part and loads up the next one
+Back button saves your part and loads up the previous step
+
+Save file everytime next is pressed save stage # as well, main page shows a list of quests matching your ip to edit, and a list of completed quests made by anyone that can't be edited
+
+
+
+
+--- TEXTBOX
+### NUMBERBOX
+=== DROPDOWN
+[x][y] ONE CHOICE
+(x)(y) MULTIPLE CHOICE
+
+<!-- QUEST INFO -->
+
+What is your quest called?
+Name: ---
+
+What Level is it?
+Level: ###
+
+<!-- STAGE 1 -->
+
+What is the name of your first NPC?
+Name: ---
+
+How do you get to it?
+Stage 1: ---
+
+Where is it?
+Coordinates: ###, ###, ###
+
+What is its occupation?
+===
+[Farmer]
+[Librarian]
+[Priest]
+[Blacksmith]
+[Butcher]
+
+Is it a child?
+[Yes][No]
+
+What does it say if you're not the right level
+Low Level Message: &7[1/1] &2{NAME}: &a ---   (Edit entire message)(add line)
+	
+What does it say if you don't need to talk to it yet? <!-- Not necessary for first NPC -->
+Low Stage Message: &7[1/1] &2{NAME}: &a ---   (Edit entire message)(add line)
+	
+What does it say if it is waiting for an item you don't have yet?
+Repeat Message: &7[1/1] &2{NAME}: &a ---   (Edit entire message)(add line)
+	
+What does it say if you haven't finished the quest, but you wont need to talk to them again?
+Fallback Message: &7[1/1] &2{NAME}: &a ---   (Edit entire message)(add line)
+	
+What does it say after you finished the quest?
+Greet Message: &7[1/1] &2{NAME}: &a ---   (Edit entire message)(add line)
+	
+	
+	
+What will it say to you at stage 1?
+{NAME} Stage 1: &7[1/1] &2{NAME}: &a ---   (Edit entire message)(add line)
+<!-- &7[New Quest Started: {QUEST NAME}] -->
+    
+Does it have a requirement? <!-- Not necessary for the first NPC -->
+[Yes][No]
+
+	<!-- YES -->
+    Where is the requirement's chest located?
+    Coordinates: ###, ###, ###
+    
+Does it have a reward?
+[Yes][No]
+
+	<!-- YES -->
+    Where is the reward's chest located?
+    Coordinates: ###, ###, ###
+    
+    
+<!-- REPEAT UNTIL YES IS SELECTED -->
+Is this the end of the quest?
+[Yes][No]
+
+	<!-- NO -->
+	What do you do next?
+	Stage x: ---
+
+	Does an NPC or a region escalate the stage?
+	[NPC][Region]
+
+		<!-- NPC -->
+		Does the NPC exist?
+        [Yes][No]
+        
+        	<!-- YES -->
+            Which NPC is it?
+            ===
+            [All NPC's made]
+            
+            What will it say to you at stage x?
+            {NAME} Stage x: &7[1/1] &2{NAME}: &a ---   (Edit entire message)(add line)
+			<!-- &7[Quest Book Updated] -->
+            
+            <!-- NO -->
+            (ALL THE NPC QUESTIONS APPEAR)
+            
+		<!-- REGION -->
+        What is the region name?
+        Name: ---
+        
+        What is one of the corners?
+        Location 1: ###, ###, ###
+        
+        What is the opposite corner?
+        Location 2: ###, ###, ###
+        
+        What is said when you're not at the right stage?
+        Message: ---
+        
+        Do you need to be wearing a hat?
+        [Yes][No]
+        
+        	<!-- YES -->
+            What are the coords of the chest the hat is in?
+            Coordinates: ###, ###, ###
+            
+		Does the region teleport you?
+        [Yes][No]
+        
+        	<!-- YES -->
+            Where does it teleport you to?
+            Coordinates: ###, ###, ###
+            
+        What is said when you enter the region?
+        Stage Set Message: --- (Default: &7[Quest Book Updated])
+<!-- REPEAT UNTIL YES IS SELECTED -->
+
+	<!-- YES -->
+    <!-- REPEAT UNTIL NO IS SELECTED -->
+    Are there any more regions you want to add?
+    [Yes][No]
+    
+    	<!-- YES -->
+        (ALL THE REGION QUESTIONS APPEAR)
+    <!-- REPEAT UNTIL NO IS SELECTED -->
+    
+    	<!-- NO -->
+        <!-- REPEAT UNTIL NO IS SELECTED -->
+        Are there any more NPCs you want to add?
+        [Yes][No]
+        
+        	<!-- YES -->
+            (ALL THE NPC QUESTIONS APPEAR - NO REWARD, NO REQUI, NO STAGE)
+        <!-- REPEAT UNTIL NO IS SELECTED -->
+        
+        	<!-- NO -->
+            How much XP does the quest give?
+            XP: ### (Defualt based off level)
+            
+            What extra rewards does the quest give?
+            Success Message: &7[+ --- ]     (Edit entire message)(add line)
+            
+            YOU ARE DONE!
+            [Get YML]
+
+</body>
+</html>
