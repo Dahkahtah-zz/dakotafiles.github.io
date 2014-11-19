@@ -18,7 +18,6 @@ NOT YET FUNCTIONAL - FOR LOGIC FIXES
 <img src="media/bank.png">
 <br><br><br>
 <div id="form"></div><div id="answer"></div>
-<div id="yml"></div>
 
 <br><br><strong>QUEST INFO</strong><br><br>
 
@@ -26,36 +25,36 @@ NOT YET FUNCTIONAL - FOR LOGIC FIXES
 
 What is your quest called?
 <br>
-name:<input type="text" name="questName" id="questName" style="color:#888;" value="Quest Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" /><br><br>
+Name: <input type="text" name="questName" id="questName" style="color:#888;" value="Quest Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" /><br><br>
 
 
 
 What Level is it?
 <br>
-startingLevel:<input type="number" name="level" id="level" min="1" max="100" value="1"><br><br>
+Starting Level: <input type="number" name="level" id="level" min="1" max="100" value="1"><br><br>
 
 
 
 What do you do in the quest?
 <br>
-questStages:<input type="text" name="stages" id="stages" style="color:#888;" value="#Stage 1" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+Quest Stages: <input type="text" name="stages" id="stages" style="color:#888;" value="#Stage 1" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="stages-lineSpace-2"></span>
-<input type="submit" value="Add Line" class="add3" id="stagesAdd">
+<input type="submit" value="Add Line" class="add questStage" id="stagesAdd">
 <input type="submit" value="Remove Line" class="remove" id="stagesRemove"><br><br>
 
 
 
 How much XP does the quest give?
 <br>
-xp:<input type="number" name="62" id="questXP" value="0"><br><br>
+XP: <input type="number" name="questXP" id="questXP" value="0"><br><br>
 
 
 
 What extra rewards does the quest give?
 <br>
-successMessages:<input type="text" name="questReward" id="questReward" style="color:#888;" value="+[# <item>]" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+Success Messages: <input type="text" name="questReward" id="questReward" style="color:#888;" value="+[# <item>]" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="questReward-lineSpace-2"></span>
-<input type="submit" value="Add Line" class="add2" id="questRewardAdd">
+<input type="submit" value="Add Line" class="add questReward" id="questRewardAdd">
 <input type="submit" value="Remove Line" class="remove" id="questRewardRemove"><br><br>
 
 
@@ -66,21 +65,21 @@ successMessages:<input type="text" name="questReward" id="questReward" style="co
 
 What is the name of your first NPC?
 <br>
-name:<input type="text" name="npc1" id="npc1" style="color:#888;" value="NPC Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" /><br><br>
+Name: <input type="text" name="npc1" id="npc1" style="color:#888;" value="NPC Name" onfocus="inputFocus(this)" onblur="inputBlur(this)" /><br><br>
 
 
 
 Where is it?
 <br>
-x:<input type="number" name="xnpc1Loc" id="xnpc1Loc" value="0">, 
-y:<input type="number" name="ynpc1Loc" id="ynpc1Loc" value="0">, 
-z:<input type="number" name="znpc1Loc" id="znpc1Loc" value="0"><br><br>
+X: <input type="number" name="xnpc1Loc" id="xnpc1Loc" value="0">, 
+Y: <input type="number" name="ynpc1Loc" id="ynpc1Loc" value="0">, 
+Z: <input type="number" name="znpc1Loc" id="znpc1Loc" value="0"><br><br>
 
 
 
 What is its occupation?
 <br>
-occupation:<select id="npc1Profession" name="npc1Profession">
+Occupation: <select id="npc1Profession" name="npc1Profession">
 <option value="blacksmith">Blacksmith</option>
 <option value="butcher">Butcher</option>
 <option value="farmer">Farmer</option>
@@ -92,59 +91,57 @@ occupation:<select id="npc1Profession" name="npc1Profession">
 
 Is it a child?
 <br>
-baby: Y:<input type="radio" name="npc1Child" value="yes" class="npc1Child"> N:<input type="radio" name="npc1Child" value="no" class="npc1Child" checked><br><br>
+Baby: Y:<input type="radio" name="npc1Child" value="true" class="npc1Child"> N:<input type="radio" name="npc1Child" value="false" class="npc1Child" checked><br><br>
 
 
 <span id="npc1Stage1-Container">
 What will it say to you at stage 1?
 <br>
-Stage: 1<input type="text" name="npc1Stage1" id="npc1Stage1" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+Stage: 1 <input type="text" name="npc1Stage1" id="npc1Stage1" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="npc1Stage1-lineSpace-2"></span>
-<input type="submit" value="Add Line" class="add" id="npc1Stage1Add">
+<input type="submit" value="Add Line" class="add message" id="npc1Stage1Add">
 <input type="submit" value="Remove Line" class="remove" id="npc1Stage1Remove">
 <span id="npc1Stage-lineSpace-2"></span>
-<input type="submit" value="Add Stage" class="addStage" id="npc1StageAdd">
-<input type="submit" value="Remove Stage" class="remove" id="npc1StageRemove"><br><br>
+<input type="submit" value="Add Stage" class="add npcStage" id="npc1StageAdd">
+<input type="submit" value="Remove Stage" class="remove npcStage" id="npc1StageRemove"><br><br>
 </span>
-
-
 
 
 
 What does it say if you're not the right level?
 <br>
-lowLevelMessage:<input type="text" name="npc1LowLevel" id="npc1LowLevel" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+Low Level Message: <input type="text" name="npc1LowLevel" id="npc1LowLevel" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="npc1LowLevel-lineSpace-2"></span>
-<input type="submit" value="Add Line" class="add" id="npc1LowLevelAdd">
+<input type="submit" value="Add Line" class="add message" id="npc1LowLevelAdd">
 <input type="submit" value="Remove Line" class="remove" id="npc1LowLevelRemove"><br><br>
 
 
 
 What does it say if it is waiting for an item you don't have yet?
 <br>
-repeatMessage:<input type="text" name="npc1Repeat" id="npc1Repeat" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+Repeat Message: <input type="text" name="npc1Repeat" id="npc1Repeat" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="npc1Repeat-lineSpace-2"></span>
-<input type="submit" value="Add Line" class="add" id="npc1RepeatAdd">
+<input type="submit" value="Add Line" class="add message" id="npc1RepeatAdd">
 <input type="submit" value="Remove Line" class="remove" id="npc1RepeatRemove"><br><br>
 
 
 
 What does it say if you haven't finished the quest, but you wont need to talk to them again?
 <br>
-fallBackMessage:<input type="text" name="npc1Fallback" id="npc1Fallback" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+Fall Back Message: <input type="text" name="npc1Fallback" id="npc1Fallback" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="npc1Fallback-lineSpace-2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npc1FallbackAdd">
+<input type="submit" value="Add Line" class="add message" id="npc1FallbackAdd">
 <input type="submit" value="Remove Line" class="remove" id="npc1FallbackRemove"><br><br>
 
 
 
 What does it say after you finished the quest?
 <br>
-greetMessage:<input type="text" name="npc1Greet" id="npc1Greet" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+Greet Message: <input type="text" name="npc1Greet" id="npc1Greet" style="color:#888;" value="&7[#/#] &2<Name>: &a<Message>" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="npc1Greet-lineSpace-2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npc1GreetAdd">
+<input type="submit" value="Add Line" class="add message" id="npc1GreetAdd">
 <input type="submit" value="Remove Line" class="remove" id="npc1GreetRemove"><br><br>
 
 
@@ -157,12 +154,12 @@ Does it have any requirements?
 Where is the requirements's chest located?
 <br>
 Stage:<input type="number" name="stagenpc1Requirements" id="stagenpc1Requirements" min="1" value="1">
-x:<input type="number" name="xnpc1Requirements" id="xnpc1Requirements" value="0">, 
-y:<input type="number" name="ynpc1Requirements" id="ynpc1Requirements" value="0">, 
-z:<input type="number" name="znpc1Requirements" id="znpc1Requirements" value="0">
+X: <input type="number" name="xnpc1Requirements" id="xnpc1Requirements" value="0">, 
+Y: <input type="number" name="ynpc1Requirements" id="ynpc1Requirements" value="0">, 
+Z: <input type="number" name="znpc1Requirements" id="znpc1Requirements" value="0">
 <span id="npc1Requirements-lineSpace-2"></span>
-<input type="submit" value="Add Line" class="addCoords" id="npc1RequirementsAdd">
-<input type="submit" value="Remove Line" class="remove" id="npc1RequirementsRemove"><br><br>
+<input type="submit" value="Add Requi" class="add npcRe" id="npc1RequirementsAdd">
+<input type="submit" value="Remove Requi" class="remove" id="npc1RequirementsRemove"><br><br>
 </span>
 
 
@@ -173,23 +170,30 @@ Does it have any rewards?
 <span id="npc1Reward-dependant" style="display:none;">
 Where is the reward's chest located?
 <br>
-Stage:<input type="number" name="stagenpc1Reward" id="stagenpc1Reward" min="1" value="1">
-x:<input type="number" name="xnpc1Reward" id="xnpc1Reward1" value="0">, 
-y:<input type="number" name="ynpc1Reward" id="ynpc1Reward1" value="0">, 
-z:<input type="number" name="znpc1Reward" id="znpc1Reward1" value="0">
+Stage: <input type="number" name="stagenpc1Reward" id="stagenpc1Reward" min="1" value="1">
+X: <input type="number" name="xnpc1Reward" id="xnpc1Reward" value="0">, 
+Y: <input type="number" name="ynpc1Reward" id="ynpc1Reward" value="0">, 
+Z: <input type="number" name="znpc1Reward" id="znpc1Reward" value="0">
 <span id="npc1Reward-lineSpace-2"></span>
-<input type="submit" value="Add Requi" class="addCoords" id="npc1RewardAdd">
-<input type="submit" value="Remove Requi" class="remove" id="npc1RewardRemove"><br><br>
+<input type="submit" value="Add Reward" class="add npcRe" id="npc1RewardAdd">
+<input type="submit" value="Remove Reward" class="remove" id="npc1RewardRemove"><br><br>
 </span>
 
 
-<br><br><strong>MORE NPCS</strong><br><br>
-<div id="NPC1"></div>
+<br><br><strong>MORE NPCS</strong>
+<span id="npc-lineSpace-2"></span><br><br>
+<input type="submit" value="Add NPC" class="add npc" id="npcAdd">
+<input type="submit" value="Remove NPC" class="remove" id="npcRemove">
 
 
 
-<br><br><strong>MORE REGIONS</strong><br><br>
-<div id="Region1"></div>
+<br><br><strong>REGIONS</strong><br><br>
+<span id="region-lineSpace-2"></span><br><br>
+<input type="submit" value="Add Region" class="add region" id="regionAdd">
+<input type="submit" value="Remove Region" class="remove" id="regionRemove">
+
+
+
 <!-- ADD NPC BUTTON -->
 
 <!--
@@ -212,7 +216,7 @@ What will it say to you at stage 1?
 <input type="text" name="19" id="npcXStageX" style="color:#888;" value="{NAME} Stage X" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="line2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npcXStageXAdd">
+<input type="submit" value="Add Line" class="add message" id="npcXStageXAdd">
 <input type="submit" value="Remove Line" class="remove" id="xxx"><br><br>
 
 
@@ -251,7 +255,7 @@ What will it say to you at stage X?
 <input type="text" name="24" id="npcXStage1" style="color:#888;" value="{NAME} Stage 1" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="line2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npcXAdd">
+<input type="submit" value="Add Line" class="add message" id="npcXAdd">
 <input type="submit" value="Remove Line" class="remove" id="xxx"><br><br>
 
 
@@ -261,7 +265,7 @@ What does it say if you're not the right level?
 <input type="text" name="25" id="npcXLowLevel" style="color:#888;" value="Low Level Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="line2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npcXLowLevelAdd">
+<input type="submit" value="Add Line" class="add message" id="npcXLowLevelAdd">
 <input type="submit" value="Remove Line" class="remove" id="xxx"><br><br>
 
 
@@ -271,7 +275,7 @@ What does it say if you don't need to talk to it yet?
 <input type="text" name="26" id="npcXLowStage" style="color:#888;" value="Low Stage Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="line2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npcXLowStageAdd">
+<input type="submit" value="Add Line" class="add message" id="npcXLowStageAdd">
 <input type="submit" value="Remove Line" class="remove" id="xxx"><br><br>
 
 
@@ -281,7 +285,7 @@ What does it say if it is waiting for an item you don't have yet?
 <input type="text" name="27" id="npcXRepeat" style="color:#888;" value="Repeat Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="line2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npcXRepeatAdd">
+<input type="submit" value="Add Line" class="add message" id="npcXRepeatAdd">
 <input type="submit" value="Remove Line" class="remove" id="xxx"><br><br>
 
 
@@ -291,7 +295,7 @@ What does it say if you haven't finished the quest, but you wont need to talk to
 <input type="text" name="28" id="npcXFallback" style="color:#888;" value="Fallback Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="line2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npcXFallbackAdd">
+<input type="submit" value="Add Line" class="add message" id="npcXFallbackAdd">
 <input type="submit" value="Remove Line" class="remove" id="xxx"><br><br>
 
 
@@ -301,7 +305,7 @@ What does it say after you finished the quest?
 <input type="text" name="29" id="npcXGreet" style="color:#888;" value="Greet Message" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 <span id="line2">
 </span>
-<input type="submit" value="Add Line" class="add" id="npcXGreetAdd">
+<input type="submit" value="Add Line" class="add message" id="npcXGreetAdd">
 <input type="submit" value="Remove Line" class="remove" id="xxx"><br><br>
 
 
@@ -387,133 +391,97 @@ What is said when you enter the region?
 -->
 <br><br><strong>GENERATION</strong><br><br>
 
-Your quest is now complete!
+<input type="submit" value="Generate YML" class="generate" id="generate">
 <br>
 <br>
+<div id="yml"></div>
 
 <script>
 	//VARIABLES//
 var linesArray = {};
 
+	// ADD //
+$(document).on('click', '.add', function() {
+	var id = $(this).attr('id');
+	var className = $(this).attr('class').split(/\s+/);
+	id = id.replace("Add", "");
+	var lines = 1;
+	
+	if(typeof linesArray[id] !== 'undefined'){
+		lines = linesArray[id];
+	}else{
+		lines = 1;
+	}
+	
+	lines++;
+	linesArray[id] = lines;
+	var nextLine = parseInt(lines) + parseInt(1);
+	var lastLine = parseInt(lines) - parseInt(1);
+	
+	var newLine = "";
+	
 
-	//ADD A LINE//
-$(document).on('click', '.add', function() { 
-	var id = $(this).attr('id');
-	id = id.replace("Add", "");
-	var lines = 1;
+	if(className.indexOf("message") > -1){	// NPC LINES //
 	
-	if(typeof linesArray[id] !== 'undefined'){
-		lines = linesArray[id];
-	}else{
-		lines = 1;
+		newLine = "<br><input type=\"text\" name=\"" + id + "-line-" + lines + "\" id=\"" + id + "-line-" + lines + "\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
+		
+	}else if(className.indexOf("questReward") > -1){	// QUEST REWARD LINES //
+	
+		newLine = "<br><input type=\"text\" name=\"" + id + "-line-" + lines + "\" id=\"" + id + "-line-" + lines + "\" style=\"color:#888;\" value=\"+[# <item>]\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
+		
+	}else if(className.indexOf("questStage") > -1){	// QUEST STAGE LINES //
+	
+		newLine = "<br><input type=\"text\" name=\"" + id + "-line-" + lines + "\" id=\"" + id + "-line-" + lines + "\" style=\"color:#888;\" value=\"#Stage " + lines + "\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
+		
+	}else if(className.indexOf("npcRe") > -1){	// NPC REWARD/REQUI LINES //
+	
+		newLine = "<br><br>Stage: <input type=\"number\" name=\"stage" + id + "-line-" + lines + "\" id=\"stage" + id + "-line-" + lines + "\" min=\"1\" value=\"1\"> X:<input type=\"number\" name=\"x" + id + "-line-" + lines + "\" id=\"x" + id + "-line-" + lines + "\" value=\"0\">, Y: <input type=\"number\" name=\"y" + id + "-line-" + lines + "\" id=\"y" + id + "-line-" + lines + "\" value=\"0\">, Z: <input type=\"number\" name=\"z" + id + "-line-" + lines + "\" id=\"z" + id + "-line-" + lines + "\" value=\"0\"><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
+		
+	}else if(className.indexOf("npcStage") > -1){	// NPC STAGE MESSAGE LINES //
+	
+		newLine = "<br><br><br>Stage: <input type=\"number\" name=\"" + id + lines + "Stage\" id=\"" + id + lines + "Stage\" min=\"1\" value=\"" + lines + "\"><input type=\"text\" name=\"" + id + lines + "\" id=\"" + id + lines + "\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + lines + "-lineSpace-2\"></span><input type=\"submit\" value=\"Add Line\" class=\"add message\" id=\"" + id + lines + "Add\"><input type=\"submit\" value=\"Remove Line\" class=\"remove\" id=\"" + id + lines + "Remove\"><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
+		
+	}else if(className.indexOf("npc") > -1){	// NPCS //
+	
+		newLine = "<br><br><br><strong>NPC #" + lines + "</strong><br>What is the name of your first NPC?<br>Name: <input type=\"text\" name=\"npc" + lines + "\" id=\"npc" + lines + "\" style=\"color:#888;\" value=\"NPC Name\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><br><br>Where is it?<br>X: <input type=\"number\" name=\"xnpc" + lines + "Loc\" id=\"xnpc" + lines + "Loc\" value=\"0\">, Y: <input type=\"number\" name=\"ynpc" + lines + "Loc\" id=\"ynpc" + lines + "Loc\" value=\"0\">, Z: <input type=\"number\" name=\"znpc" + lines + "Loc\" id=\"znpc" + lines + "Loc\" value=\"0\"><br><br>What is its occupation?<br>Occupation: <select id=\"npc" + lines + "Profession\" name=\"npc" + lines + "Profession\"><option value=\"blacksmith\">Blacksmith</option><option value=\"butcher\">Butcher</option><option value=\"farmer\">Farmer</option><option value=\"librarian\">Librarian</option><option value=\"priest\">Priest</option></select><br><br>Is it a child?<br>Baby: Y:<input type=\"radio\" name=\"npc" + lines + "Child\" value=\"yes\" class=\"npc" + lines + "Child\"> N:<input type=\"radio\" name=\"npc" + lines + "Child\" value=\"no\" class=\"npc" + lines + "Child\" checked><br><br><span id=\"npc" + lines + "Stage1-Container\">Would you like to add a stage?<br><span id=\"npc" + lines + "Stage-lineSpace-1\"></span><input type=\"submit\" value=\"Add Stage\" class=\"addStage2\" id=\"npc" + lines + "StageAdd\"><input type=\"submit\" value=\"Remove Stage\" class=\"remove2 npcStage\" id=\"npc" + lines + "StageRemove\"><br><br></span>What does it say if you're not the right level?<br>Low Level Message: <input type=\"text\" name=\"npc" + lines + "LowLevel\" id=\"npc" + lines + "LowLevel\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"npc" + lines + "LowLevel-lineSpace-2\"></span><input type=\"submit\" value=\"Add Line\" class=\"add message\" id=\"npc" + lines + "LowLevelAdd\"><input type=\"submit\" value=\"Remove Line\" class=\"remove\" id=\"npc" + lines + "LowLevelRemove\"><br><br>What does it say if it is waiting for an item you don't have yet?<br>Repeat Message: <input type=\"text\" name=\"npc" + lines + "Repeat\" id=\"npc" + lines + "Repeat\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"npc" + lines + "Repeat-lineSpace-2\"></span><input type=\"submit\" value=\"Add Line\" class=\"add message\" id=\"npc" + lines + "RepeatAdd\"><input type=\"submit\" value=\"Remove Line\" class=\"remove\" id=\"npc" + lines + "RepeatRemove\"><br><br>What does it say if you haven't finished the quest, but you wont need to talk to them again?<br>Fall Back Message: <input type=\"text\" name=\"npc" + lines + "Fallback\" id=\"npc" + lines + "Fallback\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"npc" + lines + "Fallback-lineSpace-2\"></span><input type=\"submit\" value=\"Add Line\" class=\"add message\" id=\"npc" + lines + "FallbackAdd\"><input type=\"submit\" value=\"Remove Line\" class=\"remove\" id=\"npc" + lines + "FallbackRemove\"><br><br>What does it say after you finished the quest?<br>Greet Message: <input type=\"text\" name=\"npc" + lines + "Greet\" id=\"" + lines + "\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"npc" + lines + "Greet-lineSpace-2\"></span><input type=\"submit\" value=\"Add Line\" class=\"add message\" id=\"npc" + lines + "GreetAdd\"><input type=\"submit\" value=\"Remove Line\" class=\"remove\" id=\"npc" + lines + "GreetRemove\"><br><br>Does it have any requirements?<br>Y:<input type=\"radio\" name=\"npc" + lines + "Requirements\" value=\"yes\" class=\"dependee\"> N:<input type=\"radio\" name=\"npc" + lines + "Requirements\" value=\"no\" class=\"dependee\" checked><br><br><span id=\"npc" + lines + "Requirements-dependant\" style=\"display:none;\">Where is the requirements's chest located?<br>Stage:<input type=\"number\" name=\"stagenpc" + lines + "Requirements\" id=\"stagenpc" + lines + "Requirements\" min=\"1\" value=\"1\">X: <input type=\"number\" name=\"xnpc" + lines + "Requirements\" id=\"xnpc" + lines + "Requirements\" value=\"0\">, Y: <input type=\"number\" name=\"ynpc" + lines + "Requirements\" id=\"ynpc" + lines + "Requirements\" value=\"0\">, Z: <input type=\"number\" name=\"znpc" + lines + "Requirements\" id=\"znpc" + lines + "Requirements\" value=\"0\"><span id=\"npc" + lines + "Requirements-lineSpace-2\"></span><input type=\"submit\" value=\"Add Requi\" class=\"add npcRe\" id=\"npc" + lines + "RequirementsAdd\"><input type=\"submit\" value=\"Remove Requi\" class=\"remove\" id=\"npc" + lines + "RequirementsRemove\"><br><br></span>Does it have any rewards?<br>Y:<input type=\"radio\" name=\"npc" + lines + "Reward\" value=\"yes\" class=\"dependee\"> N:<input type=\"radio\" name=\"npc" + lines + "Reward\" value=\"no\" class=\"dependee\" checked><br><br><span id=\"npc" + lines + "Reward-dependant\" style=\"display:none;\">Where is the reward's chest located?<br>Stage: <input type=\"number\" name=\"stagenpc" + lines + "Reward\" id=\"stagenpc" + lines + "Reward\" min=\"1\" value=\"1\">X: <input type=\"number\" name=\"xnpc" + lines + "Reward\" id=\"xnpc" + lines + "Reward\" value=\"0\">, Y: <input type=\"number\" name=\"ynpc" + lines + "Reward\" id=\"ynpc" + lines + "Reward\" value=\"0\">, Z: <input type=\"number\" name=\"znpc" + lines + "Reward\" id=\"znpc" + lines + "Reward\" value=\"0\"><span id=\"npc" + lines + "Reward-lineSpace-2\"></span><input type=\"submit\" value=\"Add Reward\" class=\"add npcRe\" id=\"npc" + lines + "RewardAdd\"><input type=\"submit\" value=\"Remove Reward\" class=\"remove\" id=\"npc" + lines + "RewardRemove\"></span><br><br><span id=\"" + id + "-lineSpace-" + nextLine + "\"></div>";
+		
+	}else if(className.indexOf("region") > -1){	// REGIONS //
+		newLine = "<br><br><br><strong>REGION #" + lastLine + "</strong><br>What is the region name?<br>Name: <input type=\"text\" name=\"region" + lines + "Name\" id=\"region" + lines + "Name\" style=\"color:#888;\" value=\"Region Name\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><br><br>What is one of the corners?<br>X: <input type=\"number\" name=\"xRegion" + lines + "Loc1\" id=\"xRegion" + lines + "Loc1\" value=\"0\">, Y: <input type=\"number\" name=\"yRegion" + lines + "Loc1\" id=\"yRegion" + lines + "Loc1\" value=\"0\">, Z: <input type=\"number\" name=\"zRegion" + lines + "Loc1\" id=\"zRegion" + lines + "Loc1\" value=\"0\"><br><br>What is the opposite corner?<br>X: <input type=\"number\" name=\"xRegion" + lines + "Loc2\" id=\"xRegion" + lines + "Loc2\" value=\"0\">, Y: <input type=\"number\" name=\"yRegion" + lines + "Loc2\" id=\"yRegion" + lines + "Loc2\" value=\"0\">, Z: <input type=\"number\" name=\"zRegion" + lines + "Loc2\" id=\"zRegion" + lines + "Loc2\" value=\"0\"><br><br>What stage do you need to be at to enter?<br>Stage: <input type=\"number\" name=\"stagenpc1Reward\" id=\"stagenpc1Reward\" min=\"1\" value=\"1\"><br><br>What is said when you're not at the right stage?<br>Message: <input type=\"text\" name=\"region" + lines + "NotStage\" id=\"region" + lines + "NotStage\" style=\"color:#888;\" value=\"Region Name\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><br><br>Do you need to be wearing a hat?<br>Y:<input type=\"radio\" name=\"region" + lines + "Requi\" value=\"yes\" class=\"dependee\"> N:<input type=\"radio\" name=\"region" + lines + "Requi\" value=\"no\" class=\"dependee\" checked><br><br><span id=\"region" + lines + "Requi-dependant\" style=\"display:none;\">Where is the hat's chest located?<br>X: <input type=\"number\" name=\"xRegion" + lines + "Hat\" id=\"xRegion" + lines + "Hat\" value=\"0\">, Y: <input type=\"number\" name=\"yRegion" + lines + "Hat\" id=\"yRegion" + lines + "Hat\" value=\"0\">, Z: <input type=\"number\" name=\"zRegion" + lines + "Hat\" id=\"zRegion" + lines + "Hat\" value=\"0\"><br><br></span>Does the region teleport you?<br>Y:<input type=\"radio\" name=\"region" + lines + "Tele\" value=\"yes\" class=\"dependee\"> N:<input type=\"radio\" name=\"region" + lines + "Tele\" value=\"no\" class=\"dependee\" checked><br><br><span id=\"region" + lines + "Tele-dependant\" style=\"display:none;\">Where does it teleport you to?<br>X: <input type=\"number\" name=\"xRegion" + lines + "Tele\" id=\"xRegion" + lines + "Tele\" value=\"0\">, Y: <input type=\"number\" name=\"yRegion" + lines + "Tele\" id=\"yRegion" + lines + "Tele\" value=\"0\">, Z: <input type=\"number\" name=\"zRegion" + lines + "Tele\" id=\"zRegion" + lines + "Tele\" value=\"0\"><br><br></span>Does entering escalate your stage?<br>Y:<input type=\"radio\" name=\"region" + lines + "Escalate\" value=\"yes\" class=\"dependee\"> N:<input type=\"radio\" name=\"region" + lines + "Escalate\" value=\"no\" class=\"dependee\" checked><br><br><span id=\"region" + lines + "Escalate-dependant\" style=\"display:none;\">What is said when you your stage is escalated?<br><input type=\"text\" name=\"region" + lines + "StageMessage\" id=\"region" + lines + "StageMessage\" value=\"&7[Quest Book Updated]\" /><br><br></span><div id=\"region-lineSpace-" + nextLine + "\"></div>";
 	}
 	
-	lines++;
-	linesArray[id] = lines;
-	var nextLine = parseInt(lines) + parseInt(1);
-	
-	var newLine = "<br><input type=\"text\" name=\"" + id + "-line-" + lines + "\" id=\"" + id + "-line-" + lines + "\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
 	
 	document.getElementById(id + "-lineSpace-" + lines).innerHTML = newLine;
-});
-$(document).on('click', '.add2', function() { 
-	var id = $(this).attr('id');
-	id = id.replace("Add", "");
-	var lines = 1;
-	
-	if(typeof linesArray[id] !== 'undefined'){
-		lines = linesArray[id];
-	}else{
-		lines = 1;
-	}
-	
-	lines++;
-	linesArray[id] = lines;
-	var nextLine = parseInt(lines) + parseInt(1);
-	
-	var newLine = "<br><input type=\"text\" name=\"" + id + "-line-" + lines + "\" id=\"" + id + "-line-" + lines + "\" style=\"color:#888;\" value=\"+[# <item>]\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
-	
-	document.getElementById(id + "-lineSpace-" + lines).innerHTML = newLine;
-});
-$(document).on('click', '.add3', function() { 
-	var id = $(this).attr('id');
-	id = id.replace("Add", "");
-	var lines = 1;
-	
-	if(typeof linesArray[id] !== 'undefined'){
-		lines = linesArray[id];
-	}else{
-		lines = 1;
-	}
-	
-	lines++;
-	linesArray[id] = lines;
-	var nextLine = parseInt(lines) + parseInt(1);
-	
-	var newLine = "<br><input type=\"text\" name=\"" + id + "-line-" + lines + "\" id=\"" + id + "-line-" + lines + "\" style=\"color:#888;\" value=\"#Stage " + lines + "\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
-	
-	document.getElementById(id + "-lineSpace-" + lines).innerHTML = newLine;
-});
-$(document).on('click', '.addCoords', function() { 
-	var id = $(this).attr('id');
-	id = id.replace("Add", "");
-	var lines = 1;
-	
-	if(typeof linesArray[id] !== 'undefined'){
-		lines = linesArray[id];
-	}else{
-		lines = 1;
-	}
-	
-	lines++;
-	linesArray[id] = lines;
-	var nextLine = parseInt(lines) + parseInt(1);
-	
-	var newLine = "<br><br>Stage:<input type=\"number\" name=\"stage" + id + "-line-" + lines + "\" id=\"stage" + id + "-line-" + lines + "\" min=\"1\" value=\"1\"> x:<input type=\"number\" name=\"x" + id + "-line-" + lines + "\" id=\"x" + id + "-line-" + lines + "\" value=\"0\">, y:<input type=\"number\" name=\"y" + id + "-line-" + lines + "\" id=\"y" + id + "-line-" + lines + "\" value=\"0\">, z:<input type=\"number\" name=\"z" + id + "-line-" + lines + "\" id=\"z" + id + "-line-" + lines + "\" value=\"0\"><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
-	
-	document.getElementById(id + "-lineSpace-" + lines).innerHTML = newLine;
-});
-$(document).on('click', '.addStage', function() { 
-	var id = $(this).attr('id');
-	id = id.replace("Add", "");
-	var lines = 1;
-	
-	if(typeof linesArray[id] !== 'undefined'){
-		lines = linesArray[id];
-	}else{
-		lines = 1;
-	}
-	
-	lines++;
-	linesArray[id] = lines;
-	var nextLine = parseInt(lines) + parseInt(1);
-	
-	var newLine = "<br><br><br>Stage: <input type=\"number\" name=\"" + id + lines + "Stage\" id=\"" + id + lines + "Stage\" min=\"1\" value=\"" + lines + "\"><input type=\"text\" name=\"" + id + lines + "\" id=\"" + id + lines + "\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + lines + "-lineSpace-2\"></span><input type=\"submit\" value=\"Add Line\" class=\"add\" id=\"" + id + lines + "Add\"><input type=\"submit\" value=\"Remove Line\" class=\"remove\" id=\"" + id + lines + "Remove\"><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
-	
-	document.getElementById(id + "-lineSpace-" + lines).innerHTML = newLine;
+
 });
 
-
-	//REMOVE A LINE//
-$(document).on('click', '.remove', function() {
+$(document).on('click', '.addStage2', function() { 
 	var id = $(this).attr('id');
-	id = id.replace("Remove", "");
+	id = id.replace("Add", "");
+	var lines = 0;
 	
 	if(typeof linesArray[id] !== 'undefined'){
 		lines = linesArray[id];
-		if(lines > 1){
-			var newLines = parseInt(lines) - parseInt(1);
-			linesArray[id] = newLines;
-			document.getElementById(id + "-lineSpace-" + lines).innerHTML = "";
-		}
+	}else{
+		lines = 0;
 	}
+	
+	lines++;
+	linesArray[id] = lines;
+	var nextLine = parseInt(lines) + parseInt(1);
+	
+	var newLine = "<br><br><br>Stage: <input type=\"number\" name=\"" + id + lines + "Stage\" id=\"" + id + lines + "Stage\" min=\"1\" value=\"" + lines + "\"><input type=\"text\" name=\"" + id + lines + "\" id=\"" + id + lines + "\" style=\"color:#888;\" value=\"&7[#/#] &2<Name>: &a<Message>\" onfocus=\"inputFocus(this)\" onblur=\"inputBlur(this)\" /><span id=\"" + id + lines + "-lineSpace-2\"></span><input type=\"submit\" value=\"Add Line\" class=\"add message\" id=\"" + id + lines + "Add\"><input type=\"submit\" value=\"Remove Line\" class=\"remove\" id=\"" + id + lines + "Remove\"><span id=\"" + id + "-lineSpace-" + nextLine + "\"></span>";
+	
+	
+	document.getElementById(id + "-lineSpace-" + lines).innerHTML = newLine;
+	
 });
+
 
 
 
 
 	//SHOW EXTRA OPTION//
-$('input:radio').change( function() {
+$("body").on("change", "input[class=dependee]:radio", function(){
 	var classOf = $(this).attr('class');
 	if(classOf == "dependee"){
 		var nameOf = $(this).attr('name');
@@ -528,51 +496,352 @@ $('input:radio').change( function() {
 
 
 
-	//ADD AN NPC//
-$(document).on('click', '.npcAdd', function() {
+
+
+	//REMOVE//
+$(document).on('click', '.remove', function() {
+	var id = $(this).attr('id');
+	var className = $(this).attr('class').split(/\s+/);
+	id = id.replace("Remove", "");
 	
+	if(typeof linesArray[id] !== 'undefined'){
+		lines = linesArray[id];
+		if(lines > 1){
+			var newLines = parseInt(lines) - parseInt(1);
+			linesArray[id] = newLines;
+			document.getElementById(id + "-lineSpace-" + lines).innerHTML = "";
+			
+			if(className.indexOf("npcStage") > -1){
+				delete linesArray[id + lines];
+			}
+		}
+	}
 });
 
-
-	//REMOVE AN NPC//
-$(document).on('click', '.npcRemove', function() {
+$(document).on('click', '.remove2', function() {
+	var id = $(this).attr('id');
+	var className = $(this).attr('class').split(/\s+/);
+	id = id.replace("Remove", "");
 	
+	if(typeof linesArray[id] !== 'undefined'){
+		lines = linesArray[id];
+		if(lines > 0){
+			var newLines = parseInt(lines) - parseInt(1);
+			linesArray[id] = newLines;
+			document.getElementById(id + "-lineSpace-" + lines).innerHTML = "";
+			
+			if(className.indexOf("npcStage") > -1){
+				delete linesArray[id + lines];
+			}
+		}
+	}
 });
 
-
-
-
-	//ADD A REGION//
-$(document).on('click', '.regionAdd', function() {
-	
-});
-
-
-	//REMOVE A REGION//
-$(document).on('click', '.regionRemove', function() {
-	
-});
 
 
 
 
 	//GENERATE YML//
 $(document).on('click', '.generate', function() {
-	var questName = "";
-	var startingLevel = "";
-	var starter = "";
-	var xp = "";
-	var questStages = "";
-	var successMessages = "";
+	var questName = $("#questName").val();
+	var startingLevel = $("#level").val();
+/**/	var npc1 = $("#npc1").val(); 
+	var xp = $("#questXP").val();
 	
-	var infos = "questInfo:<br> - name: " + questName + "<br>   startingLevel: " + startingLevel + "<br>   starter: '" + starter + "'<br>   xp: " + xp + "<br>" + questStages + successMessages;
-	var npcs = ""
-	var messages = ""
-	var regions = ""
+	var npc1Coords = $("#xnpc1Loc").val() + "," + $("#ynpc1Loc").val() + "," + $("#znpc1Loc").val();
+	var npc1Occupation = $("#npc1Profession").val();
+	var npc1Child = $('input:radio[name=npc1Child]:checked').val();
 	
-	var YML = infos + "<br>" + npcs + "<br>" + messages + "<br>" + regions;
+	var questStages = [];
+	var questStagesAmount = 1;
+	if(typeof linesArray["stages"] !== 'undefined'){questStagesAmount = linesArray["stages"];}else{questStagesAmount = 1;}
+	var questStagesCheck = 1;
+	if(questStagesAmount > 1){
+		while(questStagesCheck <= questStagesAmount){
+			if(questStagesCheck == 1){
+				var val = $("#stages").val();
+				var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;'" + val + "'&nbsp;#Stage&nbsp;" + questStagesCheck + "<br>";
+				questStages.push(addStage);
+			}else{
+				var val = $("#stages-line-" + questStagesCheck).val();
+				var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;'" + val + "'&nbsp;#Stage&nbsp;" + questStagesCheck + "<br>";
+				questStages.push(addStage);
+			}
+			questStagesCheck++;
+		}
+	}else{
+		var val = $("#stages").val();
+		var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;'" + val + "'&nbsp;#Stage&nbsp;1<br>";
+		questStages.push(addStage);
+	}
+	questStages = questStages.join("");
 	
+	var questRewards = [];
+	var questRewardsAmount = 1;
+	if(typeof linesArray["questReward"] !== 'undefined'){questRewardsAmount = linesArray["questReward"];}else{questRewardsAmount = 1;}
+	var questRewardsCheck = 1;
+	if(questRewardsAmount > 1){
+		while(questRewardsCheck <= questRewardsAmount){
+			if(questRewardsCheck == 1){
+				var val = $("#questReward").val();
+				var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;'" + val + "'<br>";
+				questRewards.push(addStage);
+			}else{
+				var val = $("#questReward-line-" + questRewardsCheck).val();
+				var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;'" + val + "'<br>";
+				questRewards.push(addStage);
+			}
+			questRewardsCheck++;
+		}
+	}else{
+		var val = $("#questReward").val();
+		var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;'" + val + "'<br>";
+		questRewards.push(addStage);
+	}
+	questRewards = questRewards.join("");
+	
+	var npc1Stages = [];
+	var npc1StagesAmount = 1;
+	if(typeof linesArray["npc1Stage"] !== 'undefined'){npc1StagesAmount = linesArray["npc1Stage"];}else{npc1StagesAmount = 1;}
+	var npc1StagesCheck = 1;
+	if(npc1StagesAmount > 1){
+		while(npc1StagesCheck <= npc1StagesAmount){
+			var stageLine = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + npc1StagesCheck + ":&nbsp;" + npc1 + "Stage" + npc1StagesCheck + "<br>";
+			npc1Stages.push(stageLine);
+			npc1StagesCheck++;
+		}
+	}else{
+		var stageLine = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;" + npc1 + "Stage1<br>";
+		npc1Stages.push(stageLine);
+	}
+	npc1Stages = npc1Stages.join("");
+	
+	var npc1RequirementsRadio = $('input:radio[name=npc1Requirements]:checked').val();
+	
+	var npc1Requirements = [];
+	var npc1RequirementsAmount = 1;
+	if(npc1RequirementsRadio == "yes"){
+		if(typeof linesArray["npc1Requirements"] !== 'undefined'){npc1RequirementsAmount = linesArray["npc1Requirements"];}else{npc1RequirementsAmount = 1;}
+		var npc1RequirementsCheck = 1;
+		if(npc1RequirementsAmount > 1){
+			while(npc1RequirementsCheck <= npc1RequirementsAmount){
+				if(npc1RequirementsCheck == 1){
+					var stageval = $("#stagenpc1Requirements").val();
+					var xval = $("#xnpc1Requirements").val();
+					var yval = $("#ynpc1Requirements").val();
+					var zval = $("#znpc1Requirements").val();
+					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+					npc1Requirements.push(addStage);
+				}else{
+					var stageval = $("#stagenpc1Requirements-line-" + npc1RequirementsCheck).val();
+					var xval = $("#xnpc1Requirements-line-" + npc1RequirementsCheck).val();
+					var yval = $("#ynpc1Requirements-line-" + npc1RequirementsCheck).val();
+					var zval = $("#znpc1Requirements-line-" + npc1RequirementsCheck).val();
+					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+					npc1Requirements.push(addStage);
+				}
+				npc1RequirementsCheck++;
+			}
+		}else{
+			var stageval = $("#stagenpc1Requirements").val();
+			var xval = $("#xnpc1Requirements").val();
+			var yval = $("#ynpc1Requirements").val();
+			var zval = $("#znpc1Requirements").val();
+			var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+			npc1Requirements.push(addStage);
+		}
+	}else{
+		var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999:&nbsp;0,0,0<br>";
+		npc1Requirements.push(addStage);
+	}
+	npc1Requirements = npc1Requirements.join("");
+	
+	var npc1RewardRadio = $('input:radio[name=npc1Reward]:checked').val();
+	
+	var npc1Reward = [];
+	var npc1RewardAmount = 1;
+	if(npc1RewardRadio == "yes"){
+		if(typeof linesArray["npc1Reward"] !== 'undefined'){npc1RewardAmount = linesArray["npc1Reward"];}else{npc1RewardAmount = 1;}
+		var npc1RewardCheck = 1;
+		if(npc1RewardAmount > 1){
+			while(npc1RewardCheck <= npc1RewardAmount){
+				if(npc1RewardCheck == 1){
+					var stageval = $("#stagenpc1Reward").val();
+					var xval = $("#xnpc1Reward").val();
+					var yval = $("#ynpc1Reward").val();
+					var zval = $("#znpc1Reward").val();
+					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+					npc1Reward.push(addStage);
+				}else{
+					var stageval = $("#stagenpc1Reward-line-" + npc1RewardCheck).val();
+					var xval = $("#xnpc1Reward-line-" + npc1RewardCheck).val();
+					var yval = $("#ynpc1Reward-line-" + npc1RewardCheck).val();
+					var zval = $("#znpc1Reward-line-" + npc1RewardCheck).val();
+					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+					npc1Reward.push(addStage);
+				}
+				npc1RewardCheck++;
+			}
+		}else{
+			var stageval = $("#stagenpc1Reward").val();
+			var xval = $("#xnpc1Reward").val();
+			var yval = $("#ynpc1Reward").val();
+			var zval = $("#znpc1Reward").val();
+			var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+			npc1Reward.push(addStage);
+		}
+	}else{
+		var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999:&nbsp;0,0,0<br>";
+		npc1Reward.push(addStage);
+	}
+	npc1Reward = npc1Reward.join("");
+	
+	
+	
+	
+	
+	
+	var npcs = [];
+	var npcsAmount = 1;
+	if(typeof linesArray["npc"] !== 'undefined'){npcsAmount = linesArray["npc"];}else{npcsAmount = 1;}
+	var npcsCheck = 1;
+	if(npcsAmount > 1){
+		while(npcsCheck <= npcsAmount){
+			var npcX = $("#npc" + npcsCheck).val(); 
+			var npcXCoords = $("#xnpc" + npcsCheck + "Loc").val() + "," + $("#ynpc" + npcsCheck + "Loc").val() + "," + $("#znpc" + npcsCheck + "Loc").val();
+			var npcXOccupation = $("#npc" + npcsCheck + "Profession").val();
+			var npcXChild = $('input:radio[name=npc' + npcsCheck + 'Child]:checked').val();
+			
+			
+			
+			
+			var npcXStages = [];
+			var npcXStagesAmount = 1;
+			if(typeof linesArray["npc" + npcsCheck + "Stage"] !== 'undefined'){npcXStagesAmount = linesArray["npc" + npcsCheck + "Stage"];}else{npcXStagesAmount = 1;}
+			var npcXStagesCheck = 1;
+			if(npcXStagesAmount > 1){
+				while(npcXStagesCheck <= npcXStagesAmount){
+					var stageLine = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + npcXStagesCheck + ":&nbsp;" + npcX + "Stage" + npcXStagesCheck + "<br>";
+					npcXStages.push(stageLine);
+					npcXStagesCheck++;
+				}
+			}else{
+				var stageLine = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;" + npcX + "Stage1<br>";
+				npcXStages.push(stageLine);
+			}
+			npcXStages = npcXStages.join("");
+			
+			var npcXRequirementsRadio = $('input:radio[name=npc' + npcsCheck + 'Requirements]:checked').val();
+			
+			var npcXRequirements = [];
+			var npcXRequirementsAmount = 1;
+			if(npcXRequirementsRadio == "yes"){
+				if(typeof linesArray["npc" + npcsCheck + "Requirements"] !== 'undefined'){npcXRequirementsAmount = linesArray["npc" + npcsCheck + "Requirements"];}else{npcXRequirementsAmount = 1;}
+				var npcXRequirementsCheck = 1;
+				if(npcXRequirementsAmount > 1){
+					while(npcXRequirementsCheck <= npcXRequirementsAmount){
+						if(npcXRequirementsCheck == 1){
+							var stageval = $("#stagenpc" + npcsCheck + "Requirements").val();
+							var xval = $("#xnpc" + npcsCheck + "Requirements").val();
+							var yval = $("#ynpc" + npcsCheck + "Requirements").val();
+							var zval = $("#znpc" + npcsCheck + "Requirements").val();
+							var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+							npcXRequirements.push(addStage);
+						}else{
+							var stageval = $("#stagenpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
+							var xval = $("#xnpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
+							var yval = $("#ynpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
+							var zval = $("#znpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
+							var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+							npcXRequirements.push(addStage);
+						}
+						npcXRequirementsCheck++;
+					}
+				}else{
+					var stageval = $("#stagenpc" + npcsCheck + "Requirements").val();
+					var xval = $("#xnpc" + npcsCheck + "Requirements").val();
+					var yval = $("#ynpc" + npcsCheck + "Requirements").val();
+					var zval = $("#znpc" + npcsCheck + "Requirements").val();
+					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+					npcXRequirements.push(addStage);
+				}
+			}else{
+				var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999:&nbsp;0,0,0<br>";
+				npcXRequirements.push(addStage);
+			}
+			npcXRequirements = npcXRequirements.join("");
+	
+			var npcXRewardRadio = $('input:radio[name=npc' + npcsCheck + 'Reward]:checked').val();
+	
+			var npcXReward = [];
+			var npcXRewardAmount = 1;
+			if(npcXRewardRadio == "yes"){
+				if(typeof linesArray["npc" + npcsCheck + "Reward"] !== 'undefined'){npcXRewardAmount = linesArray["npc" + npcsCheck + "Reward"];}else{npcXRewardAmount = 1;}
+				var npcXRewardCheck = 1;
+				if(npcXRewardAmount > 1){
+					while(npcXRewardCheck <= npcXRewardAmount){
+						if(npcXRewardCheck == 1){
+							var stageval = $("#stagenpc" + npcsCheck + "Reward").val();
+							var xval = $("#xnpc" + npcsCheck + "Reward").val();
+							var yval = $("#ynpc" + npcsCheck + "Reward").val();
+							var zval = $("#znpc" + npcsCheck + "Reward").val();
+							var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+							npcXReward.push(addStage);
+						}else{
+							var stageval = $("#stagenpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
+							var xval = $("#xnpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
+							var yval = $("#ynpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
+							var zval = $("#znpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
+							var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+							npcXReward.push(addStage);
+						}
+						npcXRewardCheck++;
+					}
+				}else{
+					var stageval = $("#stagenpc" + npcsCheck + "Reward").val();
+					var xval = $("#xnpc" + npcsCheck + "Reward").val();
+					var yval = $("#ynpc" + npcsCheck + "Reward").val();
+					var zval = $("#znpc" + npcsCheck + "Reward").val();
+					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+					npcXReward.push(addStage);
+				}
+			}else{
+				var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999:&nbsp;0,0,0<br>";
+				npcXReward.push(addStage);
+			}
+			npcXReward = npcXReward.join("");
+			
+			
+			
+			var npcYml = "&nbsp;-&nbsp;name: " + npcX + "<br>&nbsp;&nbsp;&nbsp;quest: " + questName + "<br>&nbsp;&nbsp;&nbsp;coords: " + npcXCoords + "<br>&nbsp;&nbsp;&nbsp;occupation: " + npcXOccupation + "<br>&nbsp;&nbsp;&nbsp;baby: " + npcXChild + "<br><br>&nbsp;&nbsp;&nbsp;## Messages ##<br>&nbsp;&nbsp;&nbsp;fallBackMessage: '" + npcX + "FallBack'<br>&nbsp;&nbsp;&nbsp;repeatMessage: '" + npcX + "Repeat'<br>&nbsp;&nbsp;&nbsp;greetMessage: '" + npcX + "Greet'<br>&nbsp;&nbsp;&nbsp;nearbyMessage: 'null'<br>&nbsp;&nbsp;&nbsp;lowStageMessage: '" + npcX + "LowStage'<br>&nbsp;&nbsp;&nbsp;lowLevelMessage: '" + npcX + "LowLevel'<br><br>&nbsp;&nbsp;&nbsp;stages:<br>" + npcXStages + "&nbsp;&nbsp;&nbsp;requirements:<br>" + npcXRequirements + "&nbsp;&nbsp;&nbsp;rewards:<br>" + npcXReward + "<br><br>";
+			
+			npcs.push(npcYml);
+			npcsCheck++;
+		}
+	}else{
+		
+	}
+	npcs = npcs.join("");
+	
+	
+	
+	
+	
+	
+	var yml = "questInfo:<br>&nbsp;-&nbsp;name:&nbsp;" + questName + "<br>&nbsp;&nbsp;&nbsp;startingLevel:&nbsp;" + startingLevel + "<br>&nbsp;&nbsp;&nbsp;starter:&nbsp;'" + npc1 + "'<br>&nbsp;&nbsp;&nbsp;xp:&nbsp;" + xp + "<br>&nbsp;&nbsp;&nbsp;questStages:<br>" + questStages + "&nbsp;&nbsp;&nbsp;successMessages:<br>" + questRewards + "<br>npcs:<br>&nbsp;-&nbsp;name: " + npc1 + "<br>&nbsp;&nbsp;&nbsp;quest: " + questName + "<br>&nbsp;&nbsp;&nbsp;coords: " + npc1Coords + "<br>&nbsp;&nbsp;&nbsp;occupation: " + npc1Occupation + "<br>&nbsp;&nbsp;&nbsp;baby: " + npc1Child + "<br><br>&nbsp;&nbsp;&nbsp;## Messages ##<br>&nbsp;&nbsp;&nbsp;fallBackMessage: '" + npc1 + "FallBack'<br>&nbsp;&nbsp;&nbsp;repeatMessage: '" + npc1 + "Repeat'<br>&nbsp;&nbsp;&nbsp;greetMessage: '" + npc1 + "Greet'<br>&nbsp;&nbsp;&nbsp;nearbyMessage: 'null'<br>&nbsp;&nbsp;&nbsp;lowStageMessage: '" + npc1 + "LowStage'<br>&nbsp;&nbsp;&nbsp;lowLevelMessage: '" + npc1 + "LowLevel'<br><br>&nbsp;&nbsp;&nbsp;stages:<br>" + npc1Stages + "&nbsp;&nbsp;&nbsp;requirements:<br>" + npc1Requirements + "&nbsp;&nbsp;&nbsp;rewards:<br>" + npc1Reward + "<br><br>" + npcs;
+	
+	
+	$("#yml").html(yml);
 });
+
+
+
+function inputFocus(i){
+    if(i.value==i.defaultValue){ i.value=""; i.style.color="#000"; }
+}
+function inputBlur(i){
+    if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
+}
 </script>
 
 
