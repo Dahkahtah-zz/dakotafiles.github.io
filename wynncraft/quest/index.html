@@ -707,115 +707,117 @@ $(document).on('click', '.generate', function() {
 	var npcsCheck = 1;
 	if(npcsAmount > 1){
 		while(npcsCheck <= npcsAmount){
-			var npcX = $("#npc" + npcsCheck).val(); 
-			var npcXCoords = $("#xnpc" + npcsCheck + "Loc").val() + "," + $("#ynpc" + npcsCheck + "Loc").val() + "," + $("#znpc" + npcsCheck + "Loc").val();
-			var npcXOccupation = $("#npc" + npcsCheck + "Profession").val();
-			var npcXChild = $('input:radio[name=npc' + npcsCheck + 'Child]:checked').val();
+			if(npcsCheck !== 1){
+				var npcX = $("#npc" + npcsCheck).val(); 
+				var npcXCoords = $("#xnpc" + npcsCheck + "Loc").val() + "," + $("#ynpc" + npcsCheck + "Loc").val() + "," + $("#znpc" + npcsCheck + "Loc").val();
+				var npcXOccupation = $("#npc" + npcsCheck + "Profession").val();
+				var npcXChild = $('input:radio[name=npc' + npcsCheck + 'Child]:checked').val();
 			
 			
 			
 			
-			var npcXStages = [];
-			var npcXStagesAmount = 1;
-			if(typeof linesArray["npc" + npcsCheck + "Stage"] !== 'undefined'){npcXStagesAmount = linesArray["npc" + npcsCheck + "Stage"];}else{npcXStagesAmount = 1;}
-			var npcXStagesCheck = 1;
-			if(npcXStagesAmount > 1){
-				while(npcXStagesCheck <= npcXStagesAmount){
-					var stageLine = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + npcXStagesCheck + ":&nbsp;" + npcX + "Stage" + npcXStagesCheck + "<br>";
-					npcXStages.push(stageLine);
-					npcXStagesCheck++;
-				}
-			}else{
-				var stageLine = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;" + npcX + "Stage1<br>";
-				npcXStages.push(stageLine);
-			}
-			npcXStages = npcXStages.join("");
-			
-			var npcXRequirementsRadio = $('input:radio[name=npc' + npcsCheck + 'Requirements]:checked').val();
-			
-			var npcXRequirements = [];
-			var npcXRequirementsAmount = 1;
-			if(npcXRequirementsRadio == "yes"){
-				if(typeof linesArray["npc" + npcsCheck + "Requirements"] !== 'undefined'){npcXRequirementsAmount = linesArray["npc" + npcsCheck + "Requirements"];}else{npcXRequirementsAmount = 1;}
-				var npcXRequirementsCheck = 1;
-				if(npcXRequirementsAmount > 1){
-					while(npcXRequirementsCheck <= npcXRequirementsAmount){
-						if(npcXRequirementsCheck == 1){
-							var stageval = $("#stagenpc" + npcsCheck + "Requirements").val();
-							var xval = $("#xnpc" + npcsCheck + "Requirements").val();
-							var yval = $("#ynpc" + npcsCheck + "Requirements").val();
-							var zval = $("#znpc" + npcsCheck + "Requirements").val();
-							var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
-							npcXRequirements.push(addStage);
-						}else{
-							var stageval = $("#stagenpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
-							var xval = $("#xnpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
-							var yval = $("#ynpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
-							var zval = $("#znpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
-							var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
-							npcXRequirements.push(addStage);
-						}
-						npcXRequirementsCheck++;
+				var npcXStages = [];
+				var npcXStagesAmount = 1;
+				if(typeof linesArray["npc" + npcsCheck + "Stage"] !== 'undefined'){npcXStagesAmount = linesArray["npc" + npcsCheck + "Stage"];}else{npcXStagesAmount = 1;}
+				var npcXStagesCheck = 1;
+				if(npcXStagesAmount > 1){
+					while(npcXStagesCheck <= npcXStagesAmount){
+						var stageLine = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + npcXStagesCheck + ":&nbsp;" + npcX + "Stage" + npcXStagesCheck + "<br>";
+						npcXStages.push(stageLine);
+						npcXStagesCheck++;
 					}
 				}else{
-					var stageval = $("#stagenpc" + npcsCheck + "Requirements").val();
-					var xval = $("#xnpc" + npcsCheck + "Requirements").val();
-					var yval = $("#ynpc" + npcsCheck + "Requirements").val();
-					var zval = $("#znpc" + npcsCheck + "Requirements").val();
-					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+					var stageLine = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;" + npcX + "Stage1<br>";
+					npcXStages.push(stageLine);
+				}
+				npcXStages = npcXStages.join("");
+				
+				var npcXRequirementsRadio = $('input:radio[name=npc' + npcsCheck + 'Requirements]:checked').val();
+				
+				var npcXRequirements = [];
+				var npcXRequirementsAmount = 1;
+				if(npcXRequirementsRadio == "yes"){
+					if(typeof linesArray["npc" + npcsCheck + "Requirements"] !== 'undefined'){npcXRequirementsAmount = linesArray["npc" + npcsCheck + "Requirements"];}else{npcXRequirementsAmount = 1;}
+					var npcXRequirementsCheck = 1;
+					if(npcXRequirementsAmount > 1){
+						while(npcXRequirementsCheck <= npcXRequirementsAmount){
+							if(npcXRequirementsCheck == 1){
+								var stageval = $("#stagenpc" + npcsCheck + "Requirements").val();
+								var xval = $("#xnpc" + npcsCheck + "Requirements").val();
+								var yval = $("#ynpc" + npcsCheck + "Requirements").val();
+								var zval = $("#znpc" + npcsCheck + "Requirements").val();
+								var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+								npcXRequirements.push(addStage);
+							}else{
+								var stageval = $("#stagenpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
+								var xval = $("#xnpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
+								var yval = $("#ynpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
+								var zval = $("#znpc" + npcsCheck + "Requirements-line-" + npcXRequirementsCheck).val();
+								var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+								npcXRequirements.push(addStage);
+							}
+							npcXRequirementsCheck++;
+						}
+					}else{
+						var stageval = $("#stagenpc" + npcsCheck + "Requirements").val();
+						var xval = $("#xnpc" + npcsCheck + "Requirements").val();
+						var yval = $("#ynpc" + npcsCheck + "Requirements").val();
+						var zval = $("#znpc" + npcsCheck + "Requirements").val();
+						var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+						npcXRequirements.push(addStage);
+					}
+				}else{
+					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999:&nbsp;0,0,0<br>";
 					npcXRequirements.push(addStage);
 				}
-			}else{
-				var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999:&nbsp;0,0,0<br>";
-				npcXRequirements.push(addStage);
-			}
-			npcXRequirements = npcXRequirements.join("");
-	
-			var npcXRewardRadio = $('input:radio[name=npc' + npcsCheck + 'Reward]:checked').val();
-	
-			var npcXReward = [];
-			var npcXRewardAmount = 1;
-			if(npcXRewardRadio == "yes"){
-				if(typeof linesArray["npc" + npcsCheck + "Reward"] !== 'undefined'){npcXRewardAmount = linesArray["npc" + npcsCheck + "Reward"];}else{npcXRewardAmount = 1;}
-				var npcXRewardCheck = 1;
-				if(npcXRewardAmount > 1){
-					while(npcXRewardCheck <= npcXRewardAmount){
-						if(npcXRewardCheck == 1){
-							var stageval = $("#stagenpc" + npcsCheck + "Reward").val();
-							var xval = $("#xnpc" + npcsCheck + "Reward").val();
-							var yval = $("#ynpc" + npcsCheck + "Reward").val();
-							var zval = $("#znpc" + npcsCheck + "Reward").val();
-							var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
-							npcXReward.push(addStage);
-						}else{
-							var stageval = $("#stagenpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
-							var xval = $("#xnpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
-							var yval = $("#ynpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
-							var zval = $("#znpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
-							var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
-							npcXReward.push(addStage);
+				npcXRequirements = npcXRequirements.join("");
+		
+				var npcXRewardRadio = $('input:radio[name=npc' + npcsCheck + 'Reward]:checked').val();
+		
+				var npcXReward = [];
+				var npcXRewardAmount = 1;
+				if(npcXRewardRadio == "yes"){
+					if(typeof linesArray["npc" + npcsCheck + "Reward"] !== 'undefined'){npcXRewardAmount = linesArray["npc" + npcsCheck + "Reward"];}else{npcXRewardAmount = 1;}
+					var npcXRewardCheck = 1;
+					if(npcXRewardAmount > 1){
+						while(npcXRewardCheck <= npcXRewardAmount){
+							if(npcXRewardCheck == 1){
+								var stageval = $("#stagenpc" + npcsCheck + "Reward").val();
+								var xval = $("#xnpc" + npcsCheck + "Reward").val();
+								var yval = $("#ynpc" + npcsCheck + "Reward").val();
+								var zval = $("#znpc" + npcsCheck + "Reward").val();
+								var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+								npcXReward.push(addStage);
+							}else{
+								var stageval = $("#stagenpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
+								var xval = $("#xnpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
+								var yval = $("#ynpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
+								var zval = $("#znpc" + npcsCheck + "Reward-line-" + npcXRewardCheck).val();
+								var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+								npcXReward.push(addStage);
+							}
+							npcXRewardCheck++;
 						}
-						npcXRewardCheck++;
+					}else{
+						var stageval = $("#stagenpc" + npcsCheck + "Reward").val();
+						var xval = $("#xnpc" + npcsCheck + "Reward").val();
+						var yval = $("#ynpc" + npcsCheck + "Reward").val();
+						var zval = $("#znpc" + npcsCheck + "Reward").val();
+						var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+						npcXReward.push(addStage);
 					}
 				}else{
-					var stageval = $("#stagenpc" + npcsCheck + "Reward").val();
-					var xval = $("#xnpc" + npcsCheck + "Reward").val();
-					var yval = $("#ynpc" + npcsCheck + "Reward").val();
-					var zval = $("#znpc" + npcsCheck + "Reward").val();
-					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stageval + ":&nbsp;" + xval + "," + yval + "," + zval + "<br>";
+					var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999:&nbsp;0,0,0<br>";
 					npcXReward.push(addStage);
 				}
-			}else{
-				var addStage = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999:&nbsp;0,0,0<br>";
-				npcXReward.push(addStage);
+				npcXReward = npcXReward.join("");
+			
+			
+			
+				var npcYml = "&nbsp;-&nbsp;name: " + npcX + "<br>&nbsp;&nbsp;&nbsp;quest: " + questName + "<br>&nbsp;&nbsp;&nbsp;coords: " + npcXCoords + "<br>&nbsp;&nbsp;&nbsp;occupation: " + npcXOccupation + "<br>&nbsp;&nbsp;&nbsp;baby: " + npcXChild + "<br><br>&nbsp;&nbsp;&nbsp;## Messages ##<br>&nbsp;&nbsp;&nbsp;fallBackMessage: '" + npcX + "FallBack'<br>&nbsp;&nbsp;&nbsp;repeatMessage: '" + npcX + "Repeat'<br>&nbsp;&nbsp;&nbsp;greetMessage: '" + npcX + "Greet'<br>&nbsp;&nbsp;&nbsp;nearbyMessage: 'null'<br>&nbsp;&nbsp;&nbsp;lowStageMessage: '" + npcX + "LowStage'<br>&nbsp;&nbsp;&nbsp;lowLevelMessage: '" + npcX + "LowLevel'<br><br>&nbsp;&nbsp;&nbsp;stages:<br>" + npcXStages + "&nbsp;&nbsp;&nbsp;requirements:<br>" + npcXRequirements + "&nbsp;&nbsp;&nbsp;rewards:<br>" + npcXReward + "<br><br>";
+			
+				npcs.push(npcYml);
 			}
-			npcXReward = npcXReward.join("");
-			
-			
-			
-			var npcYml = "&nbsp;-&nbsp;name: " + npcX + "<br>&nbsp;&nbsp;&nbsp;quest: " + questName + "<br>&nbsp;&nbsp;&nbsp;coords: " + npcXCoords + "<br>&nbsp;&nbsp;&nbsp;occupation: " + npcXOccupation + "<br>&nbsp;&nbsp;&nbsp;baby: " + npcXChild + "<br><br>&nbsp;&nbsp;&nbsp;## Messages ##<br>&nbsp;&nbsp;&nbsp;fallBackMessage: '" + npcX + "FallBack'<br>&nbsp;&nbsp;&nbsp;repeatMessage: '" + npcX + "Repeat'<br>&nbsp;&nbsp;&nbsp;greetMessage: '" + npcX + "Greet'<br>&nbsp;&nbsp;&nbsp;nearbyMessage: 'null'<br>&nbsp;&nbsp;&nbsp;lowStageMessage: '" + npcX + "LowStage'<br>&nbsp;&nbsp;&nbsp;lowLevelMessage: '" + npcX + "LowLevel'<br><br>&nbsp;&nbsp;&nbsp;stages:<br>" + npcXStages + "&nbsp;&nbsp;&nbsp;requirements:<br>" + npcXRequirements + "&nbsp;&nbsp;&nbsp;rewards:<br>" + npcXReward + "<br><br>";
-			
-			npcs.push(npcYml);
 			npcsCheck++;
 		}
 	}else{
