@@ -1,13 +1,16 @@
 @charset "utf-8";
 input {
-	width: 50%;
+    width: 50%;
 }
+
 input[type=submit] {
-	width: auto;
+    width: auto;
 }
+
 input[type=radio] {
-	width: auto;
+    width: auto;
 }
+
 input[type=number] {
-	width: auto;
+    width: auto;
 }

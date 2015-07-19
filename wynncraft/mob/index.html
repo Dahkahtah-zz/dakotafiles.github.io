@@ -1,2072 +1,2151 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Katoa || Mob YML</title>
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,600,800' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<link href="stylesheet.css" rel="stylesheet" type="text/css">
-<link rel="shortcut icon" href="../../favicon.ico">
+    <meta charset="utf-8">
+    <title>Katoa || Mob YML</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,800' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../../favicon.ico">
 </head>
 
 <body>
 <div id="imagebig">
-<img src="../../media/swarm.png" class="stretch" alt="" />
-
-
-<br>
-<div id="bodyBackground"></div>
-<div id="bodyTitle">GM Mob YML Creator</div>
-<div id="selection">
-Mob: <select id="mobType" onchange="checkInput()">
-	<option value="arrow">Arrow</option>
-	<option value="bat">Bat</option>
-	<option value="blaze">Blaze</option>
-	<option value="boat">Boat</option>
-	<option value="cavespider">Cave Spider</option>
-	<option value="chicken">Chicken</option>
-	<option value="cow">Cow</option>
-	<option value="creeper">Creeper</option>
-	<option value="donkey">Donkey</option>
-	<option value="egg">Egg</option>
-	<option value="endercrystal">Ender Crystal</option>
-	<option value="enderdragon">Ender Dragon</option>
-	<option value="enderman">Enderman</option>
-	<option value="enderpearl">Enderpearl</option>
-	<option value="endersignal">Ender Signal</option>
-	<option value="fallingblock">Falling Block</option>
-	<option value="fireball">Fireball</option>
-	<option value="firework">Firework</option>
-	<option value="ghast">Ghast</option>
-	<option value="giant">Giant</option>
-	<option value="horse">Horse</option>
-	<option value="irongolem">Iron Golem</option>
-	<option value="item">Item</option>
-	<option value="leash">Leash</option>
-	<option value="magmacube">Magma Cube</option>
-	<option value="minecart">Minecart</option>
-	<option value="minecartchest">Minecart Chest</option>
-	<option value="minecartfurnace">Minecart Furnace</option>
-	<option value="minecarthopper">Minecart Hopper</option>
-	<option value="minecartmobspawner">Minecart Mob Spawner</option>
-	<option value="minecarttnt">Minecart TNT</option>
-	<option value="mooshroom">Mooshroom</option>
-	<option value="mule">Mule</option>
-	<option value="ocelot">Ocelot</option>
-	<option value="painting">Painting</option>
-	<option value="pig">Pig</option>
-	<option value="pigzombie">Pig Zombie</option>
-	<option value="potion">Potion</option>
-	<option value="primedtnt">Primed TNT</option>
-	<option value="sheep">Sheep</option>
-	<option value="silverfish">Silverfish</option>
-	<option value="skeleton">Skeleton</option>
-	<option value="slime">Slime</option>
-	<option value="smallfireball">Small Fireball</option>
-	<option value="snowball">Snowball</option>
-	<option value="snowman">Snowman</option>
-	<option value="spider">Spider</option>
-	<option value="squid">Squid</option>
-	<option value="villager">Villager</option>
-	<option value="witch">Witch</option>
-	<option value="wither">Wither</option>
-	<option value="witherskeleton">Wither Skeleton</option>
-	<option value="witherskull">Wither Skull</option>
-	<option value="wolf">Wolf</option>
-	<option value="xp">XP</option>
-	<option value="xpbottle">XP Bottle</option>
-	<option value="zombie">Zombie</option>
-</select><br><br>
-
-
-Name: <input type="text" name="name" id="name"><br>
-Tag: <input type="text" name="tag" id="tag" value="My New Mob"><br>
-Chest: x:<input type="number" value="0" name="x" id="x"> y:<input type="number" value="0" min="0" name="y" id="y"> z:<input type="number" value="0" name="z" id="z"><br>
-Attack: <select id="attack"><option value="None">None</option><option value="Melee">Melee</option><option value="Ranged">Ranged</option></select><br>
-Level: <input type="number" value="1" min="0" name="level" id="level"><br>
-Health: <input type="number" value="1" min="0" name="health" id="health"><br>
-Regen: <input type="number" value="1" min="0" name="regen" id="regen"><br>
-Minimum XP: <input type="number" value="1" min="0" name="minXP" id="minXP"><br>
-Maximum XP: <input type="number" value="1" min="0" name="maxXP" id="maxXP"><br>
-Minimum Damage: <input type="number" value="1" min="0" name="minDam" id="minDam"><br>
-Maximum Damage: <input type="number" value="1" min="0" name="maxDam" id="maxDam"><br>
-Attack Rate: <input type="number" value="1.0" min="0" step="0.1" name="attackRate" id="attackRate"><br>
-Projectile: <input type="text" name="projectile" id="projectile" value="Arrow"><br>
-Projectile Speed: <input type="number" value="1.0" min="0" step="0.1" name="projectileSpeed" id="projectileSpeed"><br>
-Loot Multiplier: <input type="number" value="1.0" min="0" step="0.1" name="lootMultiplier" id="lootMultiplier"> <span id="lootWarning" class="comment">Don't change without contacting Salted!</span><br>
-Speed: <input type="number" value="0.2" min="0" step="0.1" name="speed" id="speed"><br>
-Vision: <input type="number" value="16" min="0" name="vision" id="vision"><br>
-Vanished: <select id="vanished"><option value="false">False</option><option value="true">True</option></select><br>
-Burning: <select id="burning"><option value="false">False</option><option value="true">True</option></select><br>
-Baby: <select id="baby"><option value="false">False</option><option value="true">True</option></select><br>
-Sound Hurt: <select id="soundHurt">
-	<option value="AMBIENCE_CAVE">Ambience Cave</option>
-	<option value="AMBIENCE_RAIN">Ambience Rain</option>
-	<option value="AMBIENCE_THUNDER">Ambience Thunder</option>
-	<option value="ANVIL_BREAK">Anvil Break</option>
-	<option value="ANVIL_LAND">Anvil Land</option>
-	<option value="ANVIL_USE">Anvil Use</option>
-	<option value="ARROW_HIT">Arrow Hit</option>
-	<option value="BAT_DEATH">Bat Death</option>
-	<option value="BAT_HURT">Bat Hurt</option>
-	<option value="BAT_IDLE">Bat Idle</option>
-	<option value="BAT_LOOP">Bat Loop</option>
-	<option value="BAT_TAKEOFF">Bat Takeoff</option>
-	<option value="BLAZE_BREATH">Blaze Breath</option>
-	<option value="BLAZE_DEATH">Blaze Death</option>
-	<option value="BLAZE_HIT">Blaze Hit</option>
-	<option value="BREATH">Breath</option>
-	<option value="BURP">Burp</option>
-	<option value="CAT_HISS">Cat Hiss</option>
-	<option value="CAT_HIT">Cat Hit</option>
-	<option value="CAT_MEOW">Cat Meow</option>
-	<option value="CAT_PURR">Cat Purr</option>
-	<option value="CAT_PURREOW">Cat Purreow</option>
-	<option value="CHEST_CLOSE">Chest Close</option>
-	<option value="CHEST_OPEN">Chest Open</option>
-	<option value="CHICKEN_EGG_POP">Chicken Egg Pop</option>
-	<option value="CHICKEN_HURT">Chicken Hurt</option>
-	<option value="CHICKEN_IDLE">Chicken Idle</option>
-	<option value="CHICKEN_WALK">Chicken Walk</option>
-	<option value="CLICK">Click</option>
-	<option value="COW_HURT">Cow Hurt</option>
-	<option value="COW_IDLE">Cow Idle</option>
-	<option value="COW_WALK">Cow Walk</option>
-	<option value="CREEPER_DEATH">Creeper Death</option>
-	<option value="CREEPER_HISS">Creeper Hiss</option>
-	<option value="DIG_GRASS">Dig Grass</option>
-	<option value="DIG_GRAVEL">Dig Gravel</option>
-	<option value="DIG_SAND">Dig Sand</option>
-	<option value="DIG_SNOW">Dig Snow</option>
-	<option value="DIG_STONE">Dig Stone</option>
-	<option value="DIG_WOOD">Dig Wood</option>
-	<option value="DIG_WOOL">Dig Wool</option>
-	<option value="DONKEY_ANGRY">Donkey Angry</option>
-	<option value="DONKEY_DEATH">Donkey Death</option>
-	<option value="DONKEY_HIT">Donkey Hit</option>
-	<option value="DONKEY_IDLE">Donkey Idle</option>
-	<option value="DOOR_CLOSE">Door Close</option>
-	<option value="DOOR_OPEN">Door Open</option>
-	<option value="DRINK">Drink</option>
-	<option value="EAT">Eat</option>
-	<option value="ENDERDRAGON_DEATH">Enderdragon Death</option>
-	<option value="ENDERDRAGON_GROWL">Enderdragon Growl</option>
-	<option value="ENDERDRAGON_HIT">Enderdragon Hit</option>
-	<option value="ENDERDRAGON_WINGS">Enderdragon Wings</option>
-	<option value="ENDERMAN_DEATH">Enderman Death</option>
-	<option value="ENDERMAN_HIT">Enderman Hit</option>
-	<option value="ENDERMAN_IDLE">Enderman Idle</option>
-	<option value="ENDERMAN_SCREAM">Enderman Scream</option>
-	<option value="ENDERMAN_STARE">Enderman Stare</option>
-	<option value="ENDERMAN_TELEPORT">Enderman Teleport</option>
-	<option value="EXPLODE">Explode</option>
-	<option value="FALL_BIG">Fall Big</option>
-	<option value="FALL_SMALL">Fall Small</option>
-	<option value="FIRE">Fire</option>
-	<option value="FIREWORK_BLAST">Firework Blast</option>
-	<option value="FIREWORK_BLAST2">Firework Blast2</option>
-	<option value="FIREWORK_LARGE_BLAST">Firework Large Blast</option>
-	<option value="FIREWORK_LARGE_BLAST2">Firework Large Blast2</option>
-	<option value="FIREWORK_LAUNCH">Firework Launch</option>
-	<option value="FIREWORK_TWINKLE">Firework Twinkle</option>
-	<option value="FIREWORK_TWINKLE2">Firework Twinkle2</option>
-	<option value="FIRE_IGNITE">Fire Ignite</option>
-	<option value="FIZZ">Fizz</option>
-	<option value="FUSE">Fuse</option>
-	<option value="GHAST_CHARGE">Ghast Charge</option>
-	<option value="GHAST_DEATH">Ghast Death</option>
-	<option value="GHAST_FIREBALL">Ghast Fireball</option>
-	<option value="GHAST_MOAN">Ghast Moan</option>
-	<option value="GHAST_SCREAM">Ghast Scream</option>
-	<option value="GHAST_SCREAM2">Ghast Scream2</option>
-	<option value="GLASS">Glass</option>
-	<option value="HORSE_ANGRY">Horse Angry</option>
-	<option value="HORSE_ARMOR">Horse Armor</option>
-	<option value="HORSE_BREATHE">Horse Breathe</option>
-	<option value="HORSE_GALLOP">Horse Gallop</option>
-	<option value="HORSE_HIT">Horse Hit</option>
-	<option value="HORSE_IDLE">Horse Idle</option>
-	<option value="HORSE_JUMP">Horse Jump</option>
-	<option value="HORSE_LAND">Horse Land</option>
-	<option value="HORSE_SADDLE">Horse Saddle</option>
-	<option value="HORSE_SKELETON_DEATH">Horse Skeleton Death</option>
-	<option value="HORSE_SKELETON_IDLE">Horse Skeleton Idle</option>
-	<option value="HORSE_SOFT">Horse Soft</option>
-	<option value="HORSE_WOOD">Horse Wood</option>
-	<option value="HORSE_ZOMBIE_DEATH">Horse Zombie Death</option>
-	<option value="HORSE_ZOMBIE_HIT">Horse Zombie Hit</option>
-	<option value="HORSE_ZOMBIE_IDLE">Horse Zombie Idle</option>
-	<option value="HURT">Hurt</option>
-	<option value="HURT_FLESH">Hurt Flesh</option>
-	<option value="IRONGOLEM_DEATH">Irongolem Death</option>
-	<option value="IRONGOLEM_HIT">Irongolem Hit</option>
-	<option value="IRONGOLEM_THROW">Irongolem Throw</option>
-	<option value="IRONGOLEM_WALK">Irongolem Walk</option>
-	<option value="ITEM_BREAK">Item Break</option>
-	<option value="ITEM_PICKUP">Item Pickup</option>
-	<option value="LAVA">Lava</option>
-	<option value="LAVA_POP">Lava Pop</option>
-	<option value="LEVEL_UP">Level Up</option>
-	<option value="MAGMACUBE_JUMP">Magmacube Jump</option>
-	<option value="MAGMACUBE_WALK">Magmacube Walk</option>
-	<option value="MAGMACUBE_WALK2">Magmacube Walk2</option>
-	<option value="MINECART_BASE">Minecart Base</option>
-	<option value="MINECART_INSIDE">Minecart Inside</option>
-	<option value="NOTE_BASS">Note Bass</option>
-	<option value="NOTE_BASS_DRUM">Note Bass Drum</option>
-	<option value="NOTE_BASS_GUITAR">Note Bass Guitar</option>
-	<option value="NOTE_PIANO">Note Piano</option>
-	<option value="NOTE_PLING">Note Pling</option>
-	<option value="NOTE_SNARE_DRUM">Note Snare Drum</option>
-	<option value="NOTE_STICKS">Note Sticks</option>
-	<option value="ORB_PICKUP">Orb Pickup</option>
-	<option value="PIG_DEATH">Pig Death</option>
-	<option value="PIG_IDLE">Pig Idle</option>
-	<option value="PIG_WALK">Pig Walk</option>
-	<option value="PISTON_EXTEND">Piston Extend</option>
-	<option value="PISTON_RETRACT">Piston Retract</option>
-	<option value="PORTAL">Portal</option>
-	<option value="PORTAL_TRAVEL">Portal Travel</option>
-	<option value="PORTAL_TRIGGER">Portal Trigger</option>
-	<option value="SHEEP_IDLE">Sheep Idle</option>
-	<option value="SHEEP_SHEAR">Sheep Shear</option>
-	<option value="SHEEP_WALK">Sheep Walk</option>
-	<option value="SHOOT_ARROW">Shoot Arrow</option>
-	<option value="SILVERFISH_HIT">Silverfish Hit</option>
-	<option value="SILVERFISH_IDLE">Silverfish Idle</option>
-	<option value="SILVERFISH_KILL">Silverfish Kill</option>
-	<option value="SILVERFISH_WALK">Silverfish Walk</option>
-	<option value="SKELETON_DEATH">Skeleton Death</option>
-	<option value="SKELETON_HURT">Skeleton Hurt</option>
-	<option value="SKELETON_IDLE">Skeleton Idle</option>
-	<option value="SKELETON_WALK">Skeleton Walk</option>
-	<option value="SLIME_ATTACK">Slime Attack</option>
-	<option value="SLIME_WALK">Slime Walk</option>
-	<option value="SLIME_WALK2">Slime Walk2</option>
-	<option value="SPIDER_DEATH">Spider Death</option>
-	<option value="SPIDER_IDLE">Spider Idle</option>
-	<option value="SPIDER_WALK">Spider Walk</option>
-	<option value="SPLASH">Splash</option>
-	<option value="SPLASH2">Splash2</option>
-	<option value="STEP_GRASS">Step Grass</option>
-	<option value="STEP_GRAVEL">Step Gravel</option>
-	<option value="STEP_LADDER">Step Ladder</option>
-	<option value="STEP_SAND">Step Sand</option>
-	<option value="STEP_SNOW">Step Snow</option>
-	<option value="STEP_STONE">Step Stone</option>
-	<option value="STEP_WOOD">Step Wood</option>
-	<option value="STEP_WOOL">Step Wool</option>
-	<option value="SUCCESSFUL_HIT">Successful Hit</option>
-	<option value="SWIM">Swim</option>
-	<option value="VILLAGER_DEATH">Villager Death</option>
-	<option value="VILLAGER_HAGGLE">Villager Haggle</option>
-	<option value="VILLAGER_HIT">Villager Hit</option>
-	<option value="VILLAGER_IDLE">Villager Idle</option>
-	<option value="VILLAGER_NO">Villager No</option>
-	<option value="VILLAGER_YES">Villager Yes</option>
-	<option value="WATER">Water</option>
-	<option value="WITHER_DEATH">Wither Death</option>
-	<option value="WITHER_HURT">Wither Hurt</option>
-	<option value="WITHER_IDLE">Wither Idle</option>
-	<option value="WITHER_SHOOT">Wither Shoot</option>
-	<option value="WITHER_SPAWN">Wither Spawn</option>
-	<option value="WOLF_BARK">Wolf Bark</option>
-	<option value="WOLF_DEATH">Wolf Death</option>
-	<option value="WOLF_GROWL">Wolf Growl</option>
-	<option value="WOLF_HOWL">Wolf Howl</option>
-	<option value="WOLF_HURT">Wolf Hurt</option>
-	<option value="WOLF_PANT">Wolf Pant</option>
-	<option value="WOLF_SHAKE">Wolf Shake</option>
-	<option value="WOLF_WALK">Wolf Walk</option>
-	<option value="WOLF_WHINE">Wolf Whine</option>
-	<option value="WOOD_CLICK">Wood Click</option>
-	<option value="ZOMBIE_DEATH">Zombie Death</option>
-	<option value="ZOMBIE_HURT">Zombie Hurt</option>
-	<option value="ZOMBIE_IDLE">Zombie Idle</option>
-	<option value="ZOMBIE_INFECT">Zombie Infect</option>
-	<option value="ZOMBIE_METAL">Zombie Metal</option>
-	<option value="ZOMBIE_PIG_ANGRY">Zombie Pig Angry</option>
-	<option value="ZOMBIE_PIG_DEATH">Zombie Pig Death</option>
-	<option value="ZOMBIE_PIG_HURT">Zombie Pig Hurt</option>
-	<option value="ZOMBIE_PIG_IDLE">Zombie Pig Idle</option>
-	<option value="ZOMBIE_REMEDY">Zombie Remedy</option>
-	<option value="ZOMBIE_UNFECT">Zombie Unfect</option>
-	<option value="ZOMBIE_WOOD">Zombie Wood</option>
-	<option value="ZOMBIE_WOODBREAK">Zombie Woodbreak</option>
-</select> Pitch: <input type="number" value="1" min="0" max="2" step="0.1" name="pitchHurt" id="pitchHurt"><br>
-Sound Death: <select id="soundDeath">
-	<option value="AMBIENCE_CAVE">Ambience Cave</option>
-	<option value="AMBIENCE_RAIN">Ambience Rain</option>
-	<option value="AMBIENCE_THUNDER">Ambience Thunder</option>
-	<option value="ANVIL_BREAK">Anvil Break</option>
-	<option value="ANVIL_LAND">Anvil Land</option>
-	<option value="ANVIL_USE">Anvil Use</option>
-	<option value="ARROW_HIT">Arrow Hit</option>
-	<option value="BAT_DEATH">Bat Death</option>
-	<option value="BAT_HURT">Bat Hurt</option>
-	<option value="BAT_IDLE">Bat Idle</option>
-	<option value="BAT_LOOP">Bat Loop</option>
-	<option value="BAT_TAKEOFF">Bat Takeoff</option>
-	<option value="BLAZE_BREATH">Blaze Breath</option>
-	<option value="BLAZE_DEATH">Blaze Death</option>
-	<option value="BLAZE_HIT">Blaze Hit</option>
-	<option value="BREATH">Breath</option>
-	<option value="BURP">Burp</option>
-	<option value="CAT_HISS">Cat Hiss</option>
-	<option value="CAT_HIT">Cat Hit</option>
-	<option value="CAT_MEOW">Cat Meow</option>
-	<option value="CAT_PURR">Cat Purr</option>
-	<option value="CAT_PURREOW">Cat Purreow</option>
-	<option value="CHEST_CLOSE">Chest Close</option>
-	<option value="CHEST_OPEN">Chest Open</option>
-	<option value="CHICKEN_EGG_POP">Chicken Egg Pop</option>
-	<option value="CHICKEN_HURT">Chicken Hurt</option>
-	<option value="CHICKEN_IDLE">Chicken Idle</option>
-	<option value="CHICKEN_WALK">Chicken Walk</option>
-	<option value="CLICK">Click</option>
-	<option value="COW_HURT">Cow Hurt</option>
-	<option value="COW_IDLE">Cow Idle</option>
-	<option value="COW_WALK">Cow Walk</option>
-	<option value="CREEPER_DEATH">Creeper Death</option>
-	<option value="CREEPER_HISS">Creeper Hiss</option>
-	<option value="DIG_GRASS">Dig Grass</option>
-	<option value="DIG_GRAVEL">Dig Gravel</option>
-	<option value="DIG_SAND">Dig Sand</option>
-	<option value="DIG_SNOW">Dig Snow</option>
-	<option value="DIG_STONE">Dig Stone</option>
-	<option value="DIG_WOOD">Dig Wood</option>
-	<option value="DIG_WOOL">Dig Wool</option>
-	<option value="DONKEY_ANGRY">Donkey Angry</option>
-	<option value="DONKEY_DEATH">Donkey Death</option>
-	<option value="DONKEY_HIT">Donkey Hit</option>
-	<option value="DONKEY_IDLE">Donkey Idle</option>
-	<option value="DOOR_CLOSE">Door Close</option>
-	<option value="DOOR_OPEN">Door Open</option>
-	<option value="DRINK">Drink</option>
-	<option value="EAT">Eat</option>
-	<option value="ENDERDRAGON_DEATH">Enderdragon Death</option>
-	<option value="ENDERDRAGON_GROWL">Enderdragon Growl</option>
-	<option value="ENDERDRAGON_HIT">Enderdragon Hit</option>
-	<option value="ENDERDRAGON_WINGS">Enderdragon Wings</option>
-	<option value="ENDERMAN_DEATH">Enderman Death</option>
-	<option value="ENDERMAN_HIT">Enderman Hit</option>
-	<option value="ENDERMAN_IDLE">Enderman Idle</option>
-	<option value="ENDERMAN_SCREAM">Enderman Scream</option>
-	<option value="ENDERMAN_STARE">Enderman Stare</option>
-	<option value="ENDERMAN_TELEPORT">Enderman Teleport</option>
-	<option value="EXPLODE">Explode</option>
-	<option value="FALL_BIG">Fall Big</option>
-	<option value="FALL_SMALL">Fall Small</option>
-	<option value="FIRE">Fire</option>
-	<option value="FIREWORK_BLAST">Firework Blast</option>
-	<option value="FIREWORK_BLAST2">Firework Blast2</option>
-	<option value="FIREWORK_LARGE_BLAST">Firework Large Blast</option>
-	<option value="FIREWORK_LARGE_BLAST2">Firework Large Blast2</option>
-	<option value="FIREWORK_LAUNCH">Firework Launch</option>
-	<option value="FIREWORK_TWINKLE">Firework Twinkle</option>
-	<option value="FIREWORK_TWINKLE2">Firework Twinkle2</option>
-	<option value="FIRE_IGNITE">Fire Ignite</option>
-	<option value="FIZZ">Fizz</option>
-	<option value="FUSE">Fuse</option>
-	<option value="GHAST_CHARGE">Ghast Charge</option>
-	<option value="GHAST_DEATH">Ghast Death</option>
-	<option value="GHAST_FIREBALL">Ghast Fireball</option>
-	<option value="GHAST_MOAN">Ghast Moan</option>
-	<option value="GHAST_SCREAM">Ghast Scream</option>
-	<option value="GHAST_SCREAM2">Ghast Scream2</option>
-	<option value="GLASS">Glass</option>
-	<option value="HORSE_ANGRY">Horse Angry</option>
-	<option value="HORSE_ARMOR">Horse Armor</option>
-	<option value="HORSE_BREATHE">Horse Breathe</option>
-	<option value="HORSE_GALLOP">Horse Gallop</option>
-	<option value="HORSE_HIT">Horse Hit</option>
-	<option value="HORSE_IDLE">Horse Idle</option>
-	<option value="HORSE_JUMP">Horse Jump</option>
-	<option value="HORSE_LAND">Horse Land</option>
-	<option value="HORSE_SADDLE">Horse Saddle</option>
-	<option value="HORSE_SKELETON_DEATH">Horse Skeleton Death</option>
-	<option value="HORSE_SKELETON_IDLE">Horse Skeleton Idle</option>
-	<option value="HORSE_SOFT">Horse Soft</option>
-	<option value="HORSE_WOOD">Horse Wood</option>
-	<option value="HORSE_ZOMBIE_DEATH">Horse Zombie Death</option>
-	<option value="HORSE_ZOMBIE_HIT">Horse Zombie Hit</option>
-	<option value="HORSE_ZOMBIE_IDLE">Horse Zombie Idle</option>
-	<option value="HURT">Hurt</option>
-	<option value="HURT_FLESH">Hurt Flesh</option>
-	<option value="IRONGOLEM_DEATH">Irongolem Death</option>
-	<option value="IRONGOLEM_HIT">Irongolem Hit</option>
-	<option value="IRONGOLEM_THROW">Irongolem Throw</option>
-	<option value="IRONGOLEM_WALK">Irongolem Walk</option>
-	<option value="ITEM_BREAK">Item Break</option>
-	<option value="ITEM_PICKUP">Item Pickup</option>
-	<option value="LAVA">Lava</option>
-	<option value="LAVA_POP">Lava Pop</option>
-	<option value="LEVEL_UP">Level Up</option>
-	<option value="MAGMACUBE_JUMP">Magmacube Jump</option>
-	<option value="MAGMACUBE_WALK">Magmacube Walk</option>
-	<option value="MAGMACUBE_WALK2">Magmacube Walk2</option>
-	<option value="MINECART_BASE">Minecart Base</option>
-	<option value="MINECART_INSIDE">Minecart Inside</option>
-	<option value="NOTE_BASS">Note Bass</option>
-	<option value="NOTE_BASS_DRUM">Note Bass Drum</option>
-	<option value="NOTE_BASS_GUITAR">Note Bass Guitar</option>
-	<option value="NOTE_PIANO">Note Piano</option>
-	<option value="NOTE_PLING">Note Pling</option>
-	<option value="NOTE_SNARE_DRUM">Note Snare Drum</option>
-	<option value="NOTE_STICKS">Note Sticks</option>
-	<option value="ORB_PICKUP">Orb Pickup</option>
-	<option value="PIG_DEATH">Pig Death</option>
-	<option value="PIG_IDLE">Pig Idle</option>
-	<option value="PIG_WALK">Pig Walk</option>
-	<option value="PISTON_EXTEND">Piston Extend</option>
-	<option value="PISTON_RETRACT">Piston Retract</option>
-	<option value="PORTAL">Portal</option>
-	<option value="PORTAL_TRAVEL">Portal Travel</option>
-	<option value="PORTAL_TRIGGER">Portal Trigger</option>
-	<option value="SHEEP_IDLE">Sheep Idle</option>
-	<option value="SHEEP_SHEAR">Sheep Shear</option>
-	<option value="SHEEP_WALK">Sheep Walk</option>
-	<option value="SHOOT_ARROW">Shoot Arrow</option>
-	<option value="SILVERFISH_HIT">Silverfish Hit</option>
-	<option value="SILVERFISH_IDLE">Silverfish Idle</option>
-	<option value="SILVERFISH_KILL">Silverfish Kill</option>
-	<option value="SILVERFISH_WALK">Silverfish Walk</option>
-	<option value="SKELETON_DEATH">Skeleton Death</option>
-	<option value="SKELETON_HURT">Skeleton Hurt</option>
-	<option value="SKELETON_IDLE">Skeleton Idle</option>
-	<option value="SKELETON_WALK">Skeleton Walk</option>
-	<option value="SLIME_ATTACK">Slime Attack</option>
-	<option value="SLIME_WALK">Slime Walk</option>
-	<option value="SLIME_WALK2">Slime Walk2</option>
-	<option value="SPIDER_DEATH">Spider Death</option>
-	<option value="SPIDER_IDLE">Spider Idle</option>
-	<option value="SPIDER_WALK">Spider Walk</option>
-	<option value="SPLASH">Splash</option>
-	<option value="SPLASH2">Splash2</option>
-	<option value="STEP_GRASS">Step Grass</option>
-	<option value="STEP_GRAVEL">Step Gravel</option>
-	<option value="STEP_LADDER">Step Ladder</option>
-	<option value="STEP_SAND">Step Sand</option>
-	<option value="STEP_SNOW">Step Snow</option>
-	<option value="STEP_STONE">Step Stone</option>
-	<option value="STEP_WOOD">Step Wood</option>
-	<option value="STEP_WOOL">Step Wool</option>
-	<option value="SUCCESSFUL_HIT">Successful Hit</option>
-	<option value="SWIM">Swim</option>
-	<option value="VILLAGER_DEATH">Villager Death</option>
-	<option value="VILLAGER_HAGGLE">Villager Haggle</option>
-	<option value="VILLAGER_HIT">Villager Hit</option>
-	<option value="VILLAGER_IDLE">Villager Idle</option>
-	<option value="VILLAGER_NO">Villager No</option>
-	<option value="VILLAGER_YES">Villager Yes</option>
-	<option value="WATER">Water</option>
-	<option value="WITHER_DEATH">Wither Death</option>
-	<option value="WITHER_HURT">Wither Hurt</option>
-	<option value="WITHER_IDLE">Wither Idle</option>
-	<option value="WITHER_SHOOT">Wither Shoot</option>
-	<option value="WITHER_SPAWN">Wither Spawn</option>
-	<option value="WOLF_BARK">Wolf Bark</option>
-	<option value="WOLF_DEATH">Wolf Death</option>
-	<option value="WOLF_GROWL">Wolf Growl</option>
-	<option value="WOLF_HOWL">Wolf Howl</option>
-	<option value="WOLF_HURT">Wolf Hurt</option>
-	<option value="WOLF_PANT">Wolf Pant</option>
-	<option value="WOLF_SHAKE">Wolf Shake</option>
-	<option value="WOLF_WALK">Wolf Walk</option>
-	<option value="WOLF_WHINE">Wolf Whine</option>
-	<option value="WOOD_CLICK">Wood Click</option>
-	<option value="ZOMBIE_DEATH">Zombie Death</option>
-	<option value="ZOMBIE_HURT">Zombie Hurt</option>
-	<option value="ZOMBIE_IDLE">Zombie Idle</option>
-	<option value="ZOMBIE_INFECT">Zombie Infect</option>
-	<option value="ZOMBIE_METAL">Zombie Metal</option>
-	<option value="ZOMBIE_PIG_ANGRY">Zombie Pig Angry</option>
-	<option value="ZOMBIE_PIG_DEATH">Zombie Pig Death</option>
-	<option value="ZOMBIE_PIG_HURT">Zombie Pig Hurt</option>
-	<option value="ZOMBIE_PIG_IDLE">Zombie Pig Idle</option>
-	<option value="ZOMBIE_REMEDY">Zombie Remedy</option>
-	<option value="ZOMBIE_UNFECT">Zombie Unfect</option>
-	<option value="ZOMBIE_WOOD">Zombie Wood</option>
-	<option value="ZOMBIE_WOODBREAK">Zombie Woodbreak</option>
-</select> Pitch: <input type="number" value="1" min="0" max="2" step="0.1" name="pitchDeath" id="pitchDeath"><br>
-Sound Random: <select id="soundRandom">
-	<option value="AMBIENCE_CAVE">Ambience Cave</option>
-	<option value="AMBIENCE_RAIN">Ambience Rain</option>
-	<option value="AMBIENCE_THUNDER">Ambience Thunder</option>
-	<option value="ANVIL_BREAK">Anvil Break</option>
-	<option value="ANVIL_LAND">Anvil Land</option>
-	<option value="ANVIL_USE">Anvil Use</option>
-	<option value="ARROW_HIT">Arrow Hit</option>
-	<option value="BAT_DEATH">Bat Death</option>
-	<option value="BAT_HURT">Bat Hurt</option>
-	<option value="BAT_IDLE">Bat Idle</option>
-	<option value="BAT_LOOP">Bat Loop</option>
-	<option value="BAT_TAKEOFF">Bat Takeoff</option>
-	<option value="BLAZE_BREATH">Blaze Breath</option>
-	<option value="BLAZE_DEATH">Blaze Death</option>
-	<option value="BLAZE_HIT">Blaze Hit</option>
-	<option value="BREATH">Breath</option>
-	<option value="BURP">Burp</option>
-	<option value="CAT_HISS">Cat Hiss</option>
-	<option value="CAT_HIT">Cat Hit</option>
-	<option value="CAT_MEOW">Cat Meow</option>
-	<option value="CAT_PURR">Cat Purr</option>
-	<option value="CAT_PURREOW">Cat Purreow</option>
-	<option value="CHEST_CLOSE">Chest Close</option>
-	<option value="CHEST_OPEN">Chest Open</option>
-	<option value="CHICKEN_EGG_POP">Chicken Egg Pop</option>
-	<option value="CHICKEN_HURT">Chicken Hurt</option>
-	<option value="CHICKEN_IDLE">Chicken Idle</option>
-	<option value="CHICKEN_WALK">Chicken Walk</option>
-	<option value="CLICK">Click</option>
-	<option value="COW_HURT">Cow Hurt</option>
-	<option value="COW_IDLE">Cow Idle</option>
-	<option value="COW_WALK">Cow Walk</option>
-	<option value="CREEPER_DEATH">Creeper Death</option>
-	<option value="CREEPER_HISS">Creeper Hiss</option>
-	<option value="DIG_GRASS">Dig Grass</option>
-	<option value="DIG_GRAVEL">Dig Gravel</option>
-	<option value="DIG_SAND">Dig Sand</option>
-	<option value="DIG_SNOW">Dig Snow</option>
-	<option value="DIG_STONE">Dig Stone</option>
-	<option value="DIG_WOOD">Dig Wood</option>
-	<option value="DIG_WOOL">Dig Wool</option>
-	<option value="DONKEY_ANGRY">Donkey Angry</option>
-	<option value="DONKEY_DEATH">Donkey Death</option>
-	<option value="DONKEY_HIT">Donkey Hit</option>
-	<option value="DONKEY_IDLE">Donkey Idle</option>
-	<option value="DOOR_CLOSE">Door Close</option>
-	<option value="DOOR_OPEN">Door Open</option>
-	<option value="DRINK">Drink</option>
-	<option value="EAT">Eat</option>
-	<option value="ENDERDRAGON_DEATH">Enderdragon Death</option>
-	<option value="ENDERDRAGON_GROWL">Enderdragon Growl</option>
-	<option value="ENDERDRAGON_HIT">Enderdragon Hit</option>
-	<option value="ENDERDRAGON_WINGS">Enderdragon Wings</option>
-	<option value="ENDERMAN_DEATH">Enderman Death</option>
-	<option value="ENDERMAN_HIT">Enderman Hit</option>
-	<option value="ENDERMAN_IDLE">Enderman Idle</option>
-	<option value="ENDERMAN_SCREAM">Enderman Scream</option>
-	<option value="ENDERMAN_STARE">Enderman Stare</option>
-	<option value="ENDERMAN_TELEPORT">Enderman Teleport</option>
-	<option value="EXPLODE">Explode</option>
-	<option value="FALL_BIG">Fall Big</option>
-	<option value="FALL_SMALL">Fall Small</option>
-	<option value="FIRE">Fire</option>
-	<option value="FIREWORK_BLAST">Firework Blast</option>
-	<option value="FIREWORK_BLAST2">Firework Blast2</option>
-	<option value="FIREWORK_LARGE_BLAST">Firework Large Blast</option>
-	<option value="FIREWORK_LARGE_BLAST2">Firework Large Blast2</option>
-	<option value="FIREWORK_LAUNCH">Firework Launch</option>
-	<option value="FIREWORK_TWINKLE">Firework Twinkle</option>
-	<option value="FIREWORK_TWINKLE2">Firework Twinkle2</option>
-	<option value="FIRE_IGNITE">Fire Ignite</option>
-	<option value="FIZZ">Fizz</option>
-	<option value="FUSE">Fuse</option>
-	<option value="GHAST_CHARGE">Ghast Charge</option>
-	<option value="GHAST_DEATH">Ghast Death</option>
-	<option value="GHAST_FIREBALL">Ghast Fireball</option>
-	<option value="GHAST_MOAN">Ghast Moan</option>
-	<option value="GHAST_SCREAM">Ghast Scream</option>
-	<option value="GHAST_SCREAM2">Ghast Scream2</option>
-	<option value="GLASS">Glass</option>
-	<option value="HORSE_ANGRY">Horse Angry</option>
-	<option value="HORSE_ARMOR">Horse Armor</option>
-	<option value="HORSE_BREATHE">Horse Breathe</option>
-	<option value="HORSE_GALLOP">Horse Gallop</option>
-	<option value="HORSE_HIT">Horse Hit</option>
-	<option value="HORSE_IDLE">Horse Idle</option>
-	<option value="HORSE_JUMP">Horse Jump</option>
-	<option value="HORSE_LAND">Horse Land</option>
-	<option value="HORSE_SADDLE">Horse Saddle</option>
-	<option value="HORSE_SKELETON_DEATH">Horse Skeleton Death</option>
-	<option value="HORSE_SKELETON_IDLE">Horse Skeleton Idle</option>
-	<option value="HORSE_SOFT">Horse Soft</option>
-	<option value="HORSE_WOOD">Horse Wood</option>
-	<option value="HORSE_ZOMBIE_DEATH">Horse Zombie Death</option>
-	<option value="HORSE_ZOMBIE_HIT">Horse Zombie Hit</option>
-	<option value="HORSE_ZOMBIE_IDLE">Horse Zombie Idle</option>
-	<option value="HURT">Hurt</option>
-	<option value="HURT_FLESH">Hurt Flesh</option>
-	<option value="IRONGOLEM_DEATH">Irongolem Death</option>
-	<option value="IRONGOLEM_HIT">Irongolem Hit</option>
-	<option value="IRONGOLEM_THROW">Irongolem Throw</option>
-	<option value="IRONGOLEM_WALK">Irongolem Walk</option>
-	<option value="ITEM_BREAK">Item Break</option>
-	<option value="ITEM_PICKUP">Item Pickup</option>
-	<option value="LAVA">Lava</option>
-	<option value="LAVA_POP">Lava Pop</option>
-	<option value="LEVEL_UP">Level Up</option>
-	<option value="MAGMACUBE_JUMP">Magmacube Jump</option>
-	<option value="MAGMACUBE_WALK">Magmacube Walk</option>
-	<option value="MAGMACUBE_WALK2">Magmacube Walk2</option>
-	<option value="MINECART_BASE">Minecart Base</option>
-	<option value="MINECART_INSIDE">Minecart Inside</option>
-	<option value="NOTE_BASS">Note Bass</option>
-	<option value="NOTE_BASS_DRUM">Note Bass Drum</option>
-	<option value="NOTE_BASS_GUITAR">Note Bass Guitar</option>
-	<option value="NOTE_PIANO">Note Piano</option>
-	<option value="NOTE_PLING">Note Pling</option>
-	<option value="NOTE_SNARE_DRUM">Note Snare Drum</option>
-	<option value="NOTE_STICKS">Note Sticks</option>
-	<option value="ORB_PICKUP">Orb Pickup</option>
-	<option value="PIG_DEATH">Pig Death</option>
-	<option value="PIG_IDLE">Pig Idle</option>
-	<option value="PIG_WALK">Pig Walk</option>
-	<option value="PISTON_EXTEND">Piston Extend</option>
-	<option value="PISTON_RETRACT">Piston Retract</option>
-	<option value="PORTAL">Portal</option>
-	<option value="PORTAL_TRAVEL">Portal Travel</option>
-	<option value="PORTAL_TRIGGER">Portal Trigger</option>
-	<option value="SHEEP_IDLE">Sheep Idle</option>
-	<option value="SHEEP_SHEAR">Sheep Shear</option>
-	<option value="SHEEP_WALK">Sheep Walk</option>
-	<option value="SHOOT_ARROW">Shoot Arrow</option>
-	<option value="SILVERFISH_HIT">Silverfish Hit</option>
-	<option value="SILVERFISH_IDLE">Silverfish Idle</option>
-	<option value="SILVERFISH_KILL">Silverfish Kill</option>
-	<option value="SILVERFISH_WALK">Silverfish Walk</option>
-	<option value="SKELETON_DEATH">Skeleton Death</option>
-	<option value="SKELETON_HURT">Skeleton Hurt</option>
-	<option value="SKELETON_IDLE">Skeleton Idle</option>
-	<option value="SKELETON_WALK">Skeleton Walk</option>
-	<option value="SLIME_ATTACK">Slime Attack</option>
-	<option value="SLIME_WALK">Slime Walk</option>
-	<option value="SLIME_WALK2">Slime Walk2</option>
-	<option value="SPIDER_DEATH">Spider Death</option>
-	<option value="SPIDER_IDLE">Spider Idle</option>
-	<option value="SPIDER_WALK">Spider Walk</option>
-	<option value="SPLASH">Splash</option>
-	<option value="SPLASH2">Splash2</option>
-	<option value="STEP_GRASS">Step Grass</option>
-	<option value="STEP_GRAVEL">Step Gravel</option>
-	<option value="STEP_LADDER">Step Ladder</option>
-	<option value="STEP_SAND">Step Sand</option>
-	<option value="STEP_SNOW">Step Snow</option>
-	<option value="STEP_STONE">Step Stone</option>
-	<option value="STEP_WOOD">Step Wood</option>
-	<option value="STEP_WOOL">Step Wool</option>
-	<option value="SUCCESSFUL_HIT">Successful Hit</option>
-	<option value="SWIM">Swim</option>
-	<option value="VILLAGER_DEATH">Villager Death</option>
-	<option value="VILLAGER_HAGGLE">Villager Haggle</option>
-	<option value="VILLAGER_HIT">Villager Hit</option>
-	<option value="VILLAGER_IDLE">Villager Idle</option>
-	<option value="VILLAGER_NO">Villager No</option>
-	<option value="VILLAGER_YES">Villager Yes</option>
-	<option value="WATER">Water</option>
-	<option value="WITHER_DEATH">Wither Death</option>
-	<option value="WITHER_HURT">Wither Hurt</option>
-	<option value="WITHER_IDLE">Wither Idle</option>
-	<option value="WITHER_SHOOT">Wither Shoot</option>
-	<option value="WITHER_SPAWN">Wither Spawn</option>
-	<option value="WOLF_BARK">Wolf Bark</option>
-	<option value="WOLF_DEATH">Wolf Death</option>
-	<option value="WOLF_GROWL">Wolf Growl</option>
-	<option value="WOLF_HOWL">Wolf Howl</option>
-	<option value="WOLF_HURT">Wolf Hurt</option>
-	<option value="WOLF_PANT">Wolf Pant</option>
-	<option value="WOLF_SHAKE">Wolf Shake</option>
-	<option value="WOLF_WALK">Wolf Walk</option>
-	<option value="WOLF_WHINE">Wolf Whine</option>
-	<option value="WOOD_CLICK">Wood Click</option>
-	<option value="ZOMBIE_DEATH">Zombie Death</option>
-	<option value="ZOMBIE_HURT">Zombie Hurt</option>
-	<option value="ZOMBIE_IDLE">Zombie Idle</option>
-	<option value="ZOMBIE_INFECT">Zombie Infect</option>
-	<option value="ZOMBIE_METAL">Zombie Metal</option>
-	<option value="ZOMBIE_PIG_ANGRY">Zombie Pig Angry</option>
-	<option value="ZOMBIE_PIG_DEATH">Zombie Pig Death</option>
-	<option value="ZOMBIE_PIG_HURT">Zombie Pig Hurt</option>
-	<option value="ZOMBIE_PIG_IDLE">Zombie Pig Idle</option>
-	<option value="ZOMBIE_REMEDY">Zombie Remedy</option>
-	<option value="ZOMBIE_UNFECT">Zombie Unfect</option>
-	<option value="ZOMBIE_WOOD">Zombie Wood</option>
-	<option value="ZOMBIE_WOODBREAK">Zombie Woodbreak</option>
-</select> Pitch: <input type="number" value="1" min="0" max="2" step="0.1" name="pitchRandom" id="pitchRandom"><br><br><br>
-
-<!--arrow-->
-<div id="arrow">
-Critical: <select id="critical"><option value="true">True</option><option value="false">False</option></select><br><br><br>
-</div>
-
-<!--bat-->
-<div id="bat">
-Flying: <select id="flying"><option value="true">True</option><option value="false">False</option></select><br><br><br>
-</div>
-
-<!--blaze-->
-<div id="blaze">
-Blazing: <select id="blazing"><option value="false">False</option><option value="true">True</option></select><br><br><br>
-</div>
-
-<!--creeper-->
-<div id="creeper">
-Powered: <select id="powered"><option value="false">False</option><option value="true">True</option></select><br>
-Ignited: <select id="ignited"><option value="false">False</option><option value="true">True</option></select><br><br><br>
-</div>
-
-<!--enderman-->
-<div id="enderman">
-Aggressive: <select id="aggressiveEnderman"><option value="false">False</option><option value="true">True</option></select><br><br><br>
-</div>
-
-<!--fallingblock-->
-<div id="fallingblock">
-Block: <input type="text" name="block" id="block"><br>
-Block Damage: <input type="number" value="0" name="blockdamage" id="blockdamage"><br><br><br>
-</div>
-
-<!--ghast-->
-<div id="ghast">
-Aggressive: <select id="aggressiveGhast"><option value="true">True</option><option value="false">False</option></select><br><br><br>
-</div>
-
-<!--horse-->
-<div id="horse">
-Colour: <select id="horseColour">
-	<option value="BLACK">Black</option>
-	<option value="BROWN">Brown</option>
-	<option value="CHESTNUT">Chestnut</option>
-	<option value="CREAMY">Creamy</option>
-	<option value="DARK_BROWN">Dark Brown</option>
-	<option value="GRAY">Gray</option>
-	<option value="WHITE">White</option>
-</select><br>
-Style: <select id="horseStyle">
-	<option value="NONE">None</option>
-	<option value="BLACK_DOTS ">Small Black Dots</option>
-	<option value="WHITE">White Socks</option>
-	<option value="WHITE_DOTS">Round White Dots</option>
-	<option value="WHITEFIELD">Milky Splotches</option>
-</select><br>
-Carrying Chest: <select id="carryingChest"><option value="false">False</option><option value="true">True</option></select><br>
-Mouth Open: <select id="mouthOpen"><option value="false">False</option><option value="true">True</option></select><br>
-Rearing: <select id="rearing"><option value="false">False</option><option value="true">True</option></select><br>
-Saddled: <select id="horseSaddled"><option value="false">False</option><option value="true">True</option></select><br><br><br>
-</div>
-
-<!--item-->
-<div id="item">
-Item: <input type="text" name="itemName" id="itemName"><br>
-Item Damage: <input type="number" value="0" name="itemdamage" id="itemdamage"><br><br><br>
-</div>
-
-<!--ocelot-->
-<div id="ocelot">
-Type: <select id="ocelotType">
-	<option value="WILD_OCELOT">Wild Ocelot</option>
-    <option value="SIAMESE_CAT">Siamese Cat</option>
-    <option value="RED_CAT">Red Cat</option>
-    <option value="BLACK_CAT">Black Cat</option>
-</select><br>
-Sitting: <select id="catSitting"><option value="false">False</option><option value="true">True</option></select><br>
-Tamed: <select id="catTamed"><option value="false">False</option><option value="true">True</option></select><br><br><br>
-</div>
-
-<!--painting-->
-<div id="painting">
-Art: <select id="art">
-	<option value="ALBAN">Alban</option>
-	<option value="AZTEC">Aztec</option>
-	<option value="AZTEC2">Aztec 2</option>
-	<option value="BOMB">Bomb</option>
-	<option value="BURNINGSKULL">Burning Skull</option>
-	<option value="BUST">Bust</option>
-	<option value="COURBET">Courbet</option>
-	<option value="CREEBET">Creebet</option>
-	<option value="DONKEYKONG">Donkey Kong</option>
-	<option value="FIGHTERS">Fighters</option>
-	<option value="GRAHAM">Graham</option>
-	<option value="KEBAB">Kebab</option>
-	<option value="MATCH">Match</option>
-	<option value="PIGSCENE">Pig Scene</option>
-	<option value="PLANT">Plant</option>
-	<option value="POINTER">Pointer</option>
-	<option value="POOL">Pool</option>
-	<option value="SEA">Sea</option>
-	<option value="SKELETON">Skeleton</option>
-	<option value="SKULL_AND_ROSES">Skull And Roses</option>
-	<option value="STAGE">Stage</option>
-	<option value="SUNSET">Sunset</option>
-	<option value="VOID">Void</option>
-	<option value="WANDERER">Wanderer</option>
-	<option value="WASTELAND">Wasteland</option>
-	<option value="WITHER">Wither</option>
-</select><br><br><br>
-</div>
-
-<!--pig-->
-<div id="pig">
-Saddled: <select id="pigSaddled"><option value="false">False</option><option value="true">True</option></select><br><br><br>
-</div>
-
-<!--potion-->
-<div id="potion">
-Potion ID: <input type="number" value="1" min="0" name="potionID" id="potionID"><br><br><br>
-</div>
-
-<!--sheep-->
-<div id="sheep">
-Sheared: <select id="sheared"><option value="false">False</option><option value="true">True</option></select><br>
-Colour: <select id="sheepColour">
-	<option value="BLACK">Black</option>
-	<option value="BLUE">Blue</option>
-	<option value="BROWN">Brown</option>
-	<option value="CYAN">Cyan</option>
-	<option value="GRAY">Gray</option>
-	<option value="GREEN">Green</option>
-	<option value="LIGHT_BLUE">Light Blue</option>
-	<option value="LIME">Lime</option>
-	<option value="MAGENTA">Magenta</option>
-	<option value="ORANGE">Orange</option>
-	<option value="PINK">Pink</option>
-	<option value="PURPLE">Purple</option>
-	<option value="RED">Red</option>
-	<option value="SILVER">Silver</option>
-	<option value="WHITE">White</option>
-	<option value="YELLOW">Yellow</option>
-</select><br><br><br>
-</div>
-
-<!--slime-->
-<div id="slime">
-Size: <input type="number" value="1" min="1" max="256" name="slimeSize" id="slimeSize"><span id="slimeWarning" class="comment">Slime sizes above 5 can cause major client lag!</span><br><br><br>
-</div>
-
-<!--villager-->
-<div id="villager">
-Profession: <select id="profession">
-	<option value="FARMER">Farmer</option>
-    <option value="BLACKSMITH">Blacksmith</option>
-    <option value="BUTCHER">Butcher</option>
-    <option value="LIBRARIAN">Librarian</option>
-    <option value="PRIEST">Priest</option>
-</select><br><br><br>
-</div>
-
-<!--witherskull-->
-<div id="witherskull">
-Blue: <select id="blue"><option value="false">False</option><option value="true">True</option></select><br><br><br>
-</div>
-
-<!--wolf-->
-<div id="wolf">
-Angry: <select id="wolfAngry"><option value="true">True</option><option value="false">False</option></select><br>
-Sitting: <select id="wolfSitting"><option value="false">False</option><option value="true">True</option></select><br>
-Tame: <select id="wolfTame"><option value="false">False</option><option value="true">True</option></select><br>
-Colour: <select id="wolfColour">
-	<option value="BLACK">Black</option>
-	<option value="BLUE">Blue</option>
-	<option value="BROWN">Brown</option>
-	<option value="CYAN">Cyan</option>
-	<option value="GRAY">Gray</option>
-	<option value="GREEN">Green</option>
-	<option value="LIGHT_BLUE">Light Blue</option>
-	<option value="LIME">Lime</option>
-	<option value="MAGENTA">Magenta</option>
-	<option value="ORANGE">Orange</option>
-	<option value="PINK">Pink</option>
-	<option value="PURPLE">Purple</option>
-	<option value="RED">Red</option>
-	<option value="SILVER">Silver</option>
-	<option value="WHITE">White</option>
-	<option value="YELLOW">Yellow</option>
-</select><br><br><br>
-</div>
-
-<!--zombie-->
-<div id="zombie">
-Villager: <select id="villagerZombie"><option value="false">False</option><option value="true">True</option></select><br><br><br>
-</div>
-
-<br><button type="button" id="submit">Create YML!</button>
-
-<div id="mobDisplay">
-<div id="displayName">
-<span id="displayTag">My New Mob </span>
-<span id="displayLevel">[Lv. 1]</span>
-</div>
-<div id="displayImage"><img src="img/arrow.png"></div>
-</div>
-
-<div id="hug">
-<div id="code">
-<div id="titleName">
-</div>
-<div id="all">
-</div>
-<div id="special">
-</div>
-</div>
-</div>
-
-</div>
-
-<script>
-$("#mobType").change(function () {
-	var mob = document.getElementById("mobType").value;
-	document.getElementById("displayImage").innerHTML = "<img src=\"img/" + mob + ".png\">";
-	//default options for all mobs
-	
-	if(mob == "arrow"){
-		$("#arrow").css({"display":"inline-block"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "bat"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"inline-block"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "blaze"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"inline-block"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "creeper"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"inline-block"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "enderman"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"inline-block"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "fallingblock"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"inline-block"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "ghast"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"inline-block"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "horse"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"inline-block"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "item"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"inline-block"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "ocelot"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"inline-block"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "painting"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"inline-block"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "pig"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"inline-block"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "potion"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"inline-block"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "sheep"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"inline-block"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "slime"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"inline-block"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "villager"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"inline-block"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "witherskull"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"inline-block"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "wolf"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"inline-block"});
-		$("#zombie").css({"display":"none"});
-	}else if(mob == "zombie"){
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"inline-block"});
-	}else{
-		$("#arrow").css({"display":"none"});
-		$("#bat").css({"display":"none"});
-		$("#blaze").css({"display":"none"});
-		$("#creeper").css({"display":"none"});
-		$("#enderman").css({"display":"none"});
-		$("#fallingblock").css({"display":"none"});
-		$("#ghast").css({"display":"none"});
-		$("#horse").css({"display":"none"});
-		$("#item").css({"display":"none"});
-		$("#ocelot").css({"display":"none"});
-		$("#painting").css({"display":"none"});
-		$("#pig").css({"display":"none"});
-		$("#potion").css({"display":"none"});
-		$("#sheep").css({"display":"none"});
-		$("#slime").css({"display":"none"});
-		$("#villager").css({"display":"none"});
-		$("#witherskull").css({"display":"none"});
-		$("#wolf").css({"display":"none"});
-		$("#zombie").css({"display":"none"});
-	}
-	
-	
-});
-
-$("#level").bind('keyup mouseup', function () {
-	var level = document.getElementById("level").value;
-	if(level == "1"){
-		$("#health").val("6");
-		$("#regen").val("1");
-		$("#minDam").val("2");
-		$("#maxDam").val("2");
-		$("#minXP").val("11");
-		$("#maxXP").val("11");
-
-	}else if(level == "2"){
-		$("#health").val("8");
-		$("#regen").val("1");
-		$("#minDam").val("2");
-		$("#maxDam").val("2");
-		$("#minXP").val("13");
-		$("#maxXP").val("13");
-
-	}else if(level == "3"){
-		$("#health").val("10");
-		$("#regen").val("2");
-		$("#minDam").val("2");
-		$("#maxDam").val("2");
-		$("#minXP").val("15");
-		$("#maxXP").val("15");
-
-	}else if(level == "4"){
-		$("#health").val("12");
-		$("#regen").val("2");
-		$("#minDam").val("3");
-		$("#maxDam").val("3");
-		$("#minXP").val("16");
-		$("#maxXP").val("16");
-
-	}else if(level == "5"){
-		$("#health").val("14");
-		$("#regen").val("2");
-		$("#minDam").val("3");
-		$("#maxDam").val("3");
-		$("#minXP").val("18");
-		$("#maxXP").val("18");
-
-	}else if(level == "6"){
-		$("#health").val("17");
-		$("#regen").val("3");
-		$("#minDam").val("4");
-		$("#maxDam").val("4");
-		$("#minXP").val("20");
-		$("#maxXP").val("20");
-
-	}else if(level == "7"){
-		$("#health").val("20");
-		$("#regen").val("3");
-		$("#minDam").val("5");
-		$("#maxDam").val("5");
-		$("#minXP").val("22");
-		$("#maxXP").val("22");
-
-	}else if(level == "8"){
-		$("#health").val("22");
-		$("#regen").val("3");
-		$("#minDam").val("5");
-		$("#maxDam").val("5");
-		$("#minXP").val("23");
-		$("#maxXP").val("23");
-
-	}else if(level == "9"){
-		$("#health").val("25");
-		$("#regen").val("4");
-		$("#minDam").val("6");
-		$("#maxDam").val("6");
-		$("#minXP").val("25");
-		$("#maxXP").val("25");
-
-	}else if(level == "10"){
-		$("#health").val("28");
-		$("#regen").val("4");
-		$("#minDam").val("7");
-		$("#maxDam").val("7");
-		$("#minXP").val("27");
-		$("#maxXP").val("27");
-
-	}else if(level == "11"){
-		$("#health").val("31");
-		$("#regen").val("5");
-		$("#minDam").val("8");
-		$("#maxDam").val("8");
-		$("#minXP").val("28");
-		$("#maxXP").val("28");
-
-	}else if(level == "12"){
-		$("#health").val("34");
-		$("#regen").val("5");
-		$("#minDam").val("8");
-		$("#maxDam").val("8");
-		$("#minXP").val("30");
-		$("#maxXP").val("30");
-
-	}else if(level == "13"){
-		$("#health").val("37");
-		$("#regen").val("6");
-		$("#minDam").val("9");
-		$("#maxDam").val("9");
-		$("#minXP").val("31");
-		$("#maxXP").val("31");
-
-	}else if(level == "14"){
-		$("#health").val("40");
-		$("#regen").val("6");
-		$("#minDam").val("9");
-		$("#maxDam").val("9");
-		$("#minXP").val("33");
-		$("#maxXP").val("33");
-
-	}else if(level == "15"){
-		$("#health").val("43");
-		$("#regen").val("6");
-		$("#minDam").val("10");
-		$("#maxDam").val("10");
-		$("#minXP").val("34");
-		$("#maxXP").val("34");
-
-	}else if(level == "16"){
-		$("#health").val("48");
-		$("#regen").val("7");
-		$("#minDam").val("11");
-		$("#maxDam").val("11");
-		$("#minXP").val("35");
-		$("#maxXP").val("35");
-
-	}else if(level == "17"){
-		$("#health").val("53");
-		$("#regen").val("8");
-		$("#minDam").val("12");
-		$("#maxDam").val("12");
-		$("#minXP").val("36");
-		$("#maxXP").val("36");
-
-	}else if(level == "18"){
-		$("#health").val("58");
-		$("#regen").val("9");
-		$("#minDam").val("12");
-		$("#maxDam").val("12");
-		$("#minXP").val("38");
-		$("#maxXP").val("38");
-
-	}else if(level == "19"){
-		$("#health").val("63");
-		$("#regen").val("9");
-		$("#minDam").val("13");
-		$("#maxDam").val("13");
-		$("#minXP").val("39");
-		$("#maxXP").val("39");
-
-	}else if(level == "20"){
-		$("#health").val("68");
-		$("#regen").val("10");
-		$("#minDam").val("14");
-		$("#maxDam").val("14");
-		$("#minXP").val("40");
-		$("#maxXP").val("40");
-
-	}else if(level == "21"){
-		$("#health").val("73");
-		$("#regen").val("11");
-		$("#minDam").val("16");
-		$("#maxDam").val("16");
-		$("#minXP").val("42");
-		$("#maxXP").val("42");
-
-	}else if(level == "22"){
-		$("#health").val("79");
-		$("#regen").val("12");
-		$("#minDam").val("18");
-		$("#maxDam").val("18");
-		$("#minXP").val("45");
-		$("#maxXP").val("45");
-
-	}else if(level == "23"){
-		$("#health").val("84");
-		$("#regen").val("13");
-		$("#minDam").val("20");
-		$("#maxDam").val("20");
-		$("#minXP").val("47");
-		$("#maxXP").val("47");
-
-	}else if(level == "24"){
-		$("#health").val("90");
-		$("#regen").val("13");
-		$("#minDam").val("22");
-		$("#maxDam").val("22");
-		$("#minXP").val("50");
-		$("#maxXP").val("50");
-
-	}else if(level == "25"){
-		$("#health").val("95");
-		$("#regen").val("14");
-		$("#minDam").val("24");
-		$("#maxDam").val("24");
-		$("#minXP").val("52");
-		$("#maxXP").val("52");
-
-	}else if(level == "26"){
-		$("#health").val("98");
-		$("#regen").val("15");
-		$("#minDam").val("25");
-		$("#maxDam").val("25");
-		$("#minXP").val("54");
-		$("#maxXP").val("54");
-
-	}else if(level == "27"){
-		$("#health").val("101");
-		$("#regen").val("15");
-		$("#minDam").val("25");
-		$("#maxDam").val("25");
-		$("#minXP").val("56");
-		$("#maxXP").val("56");
-
-	}else if(level == "28"){
-		$("#health").val("104");
-		$("#regen").val("16");
-		$("#minDam").val("26");
-		$("#maxDam").val("26");
-		$("#minXP").val("58");
-		$("#maxXP").val("58");
-
-	}else if(level == "29"){
-		$("#health").val("107");
-		$("#regen").val("16");
-		$("#minDam").val("26");
-		$("#maxDam").val("26");
-		$("#minXP").val("60");
-		$("#maxXP").val("60");
-
-	}else if(level == "30"){
-		$("#health").val("110");
-		$("#regen").val("17");
-		$("#minDam").val("27");
-		$("#maxDam").val("27");
-		$("#minXP").val("62");
-		$("#maxXP").val("62");
-
-	}else if(level == "31"){
-		$("#health").val("113");
-		$("#regen").val("17");
-		$("#minDam").val("29");
-		$("#maxDam").val("29");
-		$("#minXP").val("64");
-		$("#maxXP").val("64");
-
-	}else if(level == "32"){
-		$("#health").val("116");
-		$("#regen").val("17");
-		$("#minDam").val("30");
-		$("#maxDam").val("30");
-		$("#minXP").val("66");
-		$("#maxXP").val("66");
-
-	}else if(level == "33"){
-		$("#health").val("119");
-		$("#regen").val("18");
-		$("#minDam").val("32");
-		$("#maxDam").val("32");
-		$("#minXP").val("68");
-		$("#maxXP").val("68");
-
-	}else if(level == "34"){
-		$("#health").val("122");
-		$("#regen").val("18");
-		$("#minDam").val("33");
-		$("#maxDam").val("33");
-		$("#minXP").val("70");
-		$("#maxXP").val("70");
-
-	}else if(level == "35"){
-		$("#health").val("125");
-		$("#regen").val("19");
-		$("#minDam").val("35");
-		$("#maxDam").val("35");
-		$("#minXP").val("72");
-		$("#maxXP").val("72");
-
-	}else if(level == "36"){
-		$("#health").val("129");
-		$("#regen").val("19");
-		$("#minDam").val("37");
-		$("#maxDam").val("37");
-		$("#minXP").val("74");
-		$("#maxXP").val("74");
-
-	}else if(level == "37"){
-		$("#health").val("133");
-		$("#regen").val("20");
-		$("#minDam").val("39");
-		$("#maxDam").val("39");
-		$("#minXP").val("75");
-		$("#maxXP").val("75");
-
-	}else if(level == "38"){
-		$("#health").val("136");
-		$("#regen").val("20");
-		$("#minDam").val("41");
-		$("#maxDam").val("41");
-		$("#minXP").val("77");
-		$("#maxXP").val("77");
-
-	}else if(level == "39"){
-		$("#health").val("140");
-		$("#regen").val("21");
-		$("#minDam").val("43");
-		$("#maxDam").val("43");
-		$("#minXP").val("78");
-		$("#maxXP").val("78");
-
-	}else if(level == "40"){
-		$("#health").val("144");
-		$("#regen").val("22");
-		$("#minDam").val("45");
-		$("#maxDam").val("45");
-		$("#minXP").val("80");
-		$("#maxXP").val("80");
-
-	}else if(level == "41"){
-		$("#health").val("152");
-		$("#regen").val("23");
-		$("#minDam").val("47");
-		$("#maxDam").val("47");
-		$("#minXP").val("83");
-		$("#maxXP").val("83");
-
-	}else if(level == "42"){
-		$("#health").val("160");
-		$("#regen").val("24");
-		$("#minDam").val("48");
-		$("#maxDam").val("48");
-		$("#minXP").val("86");
-		$("#maxXP").val("86");
-
-	}else if(level == "43"){
-		$("#health").val("169");
-		$("#regen").val("25");
-		$("#minDam").val("50");
-		$("#maxDam").val("50");
-		$("#minXP").val("89");
-		$("#maxXP").val("89");
-
-	}else if(level == "44"){
-		$("#health").val("177");
-		$("#regen").val("27");
-		$("#minDam").val("51");
-		$("#maxDam").val("51");
-		$("#minXP").val("92");
-		$("#maxXP").val("92");
-
-	}else if(level == "45"){
-		$("#health").val("185");
-		$("#regen").val("28");
-		$("#minDam").val("53");
-		$("#maxDam").val("53");
-		$("#minXP").val("95");
-		$("#maxXP").val("95");
-
-	}else if(level == "46"){
-		$("#health").val("193");
-		$("#regen").val("29");
-		$("#minDam").val("54");
-		$("#maxDam").val("54");
-		$("#minXP").val("97");
-		$("#maxXP").val("97");
-
-	}else if(level == "47"){
-		$("#health").val("201");
-		$("#regen").val("30");
-		$("#minDam").val("56");
-		$("#maxDam").val("56");
-		$("#minXP").val("99");
-		$("#maxXP").val("99");
-
-	}else if(level == "48"){
-		$("#health").val("209");
-		$("#regen").val("31");
-		$("#minDam").val("57");
-		$("#maxDam").val("57");
-		$("#minXP").val("101");
-		$("#maxXP").val("101");
-
-	}else if(level == "49"){
-		$("#health").val("217");
-		$("#regen").val("33");
-		$("#minDam").val("59");
-		$("#maxDam").val("59");
-		$("#minXP").val("103");
-		$("#maxXP").val("103");
-
-	}else if(level == "50"){
-		$("#health").val("225");
-		$("#regen").val("34");
-		$("#minDam").val("60");
-		$("#maxDam").val("60");
-		$("#minXP").val("105");
-		$("#maxXP").val("105");
-
-	}else if(level == "51"){
-		$("#health").val("260");
-		$("#regen").val("39");
-		$("#minDam").val("74");
-		$("#maxDam").val("74");
-		$("#minXP").val("107");
-		$("#maxXP").val("107");
-
-	}else if(level == "52"){
-		$("#health").val("295");
-		$("#regen").val("44");
-		$("#minDam").val("88");
-		$("#maxDam").val("88");
-		$("#minXP").val("109");
-		$("#maxXP").val("109");
-
-	}else if(level == "53"){
-		$("#health").val("330");
-		$("#regen").val("50");
-		$("#minDam").val("102");
-		$("#maxDam").val("102");
-		$("#minXP").val("111");
-		$("#maxXP").val("111");
-
-	}else if(level == "54"){
-		$("#health").val("365");
-		$("#regen").val("55");
-		$("#minDam").val("116");
-		$("#maxDam").val("116");
-		$("#minXP").val("113");
-		$("#maxXP").val("113");
-
-	}else if(level == "55"){
-		$("#health").val("400");
-		$("#regen").val("60");
-		$("#minDam").val("130");
-		$("#maxDam").val("130");
-		$("#minXP").val("115");
-		$("#maxXP").val("115");
-
-	}else if(level == "56"){
-		$("#health").val("454");
-		$("#regen").val("68");
-		$("#minDam").val("148");
-		$("#maxDam").val("148");
-		$("#minXP").val("122");
-		$("#maxXP").val("122");
-
-	}else if(level == "57"){
-		$("#health").val("508");
-		$("#regen").val("76");
-		$("#minDam").val("166");
-		$("#maxDam").val("166");
-		$("#minXP").val("129");
-		$("#maxXP").val("129");
-
-	}else if(level == "58"){
-		$("#health").val("562");
-		$("#regen").val("84");
-		$("#minDam").val("184");
-		$("#maxDam").val("184");
-		$("#minXP").val("136");
-		$("#maxXP").val("136");
-
-	}else if(level == "59"){
-		$("#health").val("616");
-		$("#regen").val("92");
-		$("#minDam").val("202");
-		$("#maxDam").val("202");
-		$("#minXP").val("143");
-		$("#maxXP").val("143");
-
-	}else if(level == "60"){
-		$("#health").val("670");
-		$("#regen").val("101");
-		$("#minDam").val("220");
-		$("#maxDam").val("220");
-		$("#minXP").val("150");
-		$("#maxXP").val("150");
-
-	}else if(level == "61"){
-		$("#health").val("706");
-		$("#regen").val("106");
-		$("#minDam").val("216");
-		$("#maxDam").val("216");
-		$("#minXP").val("155");
-		$("#maxXP").val("155");
-
-	}else if(level == "62"){
-		$("#health").val("742");
-		$("#regen").val("111");
-		$("#minDam").val("212");
-		$("#maxDam").val("212");
-		$("#minXP").val("160");
-		$("#maxXP").val("160");
-
-	}else if(level == "63"){
-		$("#health").val("778");
-		$("#regen").val("117");
-		$("#minDam").val("208");
-		$("#maxDam").val("208");
-		$("#minXP").val("165");
-		$("#maxXP").val("165");
-
-	}else if(level == "64"){
-		$("#health").val("814");
-		$("#regen").val("122");
-		$("#minDam").val("204");
-		$("#maxDam").val("204");
-		$("#minXP").val("170");
-		$("#maxXP").val("170");
-
-	}else if(level == "65"){
-		$("#health").val("850");
-		$("#regen").val("128");
-		$("#minDam").val("200");
-		$("#maxDam").val("200");
-		$("#minXP").val("175");
-		$("#maxXP").val("175");
-
-	}else if(level == "66"){
-		$("#health").val("880");
-		$("#regen").val("132");
-		$("#minDam").val("230");
-		$("#maxDam").val("230");
-		$("#minXP").val("175");
-		$("#maxXP").val("175");
-
-	}else if(level == "67"){
-		$("#health").val("910");
-		$("#regen").val("137");
-		$("#minDam").val("260");
-		$("#maxDam").val("260");
-		$("#minXP").val("175");
-		$("#maxXP").val("175");
-
-	}else if(level == "68"){
-		$("#health").val("940");
-		$("#regen").val("141");
-		$("#minDam").val("290");
-		$("#maxDam").val("290");
-		$("#minXP").val("175");
-		$("#maxXP").val("175");
-
-	}else if(level == "69"){
-		$("#health").val("970");
-		$("#regen").val("146");
-		$("#minDam").val("320");
-		$("#maxDam").val("320");
-		$("#minXP").val("175");
-		$("#maxXP").val("175");
-
-	}else if(level == "70"){
-		$("#health").val("1000");
-		$("#regen").val("150");
-		$("#minDam").val("350");
-		$("#maxDam").val("350");
-		$("#minXP").val("175");
-		$("#maxXP").val("175");
-
-	}
-});
-
-$("#submit").click(function () {
-	var mobType = document.getElementById("mobType").value;
-	var name = document.getElementById("name").value;
-	var tag = document.getElementById("tag").value;
-	var x = document.getElementById("x").value;
-	var y = document.getElementById("y").value;
-	var z = document.getElementById("z").value;
-	var attack = document.getElementById("attack").value;
-	var level = document.getElementById("level").value;
-	var health = document.getElementById("health").value;
-	var regen = document.getElementById("regen").value;
-	var minXP = document.getElementById("minXP").value;
-	var maxXP = document.getElementById("maxXP").value;
-	var minDam = document.getElementById("minDam").value;
-	var maxDam = document.getElementById("maxDam").value;
-	var attackRate = document.getElementById("attackRate").value;
-	var projectile = document.getElementById("projectile").value;
-	var projectileSpeed = document.getElementById("projectileSpeed").value;
-	var lootMultiplier = document.getElementById("lootMultiplier").value;
-	var speed = document.getElementById("speed").value;
-	var vision = document.getElementById("vision").value;
-	var vanished = document.getElementById("vanished").value;
-	var burning = document.getElementById("burning").value;
-	var baby = document.getElementById("baby").value;
-	var soundHurt = document.getElementById("soundHurt").value;
-	var pitchHurt = document.getElementById("pitchHurt").value;
-	var soundDeath = document.getElementById("soundDeath").value;
-	var pitchDeath = document.getElementById("pitchDeath").value;
-	var soundRandom = document.getElementById("soundRandom").value;
-	var pitchRandom = document.getElementById("pitchRandom").value;
-	
-	$("#code").css({"display":"inline-block"});
-	document.getElementById("titleName").innerHTML = name + "." + mobType + ".yml";
-	document.getElementById("all").innerHTML = 
-	"tag: \'" + tag + "\'<br>" +
-	"chest: " + x + "," + y + "," + z + "<br>" +
-	"attack: " + attack + "<br>" +
-	"level: " + level + "<br>" +
-	"health: " + health + ".0<br>" +
-	"regen: " + regen + ".0<br>" + 
-	"minXP: " + minXP + "<br>" +
-	"maxXP: " + maxXP + "<br>" +
-	"minDam: " + minDam + ".0<br>" +
-	"maxDam: " + maxDam + ".0<br>" +
-	"attackRate: " + attackRate + "<br>" +
-	"projectile: " + projectile + "<br>" +
-	"projectileSpeed: " + projectileSpeed + "<br>" +
-	"lootMultiplier: " + lootMultiplier + "<br>" +
-	"speed: " + speed + "<br>" +
-	"vision: " + vision + "<br>" +
-	"vanished: " + vanished + "<br>" +
-	"boss: false<br>" +
-	"burning: " + burning + "<br>" +
-	"baby: " + baby + "<br>" +
-	"projectileToMob: false<br>" +
-	"spawnedID: 'null'<br>" +
-	"maxSpawned: 0<br>" +
-	"spells: false<br>" +
-	"spell: 'null'<br>" +
-	"spellCooldown: 0<br>" +
-	"damage: 100<br>" +
-	"soundHurt: \'" + soundHurt + ":" + pitchHurt + "\'<br>" +
-	"soundDeath: \'" + soundDeath + ":" + pitchDeath + "\'<br>" +
-	"soundRandom: \'" + soundRandom + ":" + pitchRandom + "\'";
-	
-	document.getElementById("special").innerHTML = "";
-	
-	
-	if(mobType == "arrow"){
-		var critical = document.getElementById("critical").value;
-		document.getElementById("special").innerHTML =
-		"critical: " + critical + "<br>";
-	}else if(mobType == "bat"){
-		var flying = document.getElementById("flying").value;
-		document.getElementById("special").innerHTML =
-		"flying: " + flying + "<br>";
-	}else if(mobType == "blaze"){
-		var blazing = document.getElementById("blazing").value;
-		document.getElementById("special").innerHTML =
-		"blazing: " + blazing + "<br>";
-	}else if(mobType == "creeper"){
-		var powered = document.getElementById("powered").value;
-		var ignited = document.getElementById("ignited").value;
-		document.getElementById("special").innerHTML =
-		"powered: " + powered + "<br>" +
-		"ignited: " + ignited + "<br>";
-	}else if(mobType == "enderman"){
-		var aggressiveEnderman = document.getElementById("aggressiveEnderman").value;
-		document.getElementById("special").innerHTML =
-		"aggressive: " + aggressiveEnderman + "<br>";
-	}else if(mobType == "fallingblock"){
-		var block = document.getElementById("block").value;
-		var blockdamage = document.getElementById("blockdamage").value;
-		document.getElementById("special").innerHTML =
-		"block: " + block + "<br>" +
-		"blockdamage: " + blockdamage + "<br>";
-	}else if(mobType == "ghast"){
-		var aggressiveGhast = document.getElementById("aggressiveGhast").value;
-		document.getElementById("special").innerHTML =
-		"aggressive: " + agressiveGhast + "<br>";
-	}else if(mobType == "horse"){
-		var horseColour = document.getElementById("horseColour").value;
-		var horseStyle = document.getElementById("horseStyle").value;
-		var carryingChest = document.getElementById("carryingChest").value;
-		var mouthOpen = document.getElementById("mouthOpen").value;
-		var rearing = document.getElementById("rearing").value;
-		var horseSaddled = document.getElementById("horseSaddled").value;
-		document.getElementById("special").innerHTML = 
-		"colour: " + horseColour + "<br>" +
-		"style: " + horseStyle + "<br>" +
-		"carryingChest: " + carryingChest + "<br>" +
-		"mouthOpen: " + mouthOpen + "<br>" +
-		"rearing: " + rearing + "<br>" +
-		"saddled: " + horseSaddled + "<br>";
-	}else if(mobType == "item"){
-		var itemName = document.getElementById("itemName").value;
-		var itemdamage = document.getElementById("itemdamage").value;
-		document.getElementById("special").innerHTML =
-		"item: " + itemName + "<br>" +
-		"itemdamage: " + itemdamage + "<br>";
-	}else if(mobType == "ocelot"){
-		var ocelotType = document.getElementById("ocelotType").value;
-		var catSitting = document.getElementById("catSitting").value;
-		var catTamed = document.getElementById("catTamed").value;
-		document.getElementById("special").innerHTML =
-		"type: " + ocelotType + "<br>" +
-		"sitting: " + catSitting + "<br>" +
-		"tamed: " + catTamed + "<br>";
-	}else if(mobType == "painting"){
-		var art = document.getElementById("art").value;
-		document.getElementById("special").innerHTML =
-		"art: " + art + "<br>";
-	}else if(mobType == "pig"){
-		var pigSaddled = document.getElementById("pigSaddled").value;
-		document.getElementById("special").innerHTML =
-		"saddled: " + pigSaddled + "<br>";
-	}else if(mobType == "potion"){
-		var potionID = document.getElementById("potionID").value;
-		document.getElementById("special").innerHTML =
-		"potionid: " + potionID + "<br>";
-	}else if(mobType == "sheep"){
-		var sheared = document.getElementById("sheared").value;
-		var sheepColour = document.getElementById("sheepColour").value;
-		document.getElementById("special").innerHTML =
-		"sheared: " + sheared + "<br>" +
-		"colour: " + sheepColour + "<br>";
-	}else if(mobType == "slime"){
-		var slimeSize = document.getElementById("slimeSize").value;
-		document.getElementById("special").innerHTML =
-		"size: " + slimeSize + "<br>";
-	}else if(mobType == "villager"){
-		var profession = document.getElementById("profession").value;
-		document.getElementById("special").innerHTML =
-		"profession: " + profession + "<br>";
-	}else if(mobType == "witherskull"){
-		var blue = document.getElementById("blue").value;
-		document.getElementById("special").innerHTML =
-		"blue: " + blue + "<br>";
-	}else if(mobType == "wolf"){
-		var wolfAngry = document.getElementById("wolfAngry").value;
-		var wolfSitting = document.getElementById("wolfSitting").value;
-		var wolfTame = document.getElementById("wolfTame").value;
-		var wolfColour = document.getElementById("wolfColour").value;
-		document.getElementById("special").innerHTML =
-		"angry: " + wolfAngry + "<br>" +
-		"sitting: " + wolfSitting + "<br>" +
-		"tame: " + wolfTame + "<br>" +
-		"colour: " + wolfColour + "<br>";
-	}else if(mobType == "zombie"){
-		var villagerZombie = document.getElementById("villagerZombie").value;
-		document.getElementById("special").innerHTML =
-		"villager: " + villagerZombie + "<br>";
-	}
-});
-
-$('#tag').keyup(function() { 
-var displayTag = document.getElementById("tag").value;
-document.getElementById("displayTag").innerHTML = displayTag + " ";
-});
-$("#level").bind('keyup mouseup', function () {
-var displayLevel = document.getElementById("level").value;
-document.getElementById("displayLevel").innerHTML = "[Lv. " + displayLevel + "]";
-});
-$("#mobType").change(function () {
-	var mobImage = document.getElementById("mobType").value;
-});
-</script>
-<br/>
+    <img src="../../media/swarm.png" class="stretch" alt=""/>
+
+    <br/>
+    <div id="bodyBackground"></div>
+    <div id="bodyTitle">GM Mob YML Creator</div>
+    <div id="selection">
+        Mob: <select id="mobType" onchange="checkInput()">
+        <option value="arrow">Arrow</option>
+        <option value="bat">Bat</option>
+        <option value="blaze">Blaze</option>
+        <option value="boat">Boat</option>
+        <option value="cavespider">Cave Spider</option>
+        <option value="chicken">Chicken</option>
+        <option value="cow">Cow</option>
+        <option value="creeper">Creeper</option>
+        <option value="donkey">Donkey</option>
+        <option value="egg">Egg</option>
+        <option value="endercrystal">Ender Crystal</option>
+        <option value="enderdragon">Ender Dragon</option>
+        <option value="enderman">Enderman</option>
+        <option value="enderpearl">Enderpearl</option>
+        <option value="endersignal">Ender Signal</option>
+        <option value="fallingblock">Falling Block</option>
+        <option value="fireball">Fireball</option>
+        <option value="firework">Firework</option>
+        <option value="ghast">Ghast</option>
+        <option value="giant">Giant</option>
+        <option value="horse">Horse</option>
+        <option value="irongolem">Iron Golem</option>
+        <option value="item">Item</option>
+        <option value="leash">Leash</option>
+        <option value="magmacube">Magma Cube</option>
+        <option value="minecart">Minecart</option>
+        <option value="minecartchest">Minecart Chest</option>
+        <option value="minecartfurnace">Minecart Furnace</option>
+        <option value="minecarthopper">Minecart Hopper</option>
+        <option value="minecartmobspawner">Minecart Mob Spawner</option>
+        <option value="minecarttnt">Minecart TNT</option>
+        <option value="mooshroom">Mooshroom</option>
+        <option value="mule">Mule</option>
+        <option value="ocelot">Ocelot</option>
+        <option value="painting">Painting</option>
+        <option value="pig">Pig</option>
+        <option value="pigzombie">Pig Zombie</option>
+        <option value="potion">Potion</option>
+        <option value="primedtnt">Primed TNT</option>
+        <option value="sheep">Sheep</option>
+        <option value="silverfish">Silverfish</option>
+        <option value="skeleton">Skeleton</option>
+        <option value="slime">Slime</option>
+        <option value="smallfireball">Small Fireball</option>
+        <option value="snowball">Snowball</option>
+        <option value="snowman">Snowman</option>
+        <option value="spider">Spider</option>
+        <option value="squid">Squid</option>
+        <option value="villager">Villager</option>
+        <option value="witch">Witch</option>
+        <option value="wither">Wither</option>
+        <option value="witherskeleton">Wither Skeleton</option>
+        <option value="witherskull">Wither Skull</option>
+        <option value="wolf">Wolf</option>
+        <option value="xp">XP</option>
+        <option value="xpbottle">XP Bottle</option>
+        <option value="zombie">Zombie</option>
+    </select><br/><br/>
+
+
+        Name: <input type="text" name="name" id="name"><br/>
+        Tag: <input type="text" name="tag" id="tag" value="My New Mob"><br/>
+        Chest: x:<input type="number" value="0" name="x" id="x"> y:<input type="number" value="0" min="0" name="y"
+                                                                          id="y"> z:<input type="number" value="0"
+                                                                                           name="z" id="z"><br/>
+        Attack: <select id="attack">
+        <option value="None">None</option>
+        <option value="Melee">Melee</option>
+        <option value="Ranged">Ranged</option>
+    </select><br/>
+        Level: <input type="number" value="1" min="0" name="level" id="level"><br/>
+        Health: <input type="number" value="1" min="0" name="health" id="health"><br/>
+        Regen: <input type="number" value="1" min="0" name="regen" id="regen"><br/>
+        Minimum XP: <input type="number" value="1" min="0" name="minXP" id="minXP"><br/>
+        Maximum XP: <input type="number" value="1" min="0" name="maxXP" id="maxXP"><br/>
+        Minimum Damage: <input type="number" value="1" min="0" name="minDam" id="minDam"><br/>
+        Maximum Damage: <input type="number" value="1" min="0" name="maxDam" id="maxDam"><br/>
+        Attack Rate: <input type="number" value="1.0" min="0" step="0.1" name="attackRate" id="attackRate"><br/>
+        Projectile: <input type="text" name="projectile" id="projectile" value="Arrow"><br/>
+        Projectile Speed: <input type="number" value="1.0" min="0" step="0.1" name="projectileSpeed"
+                                 id="projectileSpeed"><br/>
+        Loot Multiplier: <input type="number" value="1.0" min="0" step="0.1" name="lootMultiplier" id="lootMultiplier">
+        <span id="lootWarning" class="comment">Don't change without contacting Salted!</span><br/>
+        Speed: <input type="number" value="0.2" min="0" step="0.1" name="speed" id="speed"><br/>
+        Vision: <input type="number" value="16" min="0" name="vision" id="vision"><br/>
+        Vanished: <select id="vanished">
+        <option value="false">False</option>
+        <option value="true">True</option>
+    </select><br/>
+        Burning: <select id="burning">
+        <option value="false">False</option>
+        <option value="true">True</option>
+    </select><br/>
+        Baby: <select id="baby">
+        <option value="false">False</option>
+        <option value="true">True</option>
+    </select><br/>
+        Sound Hurt: <select id="soundHurt">
+        <option value="AMBIENCE_CAVE">Ambience Cave</option>
+        <option value="AMBIENCE_RAIN">Ambience Rain</option>
+        <option value="AMBIENCE_THUNDER">Ambience Thunder</option>
+        <option value="ANVIL_BREAK">Anvil Break</option>
+        <option value="ANVIL_LAND">Anvil Land</option>
+        <option value="ANVIL_USE">Anvil Use</option>
+        <option value="ARROW_HIT">Arrow Hit</option>
+        <option value="BAT_DEATH">Bat Death</option>
+        <option value="BAT_HURT">Bat Hurt</option>
+        <option value="BAT_IDLE">Bat Idle</option>
+        <option value="BAT_LOOP">Bat Loop</option>
+        <option value="BAT_TAKEOFF">Bat Takeoff</option>
+        <option value="BLAZE_BREATH">Blaze Breath</option>
+        <option value="BLAZE_DEATH">Blaze Death</option>
+        <option value="BLAZE_HIT">Blaze Hit</option>
+        <option value="BREATH">Breath</option>
+        <option value="BURP">Burp</option>
+        <option value="CAT_HISS">Cat Hiss</option>
+        <option value="CAT_HIT">Cat Hit</option>
+        <option value="CAT_MEOW">Cat Meow</option>
+        <option value="CAT_PURR">Cat Purr</option>
+        <option value="CAT_PURREOW">Cat Purreow</option>
+        <option value="CHEST_CLOSE">Chest Close</option>
+        <option value="CHEST_OPEN">Chest Open</option>
+        <option value="CHICKEN_EGG_POP">Chicken Egg Pop</option>
+        <option value="CHICKEN_HURT">Chicken Hurt</option>
+        <option value="CHICKEN_IDLE">Chicken Idle</option>
+        <option value="CHICKEN_WALK">Chicken Walk</option>
+        <option value="CLICK">Click</option>
+        <option value="COW_HURT">Cow Hurt</option>
+        <option value="COW_IDLE">Cow Idle</option>
+        <option value="COW_WALK">Cow Walk</option>
+        <option value="CREEPER_DEATH">Creeper Death</option>
+        <option value="CREEPER_HISS">Creeper Hiss</option>
+        <option value="DIG_GRASS">Dig Grass</option>
+        <option value="DIG_GRAVEL">Dig Gravel</option>
+        <option value="DIG_SAND">Dig Sand</option>
+        <option value="DIG_SNOW">Dig Snow</option>
+        <option value="DIG_STONE">Dig Stone</option>
+        <option value="DIG_WOOD">Dig Wood</option>
+        <option value="DIG_WOOL">Dig Wool</option>
+        <option value="DONKEY_ANGRY">Donkey Angry</option>
+        <option value="DONKEY_DEATH">Donkey Death</option>
+        <option value="DONKEY_HIT">Donkey Hit</option>
+        <option value="DONKEY_IDLE">Donkey Idle</option>
+        <option value="DOOR_CLOSE">Door Close</option>
+        <option value="DOOR_OPEN">Door Open</option>
+        <option value="DRINK">Drink</option>
+        <option value="EAT">Eat</option>
+        <option value="ENDERDRAGON_DEATH">Enderdragon Death</option>
+        <option value="ENDERDRAGON_GROWL">Enderdragon Growl</option>
+        <option value="ENDERDRAGON_HIT">Enderdragon Hit</option>
+        <option value="ENDERDRAGON_WINGS">Enderdragon Wings</option>
+        <option value="ENDERMAN_DEATH">Enderman Death</option>
+        <option value="ENDERMAN_HIT">Enderman Hit</option>
+        <option value="ENDERMAN_IDLE">Enderman Idle</option>
+        <option value="ENDERMAN_SCREAM">Enderman Scream</option>
+        <option value="ENDERMAN_STARE">Enderman Stare</option>
+        <option value="ENDERMAN_TELEPORT">Enderman Teleport</option>
+        <option value="EXPLODE">Explode</option>
+        <option value="FALL_BIG">Fall Big</option>
+        <option value="FALL_SMALL">Fall Small</option>
+        <option value="FIRE">Fire</option>
+        <option value="FIREWORK_BLAST">Firework Blast</option>
+        <option value="FIREWORK_BLAST2">Firework Blast2</option>
+        <option value="FIREWORK_LARGE_BLAST">Firework Large Blast</option>
+        <option value="FIREWORK_LARGE_BLAST2">Firework Large Blast2</option>
+        <option value="FIREWORK_LAUNCH">Firework Launch</option>
+        <option value="FIREWORK_TWINKLE">Firework Twinkle</option>
+        <option value="FIREWORK_TWINKLE2">Firework Twinkle2</option>
+        <option value="FIRE_IGNITE">Fire Ignite</option>
+        <option value="FIZZ">Fizz</option>
+        <option value="FUSE">Fuse</option>
+        <option value="GHAST_CHARGE">Ghast Charge</option>
+        <option value="GHAST_DEATH">Ghast Death</option>
+        <option value="GHAST_FIREBALL">Ghast Fireball</option>
+        <option value="GHAST_MOAN">Ghast Moan</option>
+        <option value="GHAST_SCREAM">Ghast Scream</option>
+        <option value="GHAST_SCREAM2">Ghast Scream2</option>
+        <option value="GLASS">Glass</option>
+        <option value="HORSE_ANGRY">Horse Angry</option>
+        <option value="HORSE_ARMOR">Horse Armor</option>
+        <option value="HORSE_BREATHE">Horse Breathe</option>
+        <option value="HORSE_GALLOP">Horse Gallop</option>
+        <option value="HORSE_HIT">Horse Hit</option>
+        <option value="HORSE_IDLE">Horse Idle</option>
+        <option value="HORSE_JUMP">Horse Jump</option>
+        <option value="HORSE_LAND">Horse Land</option>
+        <option value="HORSE_SADDLE">Horse Saddle</option>
+        <option value="HORSE_SKELETON_DEATH">Horse Skeleton Death</option>
+        <option value="HORSE_SKELETON_IDLE">Horse Skeleton Idle</option>
+        <option value="HORSE_SOFT">Horse Soft</option>
+        <option value="HORSE_WOOD">Horse Wood</option>
+        <option value="HORSE_ZOMBIE_DEATH">Horse Zombie Death</option>
+        <option value="HORSE_ZOMBIE_HIT">Horse Zombie Hit</option>
+        <option value="HORSE_ZOMBIE_IDLE">Horse Zombie Idle</option>
+        <option value="HURT">Hurt</option>
+        <option value="HURT_FLESH">Hurt Flesh</option>
+        <option value="IRONGOLEM_DEATH">Irongolem Death</option>
+        <option value="IRONGOLEM_HIT">Irongolem Hit</option>
+        <option value="IRONGOLEM_THROW">Irongolem Throw</option>
+        <option value="IRONGOLEM_WALK">Irongolem Walk</option>
+        <option value="ITEM_BREAK">Item Break</option>
+        <option value="ITEM_PICKUP">Item Pickup</option>
+        <option value="LAVA">Lava</option>
+        <option value="LAVA_POP">Lava Pop</option>
+        <option value="LEVEL_UP">Level Up</option>
+        <option value="MAGMACUBE_JUMP">Magmacube Jump</option>
+        <option value="MAGMACUBE_WALK">Magmacube Walk</option>
+        <option value="MAGMACUBE_WALK2">Magmacube Walk2</option>
+        <option value="MINECART_BASE">Minecart Base</option>
+        <option value="MINECART_INSIDE">Minecart Inside</option>
+        <option value="NOTE_BASS">Note Bass</option>
+        <option value="NOTE_BASS_DRUM">Note Bass Drum</option>
+        <option value="NOTE_BASS_GUITAR">Note Bass Guitar</option>
+        <option value="NOTE_PIANO">Note Piano</option>
+        <option value="NOTE_PLING">Note Pling</option>
+        <option value="NOTE_SNARE_DRUM">Note Snare Drum</option>
+        <option value="NOTE_STICKS">Note Sticks</option>
+        <option value="ORB_PICKUP">Orb Pickup</option>
+        <option value="PIG_DEATH">Pig Death</option>
+        <option value="PIG_IDLE">Pig Idle</option>
+        <option value="PIG_WALK">Pig Walk</option>
+        <option value="PISTON_EXTEND">Piston Extend</option>
+        <option value="PISTON_RETRACT">Piston Retract</option>
+        <option value="PORTAL">Portal</option>
+        <option value="PORTAL_TRAVEL">Portal Travel</option>
+        <option value="PORTAL_TRIGGER">Portal Trigger</option>
+        <option value="SHEEP_IDLE">Sheep Idle</option>
+        <option value="SHEEP_SHEAR">Sheep Shear</option>
+        <option value="SHEEP_WALK">Sheep Walk</option>
+        <option value="SHOOT_ARROW">Shoot Arrow</option>
+        <option value="SILVERFISH_HIT">Silverfish Hit</option>
+        <option value="SILVERFISH_IDLE">Silverfish Idle</option>
+        <option value="SILVERFISH_KILL">Silverfish Kill</option>
+        <option value="SILVERFISH_WALK">Silverfish Walk</option>
+        <option value="SKELETON_DEATH">Skeleton Death</option>
+        <option value="SKELETON_HURT">Skeleton Hurt</option>
+        <option value="SKELETON_IDLE">Skeleton Idle</option>
+        <option value="SKELETON_WALK">Skeleton Walk</option>
+        <option value="SLIME_ATTACK">Slime Attack</option>
+        <option value="SLIME_WALK">Slime Walk</option>
+        <option value="SLIME_WALK2">Slime Walk2</option>
+        <option value="SPIDER_DEATH">Spider Death</option>
+        <option value="SPIDER_IDLE">Spider Idle</option>
+        <option value="SPIDER_WALK">Spider Walk</option>
+        <option value="SPLASH">Splash</option>
+        <option value="SPLASH2">Splash2</option>
+        <option value="STEP_GRASS">Step Grass</option>
+        <option value="STEP_GRAVEL">Step Gravel</option>
+        <option value="STEP_LADDER">Step Ladder</option>
+        <option value="STEP_SAND">Step Sand</option>
+        <option value="STEP_SNOW">Step Snow</option>
+        <option value="STEP_STONE">Step Stone</option>
+        <option value="STEP_WOOD">Step Wood</option>
+        <option value="STEP_WOOL">Step Wool</option>
+        <option value="SUCCESSFUL_HIT">Successful Hit</option>
+        <option value="SWIM">Swim</option>
+        <option value="VILLAGER_DEATH">Villager Death</option>
+        <option value="VILLAGER_HAGGLE">Villager Haggle</option>
+        <option value="VILLAGER_HIT">Villager Hit</option>
+        <option value="VILLAGER_IDLE">Villager Idle</option>
+        <option value="VILLAGER_NO">Villager No</option>
+        <option value="VILLAGER_YES">Villager Yes</option>
+        <option value="WATER">Water</option>
+        <option value="WITHER_DEATH">Wither Death</option>
+        <option value="WITHER_HURT">Wither Hurt</option>
+        <option value="WITHER_IDLE">Wither Idle</option>
+        <option value="WITHER_SHOOT">Wither Shoot</option>
+        <option value="WITHER_SPAWN">Wither Spawn</option>
+        <option value="WOLF_BARK">Wolf Bark</option>
+        <option value="WOLF_DEATH">Wolf Death</option>
+        <option value="WOLF_GROWL">Wolf Growl</option>
+        <option value="WOLF_HOWL">Wolf Howl</option>
+        <option value="WOLF_HURT">Wolf Hurt</option>
+        <option value="WOLF_PANT">Wolf Pant</option>
+        <option value="WOLF_SHAKE">Wolf Shake</option>
+        <option value="WOLF_WALK">Wolf Walk</option>
+        <option value="WOLF_WHINE">Wolf Whine</option>
+        <option value="WOOD_CLICK">Wood Click</option>
+        <option value="ZOMBIE_DEATH">Zombie Death</option>
+        <option value="ZOMBIE_HURT">Zombie Hurt</option>
+        <option value="ZOMBIE_IDLE">Zombie Idle</option>
+        <option value="ZOMBIE_INFECT">Zombie Infect</option>
+        <option value="ZOMBIE_METAL">Zombie Metal</option>
+        <option value="ZOMBIE_PIG_ANGRY">Zombie Pig Angry</option>
+        <option value="ZOMBIE_PIG_DEATH">Zombie Pig Death</option>
+        <option value="ZOMBIE_PIG_HURT">Zombie Pig Hurt</option>
+        <option value="ZOMBIE_PIG_IDLE">Zombie Pig Idle</option>
+        <option value="ZOMBIE_REMEDY">Zombie Remedy</option>
+        <option value="ZOMBIE_UNFECT">Zombie Unfect</option>
+        <option value="ZOMBIE_WOOD">Zombie Wood</option>
+        <option value="ZOMBIE_WOODBREAK">Zombie Woodbreak</option>
+    </select> Pitch: <input type="number" value="1" min="0" max="2" step="0.1" name="pitchHurt" id="pitchHurt"><br/>
+        Sound Death: <select id="soundDeath">
+        <option value="AMBIENCE_CAVE">Ambience Cave</option>
+        <option value="AMBIENCE_RAIN">Ambience Rain</option>
+        <option value="AMBIENCE_THUNDER">Ambience Thunder</option>
+        <option value="ANVIL_BREAK">Anvil Break</option>
+        <option value="ANVIL_LAND">Anvil Land</option>
+        <option value="ANVIL_USE">Anvil Use</option>
+        <option value="ARROW_HIT">Arrow Hit</option>
+        <option value="BAT_DEATH">Bat Death</option>
+        <option value="BAT_HURT">Bat Hurt</option>
+        <option value="BAT_IDLE">Bat Idle</option>
+        <option value="BAT_LOOP">Bat Loop</option>
+        <option value="BAT_TAKEOFF">Bat Takeoff</option>
+        <option value="BLAZE_BREATH">Blaze Breath</option>
+        <option value="BLAZE_DEATH">Blaze Death</option>
+        <option value="BLAZE_HIT">Blaze Hit</option>
+        <option value="BREATH">Breath</option>
+        <option value="BURP">Burp</option>
+        <option value="CAT_HISS">Cat Hiss</option>
+        <option value="CAT_HIT">Cat Hit</option>
+        <option value="CAT_MEOW">Cat Meow</option>
+        <option value="CAT_PURR">Cat Purr</option>
+        <option value="CAT_PURREOW">Cat Purreow</option>
+        <option value="CHEST_CLOSE">Chest Close</option>
+        <option value="CHEST_OPEN">Chest Open</option>
+        <option value="CHICKEN_EGG_POP">Chicken Egg Pop</option>
+        <option value="CHICKEN_HURT">Chicken Hurt</option>
+        <option value="CHICKEN_IDLE">Chicken Idle</option>
+        <option value="CHICKEN_WALK">Chicken Walk</option>
+        <option value="CLICK">Click</option>
+        <option value="COW_HURT">Cow Hurt</option>
+        <option value="COW_IDLE">Cow Idle</option>
+        <option value="COW_WALK">Cow Walk</option>
+        <option value="CREEPER_DEATH">Creeper Death</option>
+        <option value="CREEPER_HISS">Creeper Hiss</option>
+        <option value="DIG_GRASS">Dig Grass</option>
+        <option value="DIG_GRAVEL">Dig Gravel</option>
+        <option value="DIG_SAND">Dig Sand</option>
+        <option value="DIG_SNOW">Dig Snow</option>
+        <option value="DIG_STONE">Dig Stone</option>
+        <option value="DIG_WOOD">Dig Wood</option>
+        <option value="DIG_WOOL">Dig Wool</option>
+        <option value="DONKEY_ANGRY">Donkey Angry</option>
+        <option value="DONKEY_DEATH">Donkey Death</option>
+        <option value="DONKEY_HIT">Donkey Hit</option>
+        <option value="DONKEY_IDLE">Donkey Idle</option>
+        <option value="DOOR_CLOSE">Door Close</option>
+        <option value="DOOR_OPEN">Door Open</option>
+        <option value="DRINK">Drink</option>
+        <option value="EAT">Eat</option>
+        <option value="ENDERDRAGON_DEATH">Enderdragon Death</option>
+        <option value="ENDERDRAGON_GROWL">Enderdragon Growl</option>
+        <option value="ENDERDRAGON_HIT">Enderdragon Hit</option>
+        <option value="ENDERDRAGON_WINGS">Enderdragon Wings</option>
+        <option value="ENDERMAN_DEATH">Enderman Death</option>
+        <option value="ENDERMAN_HIT">Enderman Hit</option>
+        <option value="ENDERMAN_IDLE">Enderman Idle</option>
+        <option value="ENDERMAN_SCREAM">Enderman Scream</option>
+        <option value="ENDERMAN_STARE">Enderman Stare</option>
+        <option value="ENDERMAN_TELEPORT">Enderman Teleport</option>
+        <option value="EXPLODE">Explode</option>
+        <option value="FALL_BIG">Fall Big</option>
+        <option value="FALL_SMALL">Fall Small</option>
+        <option value="FIRE">Fire</option>
+        <option value="FIREWORK_BLAST">Firework Blast</option>
+        <option value="FIREWORK_BLAST2">Firework Blast2</option>
+        <option value="FIREWORK_LARGE_BLAST">Firework Large Blast</option>
+        <option value="FIREWORK_LARGE_BLAST2">Firework Large Blast2</option>
+        <option value="FIREWORK_LAUNCH">Firework Launch</option>
+        <option value="FIREWORK_TWINKLE">Firework Twinkle</option>
+        <option value="FIREWORK_TWINKLE2">Firework Twinkle2</option>
+        <option value="FIRE_IGNITE">Fire Ignite</option>
+        <option value="FIZZ">Fizz</option>
+        <option value="FUSE">Fuse</option>
+        <option value="GHAST_CHARGE">Ghast Charge</option>
+        <option value="GHAST_DEATH">Ghast Death</option>
+        <option value="GHAST_FIREBALL">Ghast Fireball</option>
+        <option value="GHAST_MOAN">Ghast Moan</option>
+        <option value="GHAST_SCREAM">Ghast Scream</option>
+        <option value="GHAST_SCREAM2">Ghast Scream2</option>
+        <option value="GLASS">Glass</option>
+        <option value="HORSE_ANGRY">Horse Angry</option>
+        <option value="HORSE_ARMOR">Horse Armor</option>
+        <option value="HORSE_BREATHE">Horse Breathe</option>
+        <option value="HORSE_GALLOP">Horse Gallop</option>
+        <option value="HORSE_HIT">Horse Hit</option>
+        <option value="HORSE_IDLE">Horse Idle</option>
+        <option value="HORSE_JUMP">Horse Jump</option>
+        <option value="HORSE_LAND">Horse Land</option>
+        <option value="HORSE_SADDLE">Horse Saddle</option>
+        <option value="HORSE_SKELETON_DEATH">Horse Skeleton Death</option>
+        <option value="HORSE_SKELETON_IDLE">Horse Skeleton Idle</option>
+        <option value="HORSE_SOFT">Horse Soft</option>
+        <option value="HORSE_WOOD">Horse Wood</option>
+        <option value="HORSE_ZOMBIE_DEATH">Horse Zombie Death</option>
+        <option value="HORSE_ZOMBIE_HIT">Horse Zombie Hit</option>
+        <option value="HORSE_ZOMBIE_IDLE">Horse Zombie Idle</option>
+        <option value="HURT">Hurt</option>
+        <option value="HURT_FLESH">Hurt Flesh</option>
+        <option value="IRONGOLEM_DEATH">Irongolem Death</option>
+        <option value="IRONGOLEM_HIT">Irongolem Hit</option>
+        <option value="IRONGOLEM_THROW">Irongolem Throw</option>
+        <option value="IRONGOLEM_WALK">Irongolem Walk</option>
+        <option value="ITEM_BREAK">Item Break</option>
+        <option value="ITEM_PICKUP">Item Pickup</option>
+        <option value="LAVA">Lava</option>
+        <option value="LAVA_POP">Lava Pop</option>
+        <option value="LEVEL_UP">Level Up</option>
+        <option value="MAGMACUBE_JUMP">Magmacube Jump</option>
+        <option value="MAGMACUBE_WALK">Magmacube Walk</option>
+        <option value="MAGMACUBE_WALK2">Magmacube Walk2</option>
+        <option value="MINECART_BASE">Minecart Base</option>
+        <option value="MINECART_INSIDE">Minecart Inside</option>
+        <option value="NOTE_BASS">Note Bass</option>
+        <option value="NOTE_BASS_DRUM">Note Bass Drum</option>
+        <option value="NOTE_BASS_GUITAR">Note Bass Guitar</option>
+        <option value="NOTE_PIANO">Note Piano</option>
+        <option value="NOTE_PLING">Note Pling</option>
+        <option value="NOTE_SNARE_DRUM">Note Snare Drum</option>
+        <option value="NOTE_STICKS">Note Sticks</option>
+        <option value="ORB_PICKUP">Orb Pickup</option>
+        <option value="PIG_DEATH">Pig Death</option>
+        <option value="PIG_IDLE">Pig Idle</option>
+        <option value="PIG_WALK">Pig Walk</option>
+        <option value="PISTON_EXTEND">Piston Extend</option>
+        <option value="PISTON_RETRACT">Piston Retract</option>
+        <option value="PORTAL">Portal</option>
+        <option value="PORTAL_TRAVEL">Portal Travel</option>
+        <option value="PORTAL_TRIGGER">Portal Trigger</option>
+        <option value="SHEEP_IDLE">Sheep Idle</option>
+        <option value="SHEEP_SHEAR">Sheep Shear</option>
+        <option value="SHEEP_WALK">Sheep Walk</option>
+        <option value="SHOOT_ARROW">Shoot Arrow</option>
+        <option value="SILVERFISH_HIT">Silverfish Hit</option>
+        <option value="SILVERFISH_IDLE">Silverfish Idle</option>
+        <option value="SILVERFISH_KILL">Silverfish Kill</option>
+        <option value="SILVERFISH_WALK">Silverfish Walk</option>
+        <option value="SKELETON_DEATH">Skeleton Death</option>
+        <option value="SKELETON_HURT">Skeleton Hurt</option>
+        <option value="SKELETON_IDLE">Skeleton Idle</option>
+        <option value="SKELETON_WALK">Skeleton Walk</option>
+        <option value="SLIME_ATTACK">Slime Attack</option>
+        <option value="SLIME_WALK">Slime Walk</option>
+        <option value="SLIME_WALK2">Slime Walk2</option>
+        <option value="SPIDER_DEATH">Spider Death</option>
+        <option value="SPIDER_IDLE">Spider Idle</option>
+        <option value="SPIDER_WALK">Spider Walk</option>
+        <option value="SPLASH">Splash</option>
+        <option value="SPLASH2">Splash2</option>
+        <option value="STEP_GRASS">Step Grass</option>
+        <option value="STEP_GRAVEL">Step Gravel</option>
+        <option value="STEP_LADDER">Step Ladder</option>
+        <option value="STEP_SAND">Step Sand</option>
+        <option value="STEP_SNOW">Step Snow</option>
+        <option value="STEP_STONE">Step Stone</option>
+        <option value="STEP_WOOD">Step Wood</option>
+        <option value="STEP_WOOL">Step Wool</option>
+        <option value="SUCCESSFUL_HIT">Successful Hit</option>
+        <option value="SWIM">Swim</option>
+        <option value="VILLAGER_DEATH">Villager Death</option>
+        <option value="VILLAGER_HAGGLE">Villager Haggle</option>
+        <option value="VILLAGER_HIT">Villager Hit</option>
+        <option value="VILLAGER_IDLE">Villager Idle</option>
+        <option value="VILLAGER_NO">Villager No</option>
+        <option value="VILLAGER_YES">Villager Yes</option>
+        <option value="WATER">Water</option>
+        <option value="WITHER_DEATH">Wither Death</option>
+        <option value="WITHER_HURT">Wither Hurt</option>
+        <option value="WITHER_IDLE">Wither Idle</option>
+        <option value="WITHER_SHOOT">Wither Shoot</option>
+        <option value="WITHER_SPAWN">Wither Spawn</option>
+        <option value="WOLF_BARK">Wolf Bark</option>
+        <option value="WOLF_DEATH">Wolf Death</option>
+        <option value="WOLF_GROWL">Wolf Growl</option>
+        <option value="WOLF_HOWL">Wolf Howl</option>
+        <option value="WOLF_HURT">Wolf Hurt</option>
+        <option value="WOLF_PANT">Wolf Pant</option>
+        <option value="WOLF_SHAKE">Wolf Shake</option>
+        <option value="WOLF_WALK">Wolf Walk</option>
+        <option value="WOLF_WHINE">Wolf Whine</option>
+        <option value="WOOD_CLICK">Wood Click</option>
+        <option value="ZOMBIE_DEATH">Zombie Death</option>
+        <option value="ZOMBIE_HURT">Zombie Hurt</option>
+        <option value="ZOMBIE_IDLE">Zombie Idle</option>
+        <option value="ZOMBIE_INFECT">Zombie Infect</option>
+        <option value="ZOMBIE_METAL">Zombie Metal</option>
+        <option value="ZOMBIE_PIG_ANGRY">Zombie Pig Angry</option>
+        <option value="ZOMBIE_PIG_DEATH">Zombie Pig Death</option>
+        <option value="ZOMBIE_PIG_HURT">Zombie Pig Hurt</option>
+        <option value="ZOMBIE_PIG_IDLE">Zombie Pig Idle</option>
+        <option value="ZOMBIE_REMEDY">Zombie Remedy</option>
+        <option value="ZOMBIE_UNFECT">Zombie Unfect</option>
+        <option value="ZOMBIE_WOOD">Zombie Wood</option>
+        <option value="ZOMBIE_WOODBREAK">Zombie Woodbreak</option>
+    </select> Pitch: <input type="number" value="1" min="0" max="2" step="0.1" name="pitchDeath" id="pitchDeath"><br/>
+        Sound Random: <select id="soundRandom">
+        <option value="AMBIENCE_CAVE">Ambience Cave</option>
+        <option value="AMBIENCE_RAIN">Ambience Rain</option>
+        <option value="AMBIENCE_THUNDER">Ambience Thunder</option>
+        <option value="ANVIL_BREAK">Anvil Break</option>
+        <option value="ANVIL_LAND">Anvil Land</option>
+        <option value="ANVIL_USE">Anvil Use</option>
+        <option value="ARROW_HIT">Arrow Hit</option>
+        <option value="BAT_DEATH">Bat Death</option>
+        <option value="BAT_HURT">Bat Hurt</option>
+        <option value="BAT_IDLE">Bat Idle</option>
+        <option value="BAT_LOOP">Bat Loop</option>
+        <option value="BAT_TAKEOFF">Bat Takeoff</option>
+        <option value="BLAZE_BREATH">Blaze Breath</option>
+        <option value="BLAZE_DEATH">Blaze Death</option>
+        <option value="BLAZE_HIT">Blaze Hit</option>
+        <option value="BREATH">Breath</option>
+        <option value="BURP">Burp</option>
+        <option value="CAT_HISS">Cat Hiss</option>
+        <option value="CAT_HIT">Cat Hit</option>
+        <option value="CAT_MEOW">Cat Meow</option>
+        <option value="CAT_PURR">Cat Purr</option>
+        <option value="CAT_PURREOW">Cat Purreow</option>
+        <option value="CHEST_CLOSE">Chest Close</option>
+        <option value="CHEST_OPEN">Chest Open</option>
+        <option value="CHICKEN_EGG_POP">Chicken Egg Pop</option>
+        <option value="CHICKEN_HURT">Chicken Hurt</option>
+        <option value="CHICKEN_IDLE">Chicken Idle</option>
+        <option value="CHICKEN_WALK">Chicken Walk</option>
+        <option value="CLICK">Click</option>
+        <option value="COW_HURT">Cow Hurt</option>
+        <option value="COW_IDLE">Cow Idle</option>
+        <option value="COW_WALK">Cow Walk</option>
+        <option value="CREEPER_DEATH">Creeper Death</option>
+        <option value="CREEPER_HISS">Creeper Hiss</option>
+        <option value="DIG_GRASS">Dig Grass</option>
+        <option value="DIG_GRAVEL">Dig Gravel</option>
+        <option value="DIG_SAND">Dig Sand</option>
+        <option value="DIG_SNOW">Dig Snow</option>
+        <option value="DIG_STONE">Dig Stone</option>
+        <option value="DIG_WOOD">Dig Wood</option>
+        <option value="DIG_WOOL">Dig Wool</option>
+        <option value="DONKEY_ANGRY">Donkey Angry</option>
+        <option value="DONKEY_DEATH">Donkey Death</option>
+        <option value="DONKEY_HIT">Donkey Hit</option>
+        <option value="DONKEY_IDLE">Donkey Idle</option>
+        <option value="DOOR_CLOSE">Door Close</option>
+        <option value="DOOR_OPEN">Door Open</option>
+        <option value="DRINK">Drink</option>
+        <option value="EAT">Eat</option>
+        <option value="ENDERDRAGON_DEATH">Enderdragon Death</option>
+        <option value="ENDERDRAGON_GROWL">Enderdragon Growl</option>
+        <option value="ENDERDRAGON_HIT">Enderdragon Hit</option>
+        <option value="ENDERDRAGON_WINGS">Enderdragon Wings</option>
+        <option value="ENDERMAN_DEATH">Enderman Death</option>
+        <option value="ENDERMAN_HIT">Enderman Hit</option>
+        <option value="ENDERMAN_IDLE">Enderman Idle</option>
+        <option value="ENDERMAN_SCREAM">Enderman Scream</option>
+        <option value="ENDERMAN_STARE">Enderman Stare</option>
+        <option value="ENDERMAN_TELEPORT">Enderman Teleport</option>
+        <option value="EXPLODE">Explode</option>
+        <option value="FALL_BIG">Fall Big</option>
+        <option value="FALL_SMALL">Fall Small</option>
+        <option value="FIRE">Fire</option>
+        <option value="FIREWORK_BLAST">Firework Blast</option>
+        <option value="FIREWORK_BLAST2">Firework Blast2</option>
+        <option value="FIREWORK_LARGE_BLAST">Firework Large Blast</option>
+        <option value="FIREWORK_LARGE_BLAST2">Firework Large Blast2</option>
+        <option value="FIREWORK_LAUNCH">Firework Launch</option>
+        <option value="FIREWORK_TWINKLE">Firework Twinkle</option>
+        <option value="FIREWORK_TWINKLE2">Firework Twinkle2</option>
+        <option value="FIRE_IGNITE">Fire Ignite</option>
+        <option value="FIZZ">Fizz</option>
+        <option value="FUSE">Fuse</option>
+        <option value="GHAST_CHARGE">Ghast Charge</option>
+        <option value="GHAST_DEATH">Ghast Death</option>
+        <option value="GHAST_FIREBALL">Ghast Fireball</option>
+        <option value="GHAST_MOAN">Ghast Moan</option>
+        <option value="GHAST_SCREAM">Ghast Scream</option>
+        <option value="GHAST_SCREAM2">Ghast Scream2</option>
+        <option value="GLASS">Glass</option>
+        <option value="HORSE_ANGRY">Horse Angry</option>
+        <option value="HORSE_ARMOR">Horse Armor</option>
+        <option value="HORSE_BREATHE">Horse Breathe</option>
+        <option value="HORSE_GALLOP">Horse Gallop</option>
+        <option value="HORSE_HIT">Horse Hit</option>
+        <option value="HORSE_IDLE">Horse Idle</option>
+        <option value="HORSE_JUMP">Horse Jump</option>
+        <option value="HORSE_LAND">Horse Land</option>
+        <option value="HORSE_SADDLE">Horse Saddle</option>
+        <option value="HORSE_SKELETON_DEATH">Horse Skeleton Death</option>
+        <option value="HORSE_SKELETON_IDLE">Horse Skeleton Idle</option>
+        <option value="HORSE_SOFT">Horse Soft</option>
+        <option value="HORSE_WOOD">Horse Wood</option>
+        <option value="HORSE_ZOMBIE_DEATH">Horse Zombie Death</option>
+        <option value="HORSE_ZOMBIE_HIT">Horse Zombie Hit</option>
+        <option value="HORSE_ZOMBIE_IDLE">Horse Zombie Idle</option>
+        <option value="HURT">Hurt</option>
+        <option value="HURT_FLESH">Hurt Flesh</option>
+        <option value="IRONGOLEM_DEATH">Irongolem Death</option>
+        <option value="IRONGOLEM_HIT">Irongolem Hit</option>
+        <option value="IRONGOLEM_THROW">Irongolem Throw</option>
+        <option value="IRONGOLEM_WALK">Irongolem Walk</option>
+        <option value="ITEM_BREAK">Item Break</option>
+        <option value="ITEM_PICKUP">Item Pickup</option>
+        <option value="LAVA">Lava</option>
+        <option value="LAVA_POP">Lava Pop</option>
+        <option value="LEVEL_UP">Level Up</option>
+        <option value="MAGMACUBE_JUMP">Magmacube Jump</option>
+        <option value="MAGMACUBE_WALK">Magmacube Walk</option>
+        <option value="MAGMACUBE_WALK2">Magmacube Walk2</option>
+        <option value="MINECART_BASE">Minecart Base</option>
+        <option value="MINECART_INSIDE">Minecart Inside</option>
+        <option value="NOTE_BASS">Note Bass</option>
+        <option value="NOTE_BASS_DRUM">Note Bass Drum</option>
+        <option value="NOTE_BASS_GUITAR">Note Bass Guitar</option>
+        <option value="NOTE_PIANO">Note Piano</option>
+        <option value="NOTE_PLING">Note Pling</option>
+        <option value="NOTE_SNARE_DRUM">Note Snare Drum</option>
+        <option value="NOTE_STICKS">Note Sticks</option>
+        <option value="ORB_PICKUP">Orb Pickup</option>
+        <option value="PIG_DEATH">Pig Death</option>
+        <option value="PIG_IDLE">Pig Idle</option>
+        <option value="PIG_WALK">Pig Walk</option>
+        <option value="PISTON_EXTEND">Piston Extend</option>
+        <option value="PISTON_RETRACT">Piston Retract</option>
+        <option value="PORTAL">Portal</option>
+        <option value="PORTAL_TRAVEL">Portal Travel</option>
+        <option value="PORTAL_TRIGGER">Portal Trigger</option>
+        <option value="SHEEP_IDLE">Sheep Idle</option>
+        <option value="SHEEP_SHEAR">Sheep Shear</option>
+        <option value="SHEEP_WALK">Sheep Walk</option>
+        <option value="SHOOT_ARROW">Shoot Arrow</option>
+        <option value="SILVERFISH_HIT">Silverfish Hit</option>
+        <option value="SILVERFISH_IDLE">Silverfish Idle</option>
+        <option value="SILVERFISH_KILL">Silverfish Kill</option>
+        <option value="SILVERFISH_WALK">Silverfish Walk</option>
+        <option value="SKELETON_DEATH">Skeleton Death</option>
+        <option value="SKELETON_HURT">Skeleton Hurt</option>
+        <option value="SKELETON_IDLE">Skeleton Idle</option>
+        <option value="SKELETON_WALK">Skeleton Walk</option>
+        <option value="SLIME_ATTACK">Slime Attack</option>
+        <option value="SLIME_WALK">Slime Walk</option>
+        <option value="SLIME_WALK2">Slime Walk2</option>
+        <option value="SPIDER_DEATH">Spider Death</option>
+        <option value="SPIDER_IDLE">Spider Idle</option>
+        <option value="SPIDER_WALK">Spider Walk</option>
+        <option value="SPLASH">Splash</option>
+        <option value="SPLASH2">Splash2</option>
+        <option value="STEP_GRASS">Step Grass</option>
+        <option value="STEP_GRAVEL">Step Gravel</option>
+        <option value="STEP_LADDER">Step Ladder</option>
+        <option value="STEP_SAND">Step Sand</option>
+        <option value="STEP_SNOW">Step Snow</option>
+        <option value="STEP_STONE">Step Stone</option>
+        <option value="STEP_WOOD">Step Wood</option>
+        <option value="STEP_WOOL">Step Wool</option>
+        <option value="SUCCESSFUL_HIT">Successful Hit</option>
+        <option value="SWIM">Swim</option>
+        <option value="VILLAGER_DEATH">Villager Death</option>
+        <option value="VILLAGER_HAGGLE">Villager Haggle</option>
+        <option value="VILLAGER_HIT">Villager Hit</option>
+        <option value="VILLAGER_IDLE">Villager Idle</option>
+        <option value="VILLAGER_NO">Villager No</option>
+        <option value="VILLAGER_YES">Villager Yes</option>
+        <option value="WATER">Water</option>
+        <option value="WITHER_DEATH">Wither Death</option>
+        <option value="WITHER_HURT">Wither Hurt</option>
+        <option value="WITHER_IDLE">Wither Idle</option>
+        <option value="WITHER_SHOOT">Wither Shoot</option>
+        <option value="WITHER_SPAWN">Wither Spawn</option>
+        <option value="WOLF_BARK">Wolf Bark</option>
+        <option value="WOLF_DEATH">Wolf Death</option>
+        <option value="WOLF_GROWL">Wolf Growl</option>
+        <option value="WOLF_HOWL">Wolf Howl</option>
+        <option value="WOLF_HURT">Wolf Hurt</option>
+        <option value="WOLF_PANT">Wolf Pant</option>
+        <option value="WOLF_SHAKE">Wolf Shake</option>
+        <option value="WOLF_WALK">Wolf Walk</option>
+        <option value="WOLF_WHINE">Wolf Whine</option>
+        <option value="WOOD_CLICK">Wood Click</option>
+        <option value="ZOMBIE_DEATH">Zombie Death</option>
+        <option value="ZOMBIE_HURT">Zombie Hurt</option>
+        <option value="ZOMBIE_IDLE">Zombie Idle</option>
+        <option value="ZOMBIE_INFECT">Zombie Infect</option>
+        <option value="ZOMBIE_METAL">Zombie Metal</option>
+        <option value="ZOMBIE_PIG_ANGRY">Zombie Pig Angry</option>
+        <option value="ZOMBIE_PIG_DEATH">Zombie Pig Death</option>
+        <option value="ZOMBIE_PIG_HURT">Zombie Pig Hurt</option>
+        <option value="ZOMBIE_PIG_IDLE">Zombie Pig Idle</option>
+        <option value="ZOMBIE_REMEDY">Zombie Remedy</option>
+        <option value="ZOMBIE_UNFECT">Zombie Unfect</option>
+        <option value="ZOMBIE_WOOD">Zombie Wood</option>
+        <option value="ZOMBIE_WOODBREAK">Zombie Woodbreak</option>
+    </select> Pitch: <input type="number" value="1" min="0" max="2" step="0.1" name="pitchRandom"
+                            id="pitchRandom"><br/><br/><br/>
+
+        <!--arrow-->
+        <div id="arrow">
+            Critical: <select id="critical">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--bat-->
+        <div id="bat">
+            Flying: <select id="flying">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--blaze-->
+        <div id="blaze">
+            Blazing: <select id="blazing">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--creeper-->
+        <div id="creeper">
+            Powered: <select id="powered">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/>
+            Ignited: <select id="ignited">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--enderman-->
+        <div id="enderman">
+            Aggressive: <select id="aggressiveEnderman">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--fallingblock-->
+        <div id="fallingblock">
+            Block: <input type="text" name="block" id="block"><br/>
+            Block Damage: <input type="number" value="0" name="blockdamage" id="blockdamage"><br/><br/><br/>
+        </div>
+
+        <!--ghast-->
+        <div id="ghast">
+            Aggressive: <select id="aggressiveGhast">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--horse-->
+        <div id="horse">
+            Colour: <select id="horseColour">
+            <option value="BLACK">Black</option>
+            <option value="BROWN">Brown</option>
+            <option value="CHESTNUT">Chestnut</option>
+            <option value="CREAMY">Creamy</option>
+            <option value="DARK_BROWN">Dark Brown</option>
+            <option value="GRAY">Gray</option>
+            <option value="WHITE">White</option>
+        </select><br/>
+            Style: <select id="horseStyle">
+            <option value="NONE">None</option>
+            <option value="BLACK_DOTS ">Small Black Dots</option>
+            <option value="WHITE">White Socks</option>
+            <option value="WHITE_DOTS">Round White Dots</option>
+            <option value="WHITEFIELD">Milky Splotches</option>
+        </select><br/>
+            Carrying Chest: <select id="carryingChest">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/>
+            Mouth Open: <select id="mouthOpen">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/>
+            Rearing: <select id="rearing">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/>
+            Saddled: <select id="horseSaddled">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--item-->
+        <div id="item">
+            Item: <input type="text" name="itemName" id="itemName"><br/>
+            Item Damage: <input type="number" value="0" name="itemdamage" id="itemdamage"><br/><br/><br/>
+        </div>
+
+        <!--ocelot-->
+        <div id="ocelot">
+            Type: <select id="ocelotType">
+            <option value="WILD_OCELOT">Wild Ocelot</option>
+            <option value="SIAMESE_CAT">Siamese Cat</option>
+            <option value="RED_CAT">Red Cat</option>
+            <option value="BLACK_CAT">Black Cat</option>
+        </select><br/>
+            Sitting: <select id="catSitting">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/>
+            Tamed: <select id="catTamed">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--painting-->
+        <div id="painting">
+            Art: <select id="art">
+            <option value="ALBAN">Alban</option>
+            <option value="AZTEC">Aztec</option>
+            <option value="AZTEC2">Aztec 2</option>
+            <option value="BOMB">Bomb</option>
+            <option value="BURNINGSKULL">Burning Skull</option>
+            <option value="BUST">Bust</option>
+            <option value="COURBET">Courbet</option>
+            <option value="CREEBET">Creebet</option>
+            <option value="DONKEYKONG">Donkey Kong</option>
+            <option value="FIGHTERS">Fighters</option>
+            <option value="GRAHAM">Graham</option>
+            <option value="KEBAB">Kebab</option>
+            <option value="MATCH">Match</option>
+            <option value="PIGSCENE">Pig Scene</option>
+            <option value="PLANT">Plant</option>
+            <option value="POINTER">Pointer</option>
+            <option value="POOL">Pool</option>
+            <option value="SEA">Sea</option>
+            <option value="SKELETON">Skeleton</option>
+            <option value="SKULL_AND_ROSES">Skull And Roses</option>
+            <option value="STAGE">Stage</option>
+            <option value="SUNSET">Sunset</option>
+            <option value="VOID">Void</option>
+            <option value="WANDERER">Wanderer</option>
+            <option value="WASTELAND">Wasteland</option>
+            <option value="WITHER">Wither</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--pig-->
+        <div id="pig">
+            Saddled: <select id="pigSaddled">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--potion-->
+        <div id="potion">
+            Potion ID: <input type="number" value="1" min="0" name="potionID" id="potionID"><br/><br/><br/>
+        </div>
+
+        <!--sheep-->
+        <div id="sheep">
+            Sheared: <select id="sheared">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/>
+            Colour: <select id="sheepColour">
+            <option value="BLACK">Black</option>
+            <option value="BLUE">Blue</option>
+            <option value="BROWN">Brown</option>
+            <option value="CYAN">Cyan</option>
+            <option value="GRAY">Gray</option>
+            <option value="GREEN">Green</option>
+            <option value="LIGHT_BLUE">Light Blue</option>
+            <option value="LIME">Lime</option>
+            <option value="MAGENTA">Magenta</option>
+            <option value="ORANGE">Orange</option>
+            <option value="PINK">Pink</option>
+            <option value="PURPLE">Purple</option>
+            <option value="RED">Red</option>
+            <option value="SILVER">Silver</option>
+            <option value="WHITE">White</option>
+            <option value="YELLOW">Yellow</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--slime-->
+        <div id="slime">
+            Size: <input type="number" value="1" min="1" max="256" name="slimeSize" id="slimeSize"><span
+                id="slimeWarning" class="comment">Slime sizes above 5 can cause major client lag!</span><br/><br/><br/>
+        </div>
+
+        <!--villager-->
+        <div id="villager">
+            Profession: <select id="profession">
+            <option value="FARMER">Farmer</option>
+            <option value="BLACKSMITH">Blacksmith</option>
+            <option value="BUTCHER">Butcher</option>
+            <option value="LIBRARIAN">Librarian</option>
+            <option value="PRIEST">Priest</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--witherskull-->
+        <div id="witherskull">
+            Blue: <select id="blue">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--wolf-->
+        <div id="wolf">
+            Angry: <select id="wolfAngry">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select><br/>
+            Sitting: <select id="wolfSitting">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/>
+            Tame: <select id="wolfTame">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/>
+            Colour: <select id="wolfColour">
+            <option value="BLACK">Black</option>
+            <option value="BLUE">Blue</option>
+            <option value="BROWN">Brown</option>
+            <option value="CYAN">Cyan</option>
+            <option value="GRAY">Gray</option>
+            <option value="GREEN">Green</option>
+            <option value="LIGHT_BLUE">Light Blue</option>
+            <option value="LIME">Lime</option>
+            <option value="MAGENTA">Magenta</option>
+            <option value="ORANGE">Orange</option>
+            <option value="PINK">Pink</option>
+            <option value="PURPLE">Purple</option>
+            <option value="RED">Red</option>
+            <option value="SILVER">Silver</option>
+            <option value="WHITE">White</option>
+            <option value="YELLOW">Yellow</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <!--zombie-->
+        <div id="zombie">
+            Villager: <select id="villagerZombie">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select><br/><br/><br/>
+        </div>
+
+        <br/>
+        <button type="button" id="submit">Create YML!</button>
+
+        <div id="mobDisplay">
+            <div id="displayName">
+                <span id="displayTag">My New Mob </span>
+                <span id="displayLevel">[Lv. 1]</span>
+            </div>
+            <div id="displayImage"><img src="img/arrow.png"></div>
+        </div>
+
+        <div id="hug">
+            <div id="code">
+                <div id="titleName">
+                </div>
+                <div id="all">
+                </div>
+                <div id="special">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $("#mobType").change(function () {
+            var mob = document.getElementById("mobType").value;
+            document.getElementById("displayImage").innerHTML = "<img src=\"img/" + mob + ".png\">";
+            //default options for all mobs
+
+            if (mob == "arrow") {
+                $("#arrow").css({"display": "inline-block"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "bat") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "inline-block"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "blaze") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "inline-block"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "creeper") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "inline-block"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "enderman") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "inline-block"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "fallingblock") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "inline-block"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "ghast") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "inline-block"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "horse") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "inline-block"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "item") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "inline-block"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "ocelot") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "inline-block"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "painting") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "inline-block"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "pig") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "inline-block"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "potion") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "inline-block"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "sheep") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "inline-block"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "slime") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "inline-block"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "villager") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "inline-block"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "witherskull") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "inline-block"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "wolf") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "inline-block"});
+                $("#zombie").css({"display": "none"});
+            } else if (mob == "zombie") {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "inline-block"});
+            } else {
+                $("#arrow").css({"display": "none"});
+                $("#bat").css({"display": "none"});
+                $("#blaze").css({"display": "none"});
+                $("#creeper").css({"display": "none"});
+                $("#enderman").css({"display": "none"});
+                $("#fallingblock").css({"display": "none"});
+                $("#ghast").css({"display": "none"});
+                $("#horse").css({"display": "none"});
+                $("#item").css({"display": "none"});
+                $("#ocelot").css({"display": "none"});
+                $("#painting").css({"display": "none"});
+                $("#pig").css({"display": "none"});
+                $("#potion").css({"display": "none"});
+                $("#sheep").css({"display": "none"});
+                $("#slime").css({"display": "none"});
+                $("#villager").css({"display": "none"});
+                $("#witherskull").css({"display": "none"});
+                $("#wolf").css({"display": "none"});
+                $("#zombie").css({"display": "none"});
+            }
+
+
+        });
+
+        $("#level").bind('keyup mouseup', function () {
+            var level = document.getElementById("level").value;
+            if (level == "1") {
+                $("#health").val("6");
+                $("#regen").val("1");
+                $("#minDam").val("2");
+                $("#maxDam").val("2");
+                $("#minXP").val("11");
+                $("#maxXP").val("11");
+
+            } else if (level == "2") {
+                $("#health").val("8");
+                $("#regen").val("1");
+                $("#minDam").val("2");
+                $("#maxDam").val("2");
+                $("#minXP").val("13");
+                $("#maxXP").val("13");
+
+            } else if (level == "3") {
+                $("#health").val("10");
+                $("#regen").val("2");
+                $("#minDam").val("2");
+                $("#maxDam").val("2");
+                $("#minXP").val("15");
+                $("#maxXP").val("15");
+
+            } else if (level == "4") {
+                $("#health").val("12");
+                $("#regen").val("2");
+                $("#minDam").val("3");
+                $("#maxDam").val("3");
+                $("#minXP").val("16");
+                $("#maxXP").val("16");
+
+            } else if (level == "5") {
+                $("#health").val("14");
+                $("#regen").val("2");
+                $("#minDam").val("3");
+                $("#maxDam").val("3");
+                $("#minXP").val("18");
+                $("#maxXP").val("18");
+
+            } else if (level == "6") {
+                $("#health").val("17");
+                $("#regen").val("3");
+                $("#minDam").val("4");
+                $("#maxDam").val("4");
+                $("#minXP").val("20");
+                $("#maxXP").val("20");
+
+            } else if (level == "7") {
+                $("#health").val("20");
+                $("#regen").val("3");
+                $("#minDam").val("5");
+                $("#maxDam").val("5");
+                $("#minXP").val("22");
+                $("#maxXP").val("22");
+
+            } else if (level == "8") {
+                $("#health").val("22");
+                $("#regen").val("3");
+                $("#minDam").val("5");
+                $("#maxDam").val("5");
+                $("#minXP").val("23");
+                $("#maxXP").val("23");
+
+            } else if (level == "9") {
+                $("#health").val("25");
+                $("#regen").val("4");
+                $("#minDam").val("6");
+                $("#maxDam").val("6");
+                $("#minXP").val("25");
+                $("#maxXP").val("25");
+
+            } else if (level == "10") {
+                $("#health").val("28");
+                $("#regen").val("4");
+                $("#minDam").val("7");
+                $("#maxDam").val("7");
+                $("#minXP").val("27");
+                $("#maxXP").val("27");
+
+            } else if (level == "11") {
+                $("#health").val("31");
+                $("#regen").val("5");
+                $("#minDam").val("8");
+                $("#maxDam").val("8");
+                $("#minXP").val("28");
+                $("#maxXP").val("28");
+
+            } else if (level == "12") {
+                $("#health").val("34");
+                $("#regen").val("5");
+                $("#minDam").val("8");
+                $("#maxDam").val("8");
+                $("#minXP").val("30");
+                $("#maxXP").val("30");
+
+            } else if (level == "13") {
+                $("#health").val("37");
+                $("#regen").val("6");
+                $("#minDam").val("9");
+                $("#maxDam").val("9");
+                $("#minXP").val("31");
+                $("#maxXP").val("31");
+
+            } else if (level == "14") {
+                $("#health").val("40");
+                $("#regen").val("6");
+                $("#minDam").val("9");
+                $("#maxDam").val("9");
+                $("#minXP").val("33");
+                $("#maxXP").val("33");
+
+            } else if (level == "15") {
+                $("#health").val("43");
+                $("#regen").val("6");
+                $("#minDam").val("10");
+                $("#maxDam").val("10");
+                $("#minXP").val("34");
+                $("#maxXP").val("34");
+
+            } else if (level == "16") {
+                $("#health").val("48");
+                $("#regen").val("7");
+                $("#minDam").val("11");
+                $("#maxDam").val("11");
+                $("#minXP").val("35");
+                $("#maxXP").val("35");
+
+            } else if (level == "17") {
+                $("#health").val("53");
+                $("#regen").val("8");
+                $("#minDam").val("12");
+                $("#maxDam").val("12");
+                $("#minXP").val("36");
+                $("#maxXP").val("36");
+
+            } else if (level == "18") {
+                $("#health").val("58");
+                $("#regen").val("9");
+                $("#minDam").val("12");
+                $("#maxDam").val("12");
+                $("#minXP").val("38");
+                $("#maxXP").val("38");
+
+            } else if (level == "19") {
+                $("#health").val("63");
+                $("#regen").val("9");
+                $("#minDam").val("13");
+                $("#maxDam").val("13");
+                $("#minXP").val("39");
+                $("#maxXP").val("39");
+
+            } else if (level == "20") {
+                $("#health").val("68");
+                $("#regen").val("10");
+                $("#minDam").val("14");
+                $("#maxDam").val("14");
+                $("#minXP").val("40");
+                $("#maxXP").val("40");
+
+            } else if (level == "21") {
+                $("#health").val("73");
+                $("#regen").val("11");
+                $("#minDam").val("16");
+                $("#maxDam").val("16");
+                $("#minXP").val("42");
+                $("#maxXP").val("42");
+
+            } else if (level == "22") {
+                $("#health").val("79");
+                $("#regen").val("12");
+                $("#minDam").val("18");
+                $("#maxDam").val("18");
+                $("#minXP").val("45");
+                $("#maxXP").val("45");
+
+            } else if (level == "23") {
+                $("#health").val("84");
+                $("#regen").val("13");
+                $("#minDam").val("20");
+                $("#maxDam").val("20");
+                $("#minXP").val("47");
+                $("#maxXP").val("47");
+
+            } else if (level == "24") {
+                $("#health").val("90");
+                $("#regen").val("13");
+                $("#minDam").val("22");
+                $("#maxDam").val("22");
+                $("#minXP").val("50");
+                $("#maxXP").val("50");
+
+            } else if (level == "25") {
+                $("#health").val("95");
+                $("#regen").val("14");
+                $("#minDam").val("24");
+                $("#maxDam").val("24");
+                $("#minXP").val("52");
+                $("#maxXP").val("52");
+
+            } else if (level == "26") {
+                $("#health").val("98");
+                $("#regen").val("15");
+                $("#minDam").val("25");
+                $("#maxDam").val("25");
+                $("#minXP").val("54");
+                $("#maxXP").val("54");
+
+            } else if (level == "27") {
+                $("#health").val("101");
+                $("#regen").val("15");
+                $("#minDam").val("25");
+                $("#maxDam").val("25");
+                $("#minXP").val("56");
+                $("#maxXP").val("56");
+
+            } else if (level == "28") {
+                $("#health").val("104");
+                $("#regen").val("16");
+                $("#minDam").val("26");
+                $("#maxDam").val("26");
+                $("#minXP").val("58");
+                $("#maxXP").val("58");
+
+            } else if (level == "29") {
+                $("#health").val("107");
+                $("#regen").val("16");
+                $("#minDam").val("26");
+                $("#maxDam").val("26");
+                $("#minXP").val("60");
+                $("#maxXP").val("60");
+
+            } else if (level == "30") {
+                $("#health").val("110");
+                $("#regen").val("17");
+                $("#minDam").val("27");
+                $("#maxDam").val("27");
+                $("#minXP").val("62");
+                $("#maxXP").val("62");
+
+            } else if (level == "31") {
+                $("#health").val("113");
+                $("#regen").val("17");
+                $("#minDam").val("29");
+                $("#maxDam").val("29");
+                $("#minXP").val("64");
+                $("#maxXP").val("64");
+
+            } else if (level == "32") {
+                $("#health").val("116");
+                $("#regen").val("17");
+                $("#minDam").val("30");
+                $("#maxDam").val("30");
+                $("#minXP").val("66");
+                $("#maxXP").val("66");
+
+            } else if (level == "33") {
+                $("#health").val("119");
+                $("#regen").val("18");
+                $("#minDam").val("32");
+                $("#maxDam").val("32");
+                $("#minXP").val("68");
+                $("#maxXP").val("68");
+
+            } else if (level == "34") {
+                $("#health").val("122");
+                $("#regen").val("18");
+                $("#minDam").val("33");
+                $("#maxDam").val("33");
+                $("#minXP").val("70");
+                $("#maxXP").val("70");
+
+            } else if (level == "35") {
+                $("#health").val("125");
+                $("#regen").val("19");
+                $("#minDam").val("35");
+                $("#maxDam").val("35");
+                $("#minXP").val("72");
+                $("#maxXP").val("72");
+
+            } else if (level == "36") {
+                $("#health").val("129");
+                $("#regen").val("19");
+                $("#minDam").val("37");
+                $("#maxDam").val("37");
+                $("#minXP").val("74");
+                $("#maxXP").val("74");
+
+            } else if (level == "37") {
+                $("#health").val("133");
+                $("#regen").val("20");
+                $("#minDam").val("39");
+                $("#maxDam").val("39");
+                $("#minXP").val("75");
+                $("#maxXP").val("75");
+
+            } else if (level == "38") {
+                $("#health").val("136");
+                $("#regen").val("20");
+                $("#minDam").val("41");
+                $("#maxDam").val("41");
+                $("#minXP").val("77");
+                $("#maxXP").val("77");
+
+            } else if (level == "39") {
+                $("#health").val("140");
+                $("#regen").val("21");
+                $("#minDam").val("43");
+                $("#maxDam").val("43");
+                $("#minXP").val("78");
+                $("#maxXP").val("78");
+
+            } else if (level == "40") {
+                $("#health").val("144");
+                $("#regen").val("22");
+                $("#minDam").val("45");
+                $("#maxDam").val("45");
+                $("#minXP").val("80");
+                $("#maxXP").val("80");
+
+            } else if (level == "41") {
+                $("#health").val("152");
+                $("#regen").val("23");
+                $("#minDam").val("47");
+                $("#maxDam").val("47");
+                $("#minXP").val("83");
+                $("#maxXP").val("83");
+
+            } else if (level == "42") {
+                $("#health").val("160");
+                $("#regen").val("24");
+                $("#minDam").val("48");
+                $("#maxDam").val("48");
+                $("#minXP").val("86");
+                $("#maxXP").val("86");
+
+            } else if (level == "43") {
+                $("#health").val("169");
+                $("#regen").val("25");
+                $("#minDam").val("50");
+                $("#maxDam").val("50");
+                $("#minXP").val("89");
+                $("#maxXP").val("89");
+
+            } else if (level == "44") {
+                $("#health").val("177");
+                $("#regen").val("27");
+                $("#minDam").val("51");
+                $("#maxDam").val("51");
+                $("#minXP").val("92");
+                $("#maxXP").val("92");
+
+            } else if (level == "45") {
+                $("#health").val("185");
+                $("#regen").val("28");
+                $("#minDam").val("53");
+                $("#maxDam").val("53");
+                $("#minXP").val("95");
+                $("#maxXP").val("95");
+
+            } else if (level == "46") {
+                $("#health").val("193");
+                $("#regen").val("29");
+                $("#minDam").val("54");
+                $("#maxDam").val("54");
+                $("#minXP").val("97");
+                $("#maxXP").val("97");
+
+            } else if (level == "47") {
+                $("#health").val("201");
+                $("#regen").val("30");
+                $("#minDam").val("56");
+                $("#maxDam").val("56");
+                $("#minXP").val("99");
+                $("#maxXP").val("99");
+
+            } else if (level == "48") {
+                $("#health").val("209");
+                $("#regen").val("31");
+                $("#minDam").val("57");
+                $("#maxDam").val("57");
+                $("#minXP").val("101");
+                $("#maxXP").val("101");
+
+            } else if (level == "49") {
+                $("#health").val("217");
+                $("#regen").val("33");
+                $("#minDam").val("59");
+                $("#maxDam").val("59");
+                $("#minXP").val("103");
+                $("#maxXP").val("103");
+
+            } else if (level == "50") {
+                $("#health").val("225");
+                $("#regen").val("34");
+                $("#minDam").val("60");
+                $("#maxDam").val("60");
+                $("#minXP").val("105");
+                $("#maxXP").val("105");
+
+            } else if (level == "51") {
+                $("#health").val("260");
+                $("#regen").val("39");
+                $("#minDam").val("74");
+                $("#maxDam").val("74");
+                $("#minXP").val("107");
+                $("#maxXP").val("107");
+
+            } else if (level == "52") {
+                $("#health").val("295");
+                $("#regen").val("44");
+                $("#minDam").val("88");
+                $("#maxDam").val("88");
+                $("#minXP").val("109");
+                $("#maxXP").val("109");
+
+            } else if (level == "53") {
+                $("#health").val("330");
+                $("#regen").val("50");
+                $("#minDam").val("102");
+                $("#maxDam").val("102");
+                $("#minXP").val("111");
+                $("#maxXP").val("111");
+
+            } else if (level == "54") {
+                $("#health").val("365");
+                $("#regen").val("55");
+                $("#minDam").val("116");
+                $("#maxDam").val("116");
+                $("#minXP").val("113");
+                $("#maxXP").val("113");
+
+            } else if (level == "55") {
+                $("#health").val("400");
+                $("#regen").val("60");
+                $("#minDam").val("130");
+                $("#maxDam").val("130");
+                $("#minXP").val("115");
+                $("#maxXP").val("115");
+
+            } else if (level == "56") {
+                $("#health").val("454");
+                $("#regen").val("68");
+                $("#minDam").val("148");
+                $("#maxDam").val("148");
+                $("#minXP").val("122");
+                $("#maxXP").val("122");
+
+            } else if (level == "57") {
+                $("#health").val("508");
+                $("#regen").val("76");
+                $("#minDam").val("166");
+                $("#maxDam").val("166");
+                $("#minXP").val("129");
+                $("#maxXP").val("129");
+
+            } else if (level == "58") {
+                $("#health").val("562");
+                $("#regen").val("84");
+                $("#minDam").val("184");
+                $("#maxDam").val("184");
+                $("#minXP").val("136");
+                $("#maxXP").val("136");
+
+            } else if (level == "59") {
+                $("#health").val("616");
+                $("#regen").val("92");
+                $("#minDam").val("202");
+                $("#maxDam").val("202");
+                $("#minXP").val("143");
+                $("#maxXP").val("143");
+
+            } else if (level == "60") {
+                $("#health").val("670");
+                $("#regen").val("101");
+                $("#minDam").val("220");
+                $("#maxDam").val("220");
+                $("#minXP").val("150");
+                $("#maxXP").val("150");
+
+            } else if (level == "61") {
+                $("#health").val("706");
+                $("#regen").val("106");
+                $("#minDam").val("216");
+                $("#maxDam").val("216");
+                $("#minXP").val("155");
+                $("#maxXP").val("155");
+
+            } else if (level == "62") {
+                $("#health").val("742");
+                $("#regen").val("111");
+                $("#minDam").val("212");
+                $("#maxDam").val("212");
+                $("#minXP").val("160");
+                $("#maxXP").val("160");
+
+            } else if (level == "63") {
+                $("#health").val("778");
+                $("#regen").val("117");
+                $("#minDam").val("208");
+                $("#maxDam").val("208");
+                $("#minXP").val("165");
+                $("#maxXP").val("165");
+
+            } else if (level == "64") {
+                $("#health").val("814");
+                $("#regen").val("122");
+                $("#minDam").val("204");
+                $("#maxDam").val("204");
+                $("#minXP").val("170");
+                $("#maxXP").val("170");
+
+            } else if (level == "65") {
+                $("#health").val("850");
+                $("#regen").val("128");
+                $("#minDam").val("200");
+                $("#maxDam").val("200");
+                $("#minXP").val("175");
+                $("#maxXP").val("175");
+
+            } else if (level == "66") {
+                $("#health").val("880");
+                $("#regen").val("132");
+                $("#minDam").val("230");
+                $("#maxDam").val("230");
+                $("#minXP").val("175");
+                $("#maxXP").val("175");
+
+            } else if (level == "67") {
+                $("#health").val("910");
+                $("#regen").val("137");
+                $("#minDam").val("260");
+                $("#maxDam").val("260");
+                $("#minXP").val("175");
+                $("#maxXP").val("175");
+
+            } else if (level == "68") {
+                $("#health").val("940");
+                $("#regen").val("141");
+                $("#minDam").val("290");
+                $("#maxDam").val("290");
+                $("#minXP").val("175");
+                $("#maxXP").val("175");
+
+            } else if (level == "69") {
+                $("#health").val("970");
+                $("#regen").val("146");
+                $("#minDam").val("320");
+                $("#maxDam").val("320");
+                $("#minXP").val("175");
+                $("#maxXP").val("175");
+
+            } else if (level == "70") {
+                $("#health").val("1000");
+                $("#regen").val("150");
+                $("#minDam").val("350");
+                $("#maxDam").val("350");
+                $("#minXP").val("175");
+                $("#maxXP").val("175");
+
+            }
+        });
+
+        $("#submit").click(function () {
+            var mobType = document.getElementById("mobType").value;
+            var name = document.getElementById("name").value;
+            var tag = document.getElementById("tag").value;
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            var z = document.getElementById("z").value;
+            var attack = document.getElementById("attack").value;
+            var level = document.getElementById("level").value;
+            var health = document.getElementById("health").value;
+            var regen = document.getElementById("regen").value;
+            var minXP = document.getElementById("minXP").value;
+            var maxXP = document.getElementById("maxXP").value;
+            var minDam = document.getElementById("minDam").value;
+            var maxDam = document.getElementById("maxDam").value;
+            var attackRate = document.getElementById("attackRate").value;
+            var projectile = document.getElementById("projectile").value;
+            var projectileSpeed = document.getElementById("projectileSpeed").value;
+            var lootMultiplier = document.getElementById("lootMultiplier").value;
+            var speed = document.getElementById("speed").value;
+            var vision = document.getElementById("vision").value;
+            var vanished = document.getElementById("vanished").value;
+            var burning = document.getElementById("burning").value;
+            var baby = document.getElementById("baby").value;
+            var soundHurt = document.getElementById("soundHurt").value;
+            var pitchHurt = document.getElementById("pitchHurt").value;
+            var soundDeath = document.getElementById("soundDeath").value;
+            var pitchDeath = document.getElementById("pitchDeath").value;
+            var soundRandom = document.getElementById("soundRandom").value;
+            var pitchRandom = document.getElementById("pitchRandom").value;
+
+            $("#code").css({"display": "inline-block"});
+            document.getElementById("titleName").innerHTML = name + "." + mobType + ".yml";
+            document.getElementById("all").innerHTML =
+                    "tag: \'" + tag + "\'<br/>" +
+                    "chest: " + x + "," + y + "," + z + "<br/>" +
+                    "attack: " + attack + "<br/>" +
+                    "level: " + level + "<br/>" +
+                    "health: " + health + ".0<br/>" +
+                    "regen: " + regen + ".0<br/>" +
+                    "minXP: " + minXP + "<br/>" +
+                    "maxXP: " + maxXP + "<br/>" +
+                    "minDam: " + minDam + ".0<br/>" +
+                    "maxDam: " + maxDam + ".0<br/>" +
+                    "attackRate: " + attackRate + "<br/>" +
+                    "projectile: " + projectile + "<br/>" +
+                    "projectileSpeed: " + projectileSpeed + "<br/>" +
+                    "lootMultiplier: " + lootMultiplier + "<br/>" +
+                    "speed: " + speed + "<br/>" +
+                    "vision: " + vision + "<br/>" +
+                    "vanished: " + vanished + "<br/>" +
+                    "boss: false<br/>" +
+                    "burning: " + burning + "<br/>" +
+                    "baby: " + baby + "<br/>" +
+                    "projectileToMob: false<br/>" +
+                    "spawnedID: 'null'<br/>" +
+                    "maxSpawned: 0<br/>" +
+                    "spells: false<br/>" +
+                    "spell: 'null'<br/>" +
+                    "spellCooldown: 0<br/>" +
+                    "damage: 100<br/>" +
+                    "soundHurt: \'" + soundHurt + ":" + pitchHurt + "\'<br/>" +
+                    "soundDeath: \'" + soundDeath + ":" + pitchDeath + "\'<br/>" +
+                    "soundRandom: \'" + soundRandom + ":" + pitchRandom + "\'";
+
+            document.getElementById("special").innerHTML = "";
+
+
+            if (mobType == "arrow") {
+                var critical = document.getElementById("critical").value;
+                document.getElementById("special").innerHTML =
+                        "critical: " + critical + "<br/>";
+            } else if (mobType == "bat") {
+                var flying = document.getElementById("flying").value;
+                document.getElementById("special").innerHTML =
+                        "flying: " + flying + "<br/>";
+            } else if (mobType == "blaze") {
+                var blazing = document.getElementById("blazing").value;
+                document.getElementById("special").innerHTML =
+                        "blazing: " + blazing + "<br/>";
+            } else if (mobType == "creeper") {
+                var powered = document.getElementById("powered").value;
+                var ignited = document.getElementById("ignited").value;
+                document.getElementById("special").innerHTML =
+                        "powered: " + powered + "<br/>" +
+                        "ignited: " + ignited + "<br/>";
+            } else if (mobType == "enderman") {
+                var aggressiveEnderman = document.getElementById("aggressiveEnderman").value;
+                document.getElementById("special").innerHTML =
+                        "aggressive: " + aggressiveEnderman + "<br/>";
+            } else if (mobType == "fallingblock") {
+                var block = document.getElementById("block").value;
+                var blockdamage = document.getElementById("blockdamage").value;
+                document.getElementById("special").innerHTML =
+                        "block: " + block + "<br/>" +
+                        "blockdamage: " + blockdamage + "<br/>";
+            } else if (mobType == "ghast") {
+                var aggressiveGhast = document.getElementById("aggressiveGhast").value;
+                document.getElementById("special").innerHTML =
+                        "aggressive: " + agressiveGhast + "<br/>";
+            } else if (mobType == "horse") {
+                var horseColour = document.getElementById("horseColour").value;
+                var horseStyle = document.getElementById("horseStyle").value;
+                var carryingChest = document.getElementById("carryingChest").value;
+                var mouthOpen = document.getElementById("mouthOpen").value;
+                var rearing = document.getElementById("rearing").value;
+                var horseSaddled = document.getElementById("horseSaddled").value;
+                document.getElementById("special").innerHTML =
+                        "colour: " + horseColour + "<br/>" +
+                        "style: " + horseStyle + "<br/>" +
+                        "carryingChest: " + carryingChest + "<br/>" +
+                        "mouthOpen: " + mouthOpen + "<br/>" +
+                        "rearing: " + rearing + "<br/>" +
+                        "saddled: " + horseSaddled + "<br/>";
+            } else if (mobType == "item") {
+                var itemName = document.getElementById("itemName").value;
+                var itemdamage = document.getElementById("itemdamage").value;
+                document.getElementById("special").innerHTML =
+                        "item: " + itemName + "<br/>" +
+                        "itemdamage: " + itemdamage + "<br/>";
+            } else if (mobType == "ocelot") {
+                var ocelotType = document.getElementById("ocelotType").value;
+                var catSitting = document.getElementById("catSitting").value;
+                var catTamed = document.getElementById("catTamed").value;
+                document.getElementById("special").innerHTML =
+                        "type: " + ocelotType + "<br/>" +
+                        "sitting: " + catSitting + "<br/>" +
+                        "tamed: " + catTamed + "<br/>";
+            } else if (mobType == "painting") {
+                var art = document.getElementById("art").value;
+                document.getElementById("special").innerHTML =
+                        "art: " + art + "<br/>";
+            } else if (mobType == "pig") {
+                var pigSaddled = document.getElementById("pigSaddled").value;
+                document.getElementById("special").innerHTML =
+                        "saddled: " + pigSaddled + "<br/>";
+            } else if (mobType == "potion") {
+                var potionID = document.getElementById("potionID").value;
+                document.getElementById("special").innerHTML =
+                        "potionid: " + potionID + "<br/>";
+            } else if (mobType == "sheep") {
+                var sheared = document.getElementById("sheared").value;
+                var sheepColour = document.getElementById("sheepColour").value;
+                document.getElementById("special").innerHTML =
+                        "sheared: " + sheared + "<br/>" +
+                        "colour: " + sheepColour + "<br/>";
+            } else if (mobType == "slime") {
+                var slimeSize = document.getElementById("slimeSize").value;
+                document.getElementById("special").innerHTML =
+                        "size: " + slimeSize + "<br/>";
+            } else if (mobType == "villager") {
+                var profession = document.getElementById("profession").value;
+                document.getElementById("special").innerHTML =
+                        "profession: " + profession + "<br/>";
+            } else if (mobType == "witherskull") {
+                var blue = document.getElementById("blue").value;
+                document.getElementById("special").innerHTML =
+                        "blue: " + blue + "<br/>";
+            } else if (mobType == "wolf") {
+                var wolfAngry = document.getElementById("wolfAngry").value;
+                var wolfSitting = document.getElementById("wolfSitting").value;
+                var wolfTame = document.getElementById("wolfTame").value;
+                var wolfColour = document.getElementById("wolfColour").value;
+                document.getElementById("special").innerHTML =
+                        "angry: " + wolfAngry + "<br/>" +
+                        "sitting: " + wolfSitting + "<br/>" +
+                        "tame: " + wolfTame + "<br/>" +
+                        "colour: " + wolfColour + "<br/>";
+            } else if (mobType == "zombie") {
+                var villagerZombie = document.getElementById("villagerZombie").value;
+                document.getElementById("special").innerHTML =
+                        "villager: " + villagerZombie + "<br/>";
+            }
+        });
+
+        $('#tag').keyup(function () {
+            var displayTag = document.getElementById("tag").value;
+            document.getElementById("displayTag").innerHTML = displayTag + " ";
+        });
+        $("#level").bind('keyup mouseup', function () {
+            var displayLevel = document.getElementById("level").value;
+            document.getElementById("displayLevel").innerHTML = "[Lv. " + displayLevel + "]";
+        });
+        $("#mobType").change(function () {
+            var mobImage = document.getElementById("mobType").value;
+        });
+    </script>
+    <br/>
 
 </div>
 </body>
